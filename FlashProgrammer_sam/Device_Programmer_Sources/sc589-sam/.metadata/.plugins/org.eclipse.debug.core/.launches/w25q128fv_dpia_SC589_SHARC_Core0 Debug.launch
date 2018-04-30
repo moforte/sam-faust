@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.analog.crosscore.debug.launchType">
+<stringAttribute key="AutomaticBreakpoint.LastSelectedProcId" value="0"/>
+<intAttribute key="AutomaticBreakpointCount" value="24"/>
+<stringAttribute key="AutomaticBreakpointDescription0" value="Fatal exception occurred in RTL"/>
+<stringAttribute key="AutomaticBreakpointDescription1" value="End of program"/>
+<stringAttribute key="AutomaticBreakpointDescription10" value="End of program"/>
+<stringAttribute key="AutomaticBreakpointDescription11" value="Used for assert"/>
+<stringAttribute key="AutomaticBreakpointDescription12" value="Fatal error occurred in RTL"/>
+<stringAttribute key="AutomaticBreakpointDescription13" value="Before overlay is swapped in"/>
+<stringAttribute key="AutomaticBreakpointDescription14" value="Start of program"/>
+<stringAttribute key="AutomaticBreakpointDescription15" value="Used for stdio"/>
+<stringAttribute key="AutomaticBreakpointDescription16" value="Fatal exception occurred in RTL"/>
+<stringAttribute key="AutomaticBreakpointDescription17" value="Before overlay is swapped in"/>
+<stringAttribute key="AutomaticBreakpointDescription18" value="Stack overflow detected"/>
+<stringAttribute key="AutomaticBreakpointDescription19" value="End of program"/>
+<stringAttribute key="AutomaticBreakpointDescription2" value="Stack overflow detected"/>
+<stringAttribute key="AutomaticBreakpointDescription20" value="Used for assert"/>
+<stringAttribute key="AutomaticBreakpointDescription21" value="Fatal error occurred in RTL"/>
+<stringAttribute key="AutomaticBreakpointDescription22" value="Before overlay is swapped in"/>
+<stringAttribute key="AutomaticBreakpointDescription23" value="Start of program"/>
+<stringAttribute key="AutomaticBreakpointDescription3" value="Used for assert"/>
+<stringAttribute key="AutomaticBreakpointDescription4" value="Fatal error occurred in RTL"/>
+<stringAttribute key="AutomaticBreakpointDescription5" value="Start of program"/>
+<stringAttribute key="AutomaticBreakpointDescription6" value="Used for stdio"/>
+<stringAttribute key="AutomaticBreakpointDescription7" value="Fatal exception occurred in RTL"/>
+<stringAttribute key="AutomaticBreakpointDescription8" value="Before overlay is swapped in"/>
+<stringAttribute key="AutomaticBreakpointDescription9" value="Stack overflow detected"/>
+<stringAttribute key="AutomaticBreakpointEnabled0" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled1" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled10" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled11" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled12" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled13" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled14" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled15" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled16" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled17" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled18" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled19" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled2" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled20" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled21" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled22" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled23" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled3" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled4" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled5" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled6" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled7" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled8" value="true"/>
+<stringAttribute key="AutomaticBreakpointEnabled9" value="true"/>
+<stringAttribute key="AutomaticBreakpointHardware0" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware1" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware10" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware11" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware12" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware13" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware14" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware15" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware16" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware17" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware18" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware19" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware2" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware20" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware21" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware22" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware23" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware3" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware4" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware5" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware6" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware7" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware8" value="false"/>
+<stringAttribute key="AutomaticBreakpointHardware9" value="false"/>
+<stringAttribute key="AutomaticBreakpointLabel0" value="__fatal_exception"/>
+<stringAttribute key="AutomaticBreakpointLabel1" value="_exit"/>
+<stringAttribute key="AutomaticBreakpointLabel10" value="___lib_prog_term"/>
+<stringAttribute key="AutomaticBreakpointLabel11" value="__dbg_assert"/>
+<stringAttribute key="AutomaticBreakpointLabel12" value="__fatal_error"/>
+<stringAttribute key="AutomaticBreakpointLabel13" value="__ov_start"/>
+<stringAttribute key="AutomaticBreakpointLabel14" value="main"/>
+<stringAttribute key="AutomaticBreakpointLabel15" value="__primIO"/>
+<stringAttribute key="AutomaticBreakpointLabel16" value="__fatal_exception"/>
+<stringAttribute key="AutomaticBreakpointLabel17" value="__ov_end"/>
+<stringAttribute key="AutomaticBreakpointLabel18" value="__stack_overflowed"/>
+<stringAttribute key="AutomaticBreakpointLabel19" value="___lib_prog_term"/>
+<stringAttribute key="AutomaticBreakpointLabel2" value="__stack_overflowed"/>
+<stringAttribute key="AutomaticBreakpointLabel20" value="__dbg_assert"/>
+<stringAttribute key="AutomaticBreakpointLabel21" value="__fatal_error"/>
+<stringAttribute key="AutomaticBreakpointLabel22" value="__ov_start"/>
+<stringAttribute key="AutomaticBreakpointLabel23" value="main"/>
+<stringAttribute key="AutomaticBreakpointLabel3" value="__dbg_assert"/>
+<stringAttribute key="AutomaticBreakpointLabel4" value="__fatal_error"/>
+<stringAttribute key="AutomaticBreakpointLabel5" value="main"/>
+<stringAttribute key="AutomaticBreakpointLabel6" value="__primIO"/>
+<stringAttribute key="AutomaticBreakpointLabel7" value="__fatal_exception"/>
+<stringAttribute key="AutomaticBreakpointLabel8" value="__ov_end"/>
+<stringAttribute key="AutomaticBreakpointLabel9" value="__stack_overflowed"/>
+<intAttribute key="AutomaticBreakpointProcId0" value="0"/>
+<intAttribute key="AutomaticBreakpointProcId1" value="0"/>
+<intAttribute key="AutomaticBreakpointProcId10" value="1"/>
+<intAttribute key="AutomaticBreakpointProcId11" value="1"/>
+<intAttribute key="AutomaticBreakpointProcId12" value="1"/>
+<intAttribute key="AutomaticBreakpointProcId13" value="1"/>
+<intAttribute key="AutomaticBreakpointProcId14" value="1"/>
+<intAttribute key="AutomaticBreakpointProcId15" value="2"/>
+<intAttribute key="AutomaticBreakpointProcId16" value="2"/>
+<intAttribute key="AutomaticBreakpointProcId17" value="2"/>
+<intAttribute key="AutomaticBreakpointProcId18" value="2"/>
+<intAttribute key="AutomaticBreakpointProcId19" value="2"/>
+<intAttribute key="AutomaticBreakpointProcId2" value="0"/>
+<intAttribute key="AutomaticBreakpointProcId20" value="2"/>
+<intAttribute key="AutomaticBreakpointProcId21" value="2"/>
+<intAttribute key="AutomaticBreakpointProcId22" value="2"/>
+<intAttribute key="AutomaticBreakpointProcId23" value="2"/>
+<intAttribute key="AutomaticBreakpointProcId3" value="0"/>
+<intAttribute key="AutomaticBreakpointProcId4" value="0"/>
+<intAttribute key="AutomaticBreakpointProcId5" value="0"/>
+<intAttribute key="AutomaticBreakpointProcId6" value="1"/>
+<intAttribute key="AutomaticBreakpointProcId7" value="1"/>
+<intAttribute key="AutomaticBreakpointProcId8" value="1"/>
+<intAttribute key="AutomaticBreakpointProcId9" value="1"/>
+<stringAttribute key="AutomaticBreakpointPublic0" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic1" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic10" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic11" value="false"/>
+<stringAttribute key="AutomaticBreakpointPublic12" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic13" value="false"/>
+<stringAttribute key="AutomaticBreakpointPublic14" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic15" value="false"/>
+<stringAttribute key="AutomaticBreakpointPublic16" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic17" value="false"/>
+<stringAttribute key="AutomaticBreakpointPublic18" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic19" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic2" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic20" value="false"/>
+<stringAttribute key="AutomaticBreakpointPublic21" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic22" value="false"/>
+<stringAttribute key="AutomaticBreakpointPublic23" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic3" value="false"/>
+<stringAttribute key="AutomaticBreakpointPublic4" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic5" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic6" value="false"/>
+<stringAttribute key="AutomaticBreakpointPublic7" value="true"/>
+<stringAttribute key="AutomaticBreakpointPublic8" value="false"/>
+<stringAttribute key="AutomaticBreakpointPublic9" value="true"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation1" value="_exit"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation10" value="___lib_prog_term"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation12" value="__fatal_error"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation14" value="0x1c1b94"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation15" value="__primIO"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation19" value="___lib_prog_term"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation21" value="__fatal_error"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation23" value="0x1c1b84"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation4" value="__fatal_error"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation5" value="0xc100a4e6"/>
+<stringAttribute key="AutomaticBreakpointSetAtLocation6" value="__primIO"/>
+<stringAttribute key="AutomaticBreakpointUser0" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser1" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser10" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser11" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser12" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser13" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser14" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser15" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser16" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser17" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser18" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser19" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser2" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser20" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser21" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser22" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser23" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser3" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser4" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser5" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser6" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser7" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser8" value="false"/>
+<stringAttribute key="AutomaticBreakpointUser9" value="false"/>
+<stringAttribute key="CustomBoardSupportFileName" value=""/>
+<stringAttribute key="Debug Target" value="Emulation Debug Target"/>
+<stringAttribute key="Emulator.EnableSemihosting0" value="b1"/>
+<stringAttribute key="Emulator.HaltCoreAfterConnect0" value="b1"/>
+<stringAttribute key="Emulator.HaltCoreAfterConnect1" value="b1"/>
+<stringAttribute key="Emulator.HaltCoreAfterConnect2" value="b1"/>
+<booleanAttribute key="EnableCustomizations" value="false"/>
+<stringAttribute key="MPGroupActive" value="Default"/>
+<intAttribute key="MPGroupCount" value="1"/>
+<stringAttribute key="MPGroupName0" value="Default"/>
+<stringAttribute key="MPGroupProcIdList0" value="0 1 2"/>
+<stringAttribute key="Platform" value="ADSP-SC589 via ICE-2000"/>
+<booleanAttribute key="PopReloadDialog" value="false"/>
+<stringAttribute key="Processor" value="ADSP-SC589"/>
+<booleanAttribute key="ReloadProgramIfModified" value="false"/>
+<stringAttribute key="TargetOptions.LastSelectedProcId" value="0"/>
+<intAttribute key="com.analog.crosscore.debug.debugModel.ATTR_LOADPROGRAM_PROPERTIES.0" value="514"/>
+<intAttribute key="com.analog.crosscore.debug.debugModel.ATTR_LOADPROGRAM_PROPERTIES.1" value="770"/>
+<intAttribute key="com.analog.crosscore.debug.debugModel.ATTR_LOADPROGRAM_PROPERTIES.2" value="770"/>
+<intAttribute key="com.analog.crosscore.debug.debugModel.ATTR_LOADPROGRAM_PROPERTIES0.0" value="1800"/>
+<intAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_COUNT.0" value="2"/>
+<intAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_COUNT.1" value="1"/>
+<intAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_COUNT.2" value="1"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_NAME.0" value="Debug\w25q128fv_dpia_SC589_SHARC_Core0"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_NAME.1" value="Debug\w25q128fv_dpia_SC589_SHARC_Core1.dxe"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_NAME.2" value="Debug\w25q128fv_dpia_SC589_SHARC_Core2.dxe"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_NAME0.0" value="C:\Analog Devices\CrossCore Embedded Studio 2.3.0\SHARC\ldr\ezkitSC589_preload_core0_v01"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_SIREV.0" value="not available"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_SIREV.1" value="any"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROGRAM_SIREV.2" value="any"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_CORE.0" value="0"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_CORE.1" value="1"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_CORE.2" value="2"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_NAME.0" value="w25q128fv_dpia_SC589_SHARC_Core0"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_NAME.1" value="w25q128fv_dpia_SC589_SHARC_Core1"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_NAME.2" value="w25q128fv_dpia_SC589_SHARC_Core2"/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_PROJECT_NAME0.0" value=""/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_WORKING_DIR.0" value=""/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_WORKING_DIR.1" value=""/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_WORKING_DIR.2" value=""/>
+<stringAttribute key="com.analog.crosscore.debug.debugModel.ATTR_WORKING_DIR0.0" value=""/>
+<stringAttribute key="com.analog.crosscore.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;memoryBlockExpressionList context=&quot;Context string&quot;/&gt;&#13;&#10;"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="w25q128fv_dpia_SC589_SHARC_Core2"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="arm.toolchain.bare.target.exe.debug.1686033533"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/w25q128fv_dpia_SC589_SHARC_Core0"/>
+<listEntry value="/w25q128fv_dpia_SC589_SHARC_Core1"/>
+<listEntry value="/w25q128fv_dpia_SC589_SHARC_Core2"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+<listEntry value="4"/>
+<listEntry value="4"/>
+</listAttribute>
+</launchConfiguration>

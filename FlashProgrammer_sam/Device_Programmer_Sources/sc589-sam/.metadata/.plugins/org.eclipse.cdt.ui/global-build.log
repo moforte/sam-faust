@@ -1,0 +1,18 @@
+09:08:11 **** Build of configuration Debug for project w25q128fv_dpia_SC589_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+09:08:12 **** Build of configuration Debug for project w25q128fv_dpia_SC589_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+09:08:18 **** Build of configuration Debug for project w25q128fv_dpia_SC589_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.
+09:13:26 **** Incremental Build of configuration Debug for project w25q128fv_dpia_SC589_SHARC_Core0 ****
+make all 
+make: Nothing to be done for `all'.
+09:13:28 **** Incremental Build of configuration Debug for project w25q128fv_dpia_SC589_SHARC_Core1 ****
+make all 
+make: Nothing to be done for `all'.
+09:13:30 **** Incremental Build of configuration Debug for project w25q128fv_dpia_SC589_SHARC_Core2 ****
+make all 
+make: Nothing to be done for `all'.

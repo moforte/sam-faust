@@ -1,0 +1,2 @@
+"src/sc589_w25q128fv_dpia_Core0.o"
+"system/adi_initialize.o"

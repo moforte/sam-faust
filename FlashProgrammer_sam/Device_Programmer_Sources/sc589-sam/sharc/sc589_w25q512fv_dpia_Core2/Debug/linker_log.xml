@@ -1,0 +1,606 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/Analog Devices/CrossCore Embedded Studio 2.5.0/System/linker_log.xsl"?>
+<DOCUMENT gen_time='Sat Sep 09 21:34:30 2017
+'>
+<MSG id='066524D8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio1']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='066526A8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio1_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0665A918' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio2']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    src\common\flash.doj(seg_dmda)
+    src\common\gpio_simple.doj(seg_dmda)
+    src\common\simple_sysctrl.doj(seg_dmda)
+    src\common\spi.doj(seg_dmda)
+    src\sc589_mt25ql512fv_dpia.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_dma.doj](seg_dmda)
+    libssl.dlb[adi_pwr.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_tmr.doj](seg_dmda)
+    libdrv.dlb[adi_hadc.doj](seg_dmda)
+    libdrv.dlb[adi_spi.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0669CE00' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio2_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0669CEF0' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio3']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    src\common\flash.doj(seg_dmda)
+    src\common\gpio_simple.doj(seg_dmda)
+    src\common\simple_sysctrl.doj(seg_dmda)
+    src\common\spi.doj(seg_dmda)
+    src\sc589_mt25ql512fv_dpia.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[exit_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libc.dlb[xatexit_ba.doj](seg_dmda)
+    libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_write_c08_any.doj](seg_dmda)
+    libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
+    libio.dlb[printf_c08_d32.doj](seg_dmda)
+    libio.dlb[xfiles_c08_any.doj](seg_dmda)
+    libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
+    libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xlonglong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xparse_format_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_close_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_open_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_read_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_remove_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_rename_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_seek_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_write2_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_a_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprint_fixed_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprnt_c08_d32.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_dma.doj](seg_dmda)
+    libssl.dlb[adi_pwr.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_tmr.doj](seg_dmda)
+    libdrv.dlb[adi_hadc.doj](seg_dmda)
+    libdrv.dlb[adi_spi.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0665AA08' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio3_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[exit_value.doj](seg_dmda)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
+    libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0665AAF8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio1']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0669CFE8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio1_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0669D0D8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio2']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    src\common\flash.doj(seg_dmda)
+    src\common\gpio_simple.doj(seg_dmda)
+    src\common\simple_sysctrl.doj(seg_dmda)
+    src\common\spi.doj(seg_dmda)
+    src\sc589_mt25ql512fv_dpia.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_dma.doj](seg_dmda)
+    libssl.dlb[adi_pwr.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_tmr.doj](seg_dmda)
+    libdrv.dlb[adi_hadc.doj](seg_dmda)
+    libdrv.dlb[adi_spi.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0669D1C8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio2_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0669A0C0' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio3']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    src\common\flash.doj(seg_dmda)
+    src\common\gpio_simple.doj(seg_dmda)
+    src\common\simple_sysctrl.doj(seg_dmda)
+    src\common\spi.doj(seg_dmda)
+    src\sc589_mt25ql512fv_dpia.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[exit_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libc.dlb[xatexit_ba.doj](seg_dmda)
+    libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_write_c08_any.doj](seg_dmda)
+    libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
+    libio.dlb[printf_c08_d32.doj](seg_dmda)
+    libio.dlb[xfiles_c08_any.doj](seg_dmda)
+    libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
+    libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xlonglong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xparse_format_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_close_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_open_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_read_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_remove_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_rename_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_seek_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_write2_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_a_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprint_fixed_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprnt_c08_d32.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_dma.doj](seg_dmda)
+    libssl.dlb[adi_pwr.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_tmr.doj](seg_dmda)
+    libdrv.dlb[adi_hadc.doj](seg_dmda)
+    libdrv.dlb[adi_spi.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0669A1B0' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio3_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[exit_value.doj](seg_dmda)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
+    libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0669D578' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio0']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[flush_data_buffer_ba.doj](seg_int_code)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0669D668' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio1']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[fatal_error_ba.doj](seg_pmco)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_pmco)
+    libc.dlb[isinff.doj](seg_pmco)
+    libc.dlb[memset_char8_ba.doj](seg_pmco)
+    libc.dlb[set_c.doj](seg_pmco)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0669D758' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio2']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(seg_pmco)
+    app_startup.doj(seg_pmco)
+    libcc.dlb[divrem_s32.doj](seg_pmco)
+    libcc.dlb[divrem_s64_char8_ba.doj](seg_pmco)
+    libcc.dlb[divrem_u32.doj](seg_pmco)
+    libcc.dlb[divrem_u64_char8_ba.doj](seg_pmco)
+    libcc.dlb[float_divide.doj](seg_pmco)
+    libcc.dlb[flt_sprt.doj](seg_pmco)
+    libcc.dlb[lib_ldtof.doj](seg_pmco)
+    libcc.dlb[strlen_char8_ba.doj](seg_pmco)
+    libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[dispatched_handler_activate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_deactivate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_unregister_ba.doj](seg_pmco)
+    libc.dlb[fatal_error_ba.doj](seg_pmco)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_pmco)
+    libc.dlb[isinff.doj](seg_pmco)
+    libc.dlb[memset_char8_ba.doj](seg_pmco)
+    libc.dlb[set_c.doj](seg_pmco)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0669D848' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio3']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(seg_pmco)
+    app_startup.doj(seg_pmco)
+    libcc.dlb[divrem_s32.doj](seg_pmco)
+    libcc.dlb[divrem_s64_char8_ba.doj](seg_pmco)
+    libcc.dlb[divrem_u32.doj](seg_pmco)
+    libcc.dlb[divrem_u64_char8_ba.doj](seg_pmco)
+    libcc.dlb[float_divide.doj](seg_pmco)
+    libcc.dlb[flt_sprt.doj](seg_pmco)
+    libcc.dlb[lib_ldtof.doj](seg_pmco)
+    libcc.dlb[strlen_char8_ba.doj](seg_pmco)
+    libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[adi_ilop_detected.doj](seg_pmco)
+    libc.dlb[adi_parity_error_detected.doj](seg_pmco)
+    libc.dlb[dispatched_handler_activate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_deactivate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_unregister_ba.doj](seg_pmco)
+    libc.dlb[fatal_error_ba.doj](seg_pmco)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_pmco)
+    libc.dlb[isinff.doj](seg_pmco)
+    libc.dlb[memset_char8_ba.doj](seg_pmco)
+    libc.dlb[no_dispatched_handler.doj](seg_pmco)
+    libc.dlb[set_c.doj](seg_pmco)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='066DC040' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_nw_code']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[flush_data_buffer_ba.doj](seg_int_code)
+    app_startup.doj(seg_pmco)
+    app_startup.doj(seg_pmco)
+    libcc.dlb[divrem_s32.doj](seg_pmco)
+    libcc.dlb[divrem_s64_char8_ba.doj](seg_pmco)
+    libcc.dlb[divrem_u32.doj](seg_pmco)
+    libcc.dlb[divrem_u64_char8_ba.doj](seg_pmco)
+    libcc.dlb[float_divide.doj](seg_pmco)
+    libcc.dlb[flt_sprt.doj](seg_pmco)
+    libcc.dlb[lib_ldtof.doj](seg_pmco)
+    libcc.dlb[strlen_char8_ba.doj](seg_pmco)
+    libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[adi_ilop_detected.doj](seg_pmco)
+    libc.dlb[adi_parity_error_detected.doj](seg_pmco)
+    libc.dlb[dispatched_handler_activate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_deactivate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_unregister_ba.doj](seg_pmco)
+    libc.dlb[fatal_error_ba.doj](seg_pmco)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_pmco)
+    libc.dlb[isinff.doj](seg_pmco)
+    libc.dlb[memset_char8_ba.doj](seg_pmco)
+    libc.dlb[no_dispatched_handler.doj](seg_pmco)
+    libc.dlb[set_c.doj](seg_pmco)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='066DC220' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_data']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    src\common\flash.doj(seg_dmda)
+    src\common\gpio_simple.doj(seg_dmda)
+    src\common\simple_sysctrl.doj(seg_dmda)
+    src\common\spi.doj(seg_dmda)
+    src\sc589_mt25ql512fv_dpia.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[exit_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libc.dlb[xatexit_ba.doj](seg_dmda)
+    libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_write_c08_any.doj](seg_dmda)
+    libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
+    libio.dlb[printf_c08_d32.doj](seg_dmda)
+    libio.dlb[xfiles_c08_any.doj](seg_dmda)
+    libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
+    libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xlonglong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xparse_format_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_close_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_open_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_read_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_remove_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_rename_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_seek_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_write2_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_a_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprint_fixed_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprnt_c08_d32.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_dma.doj](seg_dmda)
+    libssl.dlb[adi_pwr.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_tmr.doj](seg_dmda)
+    libdrv.dlb[adi_hadc.doj](seg_dmda)
+    libdrv.dlb[adi_spi.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='066DC5E0' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_data_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[exit_value.doj](seg_dmda)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
+    libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='066DC6D0' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_data']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    src\common\flash.doj(seg_dmda)
+    src\common\gpio_simple.doj(seg_dmda)
+    src\common\simple_sysctrl.doj(seg_dmda)
+    src\common\spi.doj(seg_dmda)
+    src\sc589_mt25ql512fv_dpia.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[exit_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libc.dlb[xatexit_ba.doj](seg_dmda)
+    libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_write_c08_any.doj](seg_dmda)
+    libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
+    libio.dlb[printf_c08_d32.doj](seg_dmda)
+    libio.dlb[xfiles_c08_any.doj](seg_dmda)
+    libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
+    libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xlonglong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xparse_format_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_close_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_open_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_read_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_remove_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_rename_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_seek_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_write2_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_a_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprint_fixed_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprnt_c08_d32.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_dma.doj](seg_dmda)
+    libssl.dlb[adi_pwr.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_tmr.doj](seg_dmda)
+    libdrv.dlb[adi_hadc.doj](seg_dmda)
+    libdrv.dlb[adi_spi.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='066DC310' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_data_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[exit_value.doj](seg_dmda)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
+    libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='066DC400' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_cpp_eh_gdt_nw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(.gdt)
+    app_startup.doj(.gdt)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='066DC4F0' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_cpp_ctors_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(seg_ctdml)
+    app_startup.doj(seg_ctdml)
+    libc.dlb[set_c.doj](seg_ctdml)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='066DCC70' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_nw_code']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(seg_pmco)
+    app_startup.doj(seg_pmco)
+    libcc.dlb[divrem_s32.doj](seg_pmco)
+    libcc.dlb[divrem_s64_char8_ba.doj](seg_pmco)
+    libcc.dlb[divrem_u32.doj](seg_pmco)
+    libcc.dlb[divrem_u64_char8_ba.doj](seg_pmco)
+    libcc.dlb[float_divide.doj](seg_pmco)
+    libcc.dlb[flt_sprt.doj](seg_pmco)
+    libcc.dlb[lib_ldtof.doj](seg_pmco)
+    libcc.dlb[strlen_char8_ba.doj](seg_pmco)
+    libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[adi_ilop_detected.doj](seg_pmco)
+    libc.dlb[adi_parity_error_detected.doj](seg_pmco)
+    libc.dlb[dispatched_handler_activate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_deactivate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_unregister_ba.doj](seg_pmco)
+    libc.dlb[fatal_error_ba.doj](seg_pmco)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_pmco)
+    libc.dlb[isinff.doj](seg_pmco)
+    libc.dlb[memset_char8_ba.doj](seg_pmco)
+    libc.dlb[no_dispatched_handler.doj](seg_pmco)
+    libc.dlb[set_c.doj](seg_pmco)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='066DCA90' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_data']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    src\common\flash.doj(seg_dmda)
+    src\common\gpio_simple.doj(seg_dmda)
+    src\common\simple_sysctrl.doj(seg_dmda)
+    src\common\spi.doj(seg_dmda)
+    src\sc589_mt25ql512fv_dpia.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[exit_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libc.dlb[xatexit_ba.doj](seg_dmda)
+    libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_write_c08_any.doj](seg_dmda)
+    libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
+    libio.dlb[printf_c08_d32.doj](seg_dmda)
+    libio.dlb[xfiles_c08_any.doj](seg_dmda)
+    libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
+    libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xlonglong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xparse_format_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_close_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_open_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_read_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_remove_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_rename_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_seek_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_write2_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_a_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprint_fixed_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprnt_c08_d32.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_dma.doj](seg_dmda)
+    libssl.dlb[adi_pwr.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_tmr.doj](seg_dmda)
+    libdrv.dlb[adi_hadc.doj](seg_dmda)
+    libdrv.dlb[adi_spi.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='066DC7C0' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_data_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[exit_value.doj](seg_dmda)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
+    libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+</DOCUMENT>

@@ -1,0 +1,2618 @@
+Session started on Friday February 03, 2017 09:13:31AM (Eastern Standard Time)
+
+EnableCustomBoardSupport()
+  [I] enable: 0
+  [I] processorType: ADSP-SC589
+  [I] fileName: 
+  [T] 0.00015 seconds
+
+ConnectWithOptions()
+  [I] Target: Emulation Debug Target
+  [I] Platform: ADSP-SC589 via ICE-2000
+  [I] Processor: ADSP-SC589
+  [I] ProcId: 0 Properties 1
+  [I] ProcId: 1 Properties 1
+  [I] ProcId: 2 Properties 1
+EMU[ emutarget ]: Connecting to emutarget family library...
+EMU[ emutarget ]: Connecting to emulator library...
+EMU[ emutarget ]: Connecting to processor Device 0 ( ADSP-SC589 )...
+EMU[ emucorearm ]: Debug interface is JTAG [procID=0, coreID=0]
+EMU[ emucorearm ]: Detected IDCODE: 0x228080cb [procID=0, coreID=0]
+
+>> StateChange()
+  [I] State: Running
+EMU[ emutarget ]: Connected to emutarget family library version 7.3.0.14
+  successfully
+  [I] Reason: Client Request
+  [I] ProcId: 0
+EMU[ emutarget ]: Connected to ICE-2000 emulator library version 7.1.0.7 successfully
+EMU[ emutarget ]: Connected to Device 0 ( ADSP-SC589 ) silicon revision 1.0 successfully
+EMU[ emutarget ]: Connected to Core 0 (Cortex-A5) [proc=0/core=0] successfully
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Client Request
+  [I] ProcId: 0
+EMU[ emucoresharc11 ]: Detected IDCODE: 0x228080cb [procID=0, coreID=1]
+
+>> StateChange()
+  [I] State: Running
+  [I] Reason: Client Request
+  [I] ProcId: 1
+EMU[ emutarget ]: Connected to Core 1 (SHARC) [proc=0/core=1] successfully
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Client Request
+  [I] ProcId: 1
+EMU[ emucoresharc11 ]: Detected IDCODE: 0x228080cb [procID=0, coreID=2]
+
+>> StateChange()
+  [I] State: Running
+EMU[ emutarget ]: Connected to Core 2 (SHARC) [proc=0/core=2] successfully
+  [I] Reason: Client Request
+  [I] ProcId: 2
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Client Request
+  [I] ProcId: 2
+  [T] 5.32301 seconds
+
+CreateMPGroup()
+  [O] groupId: 2
+  [T] 0.00030 seconds
+
+AddProcessorToMPGroup()
+  [I] groupId: 2
+  [I] procId: 0
+  [T] 0.00005 seconds
+
+AddProcessorToMPGroup()
+  [I] groupId: 2
+  [I] procId: 1
+  [T] 0.00004 seconds
+
+AddProcessorToMPGroup()
+  [I] groupId: 2
+  [I] procId: 2
+  [T] 0.00006 seconds
+
+ResetMPGroup()
+  [I] groupId: 2
+  [I] wait: 1
+
+>> StateChange()
+  [I] State: Reset
+  [I] Reason: Client Request
+  [I] ProcId: 0
+
+>> StateChange()
+  [I] State: Reset
+  [I] Reason: Client Request
+  [I] ProcId: 1
+
+>> StateChange()
+  [I] State: Reset
+  [I] Reason: Client Request
+  [I] ProcId: 2
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Client Request
+  [I] ProcId: 0
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Client Request
+  [I] ProcId: 1
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Client Request
+  [I] ProcId: 2
+  [T] 0.28302 seconds
+
+RemoveMPGroup()
+  [I] groupId: 2
+  [T] 0.00009 seconds
+
+GetProcessorType()
+  [I] procId: 0
+  [O] Processor Type:: ADSP-SC589
+  [T] 0.00014 seconds
+
+GetSiliconRevision()
+  [I] procId: 0
+  [O] Silicon Revision:: 1.0
+  [T] 0.00019 seconds
+
+GetProcessorType()
+  [I] FileName: C:\Analog Devices\CrossCore Embedded Studio 2.3.0\SHARC\ldr\ezkitSC589_preload_core0_v01
+  [O] Processor Type: 
+  [T] 0.01771 seconds
+
+GetProcessorType()
+  [I] FileName: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\w25q128fv_dpia_SC589_SHARC_Core0
+  [O] Processor Type: 
+  [T] 0.00963 seconds
+
+GetProgramInfo()
+  [I] FileName: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\w25q128fv_dpia_SC589_SHARC_Core0
+  [O] Toolchain: 1
+  [O] Architecture: ARM
+  [O] Processor Type: 
+  [O] Entry Address: c10040c9
+  [O] Silicon Revision: not available
+  [T] 0.00977 seconds
+
+GetProcessorType()
+  [I] procId: 1
+  [O] Processor Type:: ADSP-SC589
+  [T] 0.00004 seconds
+
+GetSiliconRevision()
+  [I] procId: 1
+  [O] Silicon Revision:: 1.0
+  [T] 0.00004 seconds
+
+GetProcessorType()
+  [I] FileName: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core1\Debug\w25q128fv_dpia_SC589_SHARC_Core1.dxe
+  [O] Processor Type: ADSP-SC589
+  [T] 0.00705 seconds
+
+GetProgramInfo()
+  [I] FileName: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core1\Debug\w25q128fv_dpia_SC589_SHARC_Core1.dxe
+  [O] Toolchain: 3
+  [O] Architecture: SHARC
+  [O] Processor Type: ADSP-SC589
+  [O] Entry Address: 1c09d8
+  [O] Silicon Revision: any
+  [T] 0.00705 seconds
+
+GetProcessorType()
+  [I] procId: 2
+  [O] Processor Type:: ADSP-SC589
+  [T] 0.00003 seconds
+
+GetSiliconRevision()
+  [I] procId: 2
+  [O] Silicon Revision:: 1.0
+  [T] 0.00004 seconds
+
+GetProcessorType()
+  [I] FileName: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core2\Debug\w25q128fv_dpia_SC589_SHARC_Core2.dxe
+  [O] Processor Type: ADSP-SC589
+  [T] 0.00523 seconds
+
+GetProgramInfo()
+  [I] FileName: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core2\Debug\w25q128fv_dpia_SC589_SHARC_Core2.dxe
+  [O] Toolchain: 3
+  [O] Architecture: SHARC
+  [O] Processor Type: ADSP-SC589
+  [O] Entry Address: 1c09d8
+  [O] Silicon Revision: any
+  [T] 0.00699 seconds
+
+LoadProgramWithOptions()
+  [I] ProcId: 0
+  [I] FileName: C:\Analog Devices\CrossCore Embedded Studio 2.3.0\SHARC\ldr\ezkitSC589_preload_core0_v01
+  [I] Properties: 8
+  [I] WorkingDirectory: 
+  [T] 1.53228 seconds
+
+GetProgramInfo()
+  [I] FileName: C:\Analog Devices\CrossCore Embedded Studio 2.3.0\SHARC\ldr\ezkitSC589_preload_core0_v01
+  [O] Toolchain: 1
+  [O] Architecture: ARM
+  [O] Processor Type: 
+  [O] Entry Address: 2008c889
+  [O] Silicon Revision: not available
+  [T] 0.00514 seconds
+
+SetExpression()
+  [I] ProcId: 0
+  [I] Expression: $PC
+  [I] Value: 0x2008c889
+  [T] 0.00379 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 0
+  [I] Symbol: __primIO
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __primIO.  Symbol not found.
+**********************************************
+  [T] 0.00105 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 0
+  [I] Symbol: _primIO_
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol _primIO_.  Symbol not found.
+**********************************************
+  [T] 0.00047 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 0
+  [I] Symbol: _primIO
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol _primIO.  Symbol not found.
+**********************************************
+  [T] 0.00042 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 0
+  [I] Symbol: ___lib_prog_term
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol ___lib_prog_term.  Symbol not found.
+**********************************************
+  [T] 0.00043 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 0
+  [I] Symbol: exit
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+  [T] 0.00784 seconds
+
+Run()
+  [I] ProcId: 0
+  [I] Wait: 1
+  [I] Timeout: 10000
+
+>> StateChange()
+  [I] State: Running
+  [I] Reason: Client Request
+  [I] ProcId: 0
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Breakpoint
+  [I] ProcId: 0
+  [T] 0.14578 seconds
+
+LoadProgramWithOptions()
+  [I] ProcId: 0
+  [I] FileName: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\w25q128fv_dpia_SC589_SHARC_Core0
+  [I] Properties: 2
+  [I] WorkingDirectory: 
+  [T] 1.07043 seconds
+
+GetProgramInfo()
+  [I] FileName: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\w25q128fv_dpia_SC589_SHARC_Core0
+  [O] Toolchain: 1
+  [O] Architecture: ARM
+  [O] Processor Type: 
+  [O] Entry Address: c10040c9
+  [O] Silicon Revision: not available
+  [T] 0.00531 seconds
+
+SetExpression()
+  [I] ProcId: 0
+  [I] Expression: $PC
+  [I] Value: 0xffffffffc10040c9
+  [T] 0.00439 seconds
+
+EvaluateExpression()
+  [I] ProcId: 0
+  [I] Expression: $PC
+  [I] Format: Hexadecimal
+  [O] Result: 0xc10040c8
+  [T] 0.00624 seconds
+
+RemoveAllBreakpoints()
+  [I] ProcId: 0
+  [T] 0.00140 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 0
+  [I] Symbol: __fatal_exception
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __fatal_exception.  Symbol not found.
+**********************************************
+  [T] 0.00035 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 0
+  [I] Symbol: _exit
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+  [T] 0.04348 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 0
+  [I] Symbol: __stack_overflowed
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __stack_overflowed.  Symbol not found.
+**********************************************
+  [T] 0.00117 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 0
+  [I] Symbol: __dbg_assert
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __dbg_assert.  Symbol not found.
+**********************************************
+  [T] 0.00107 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 0
+  [I] Symbol: __fatal_error
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+  [T] 0.01431 seconds
+
+GetFunctionBounds()
+  [I] ProcId: 0
+  [I] FunctionName: main
+  [O] TopOfFunction: 0xc100a4d8
+  [O] TopOfBody: 0xc100a4e6
+  [O] EndOfFunction: 0xc100ab1c
+  [O] EndOfBody: 0xc100ab1c
+  [T] 0.00024 seconds
+
+SetBreakpointAtAddress()
+  [I] ProcId: 0
+  [I] Address: 0xc100a4e6
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+  [T] 0.01103 seconds
+
+LoadProgramWithOptions()
+  [I] ProcId: 1
+  [I] FileName: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core1\Debug\w25q128fv_dpia_SC589_SHARC_Core1.dxe
+  [I] Properties: 2
+  [I] WorkingDirectory: 
+  [T] 0.91332 seconds
+
+GetProgramInfo()
+  [I] FileName: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core1\Debug\w25q128fv_dpia_SC589_SHARC_Core1.dxe
+  [O] Toolchain: 3
+  [O] Architecture: SHARC
+  [O] Processor Type: ADSP-SC589
+  [O] Entry Address: 1c09d8
+  [O] Silicon Revision: any
+  [T] 0.01082 seconds
+
+RemoveAllBreakpoints()
+  [I] ProcId: 1
+  [T] 0.00028 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 1
+  [I] Symbol: __primIO
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+  [T] 0.07659 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 1
+  [I] Symbol: __fatal_exception
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __fatal_exception.  Symbol not found.
+**********************************************
+  [T] 0.00251 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 1
+  [I] Symbol: __ov_end
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __ov_end.  Symbol not found.
+**********************************************
+  [T] 0.00221 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 1
+  [I] Symbol: _ov_end
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol _ov_end.  Symbol not found.
+**********************************************
+  [T] 0.00220 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 1
+  [I] Symbol: __stack_overflowed
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __stack_overflowed.  Symbol not found.
+**********************************************
+  [T] 0.00220 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 1
+  [I] Symbol: ___lib_prog_term
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+  [T] 0.02697 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 1
+  [I] Symbol: __dbg_assert
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __dbg_assert.  Symbol not found.
+**********************************************
+  [T] 0.00227 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 1
+  [I] Symbol: __fatal_error
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+  [T] 0.06479 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 1
+  [I] Symbol: __ov_start
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __ov_start.  Symbol not found.
+**********************************************
+  [T] 0.00076 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 1
+  [I] Symbol: _ov_start
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol _ov_start.  Symbol not found.
+**********************************************
+  [T] 0.00061 seconds
+
+GetProcessorType()
+  [I] procId: 1
+  [O] Processor Type:: ADSP-SC589
+  [T] 0.00016 seconds
+
+GetFunctionBounds()
+  [I] ProcId: 1
+  [I] FunctionName: main
+  [O] TopOfFunction: 0x001c1b91
+  [O] TopOfBody: 0x001c1b94
+  [O] EndOfFunction: 0x001c1cca
+  [O] EndOfBody: 0x001c1cca
+  [T] 0.00035 seconds
+
+SetBreakpointAtAddress()
+  [I] ProcId: 1
+  [I] Address: 0x001c1b94
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+  [T] 0.00938 seconds
+
+LoadProgramWithOptions()
+  [I] ProcId: 2
+  [I] FileName: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core2\Debug\w25q128fv_dpia_SC589_SHARC_Core2.dxe
+  [I] Properties: 2
+  [I] WorkingDirectory: 
+  [T] 0.92357 seconds
+
+GetProgramInfo()
+  [I] FileName: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core2\Debug\w25q128fv_dpia_SC589_SHARC_Core2.dxe
+  [O] Toolchain: 3
+  [O] Architecture: SHARC
+  [O] Processor Type: ADSP-SC589
+  [O] Entry Address: 1c09d8
+  [O] Silicon Revision: any
+  [T] 0.00628 seconds
+
+RemoveAllBreakpoints()
+  [I] ProcId: 2
+  [T] 0.00021 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 2
+  [I] Symbol: __primIO
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+  [T] 0.05855 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 2
+  [I] Symbol: __fatal_exception
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __fatal_exception.  Symbol not found.
+**********************************************
+  [T] 0.00105 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 2
+  [I] Symbol: __ov_end
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __ov_end.  Symbol not found.
+**********************************************
+  [T] 0.00066 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 2
+  [I] Symbol: _ov_end
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol _ov_end.  Symbol not found.
+**********************************************
+  [T] 0.00065 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 2
+  [I] Symbol: __stack_overflowed
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __stack_overflowed.  Symbol not found.
+**********************************************
+  [T] 0.00066 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 2
+  [I] Symbol: ___lib_prog_term
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+  [T] 0.00548 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 2
+  [I] Symbol: __dbg_assert
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __dbg_assert.  Symbol not found.
+**********************************************
+  [T] 0.00079 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 2
+  [I] Symbol: __fatal_error
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+  [T] 0.00675 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 2
+  [I] Symbol: __ov_start
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol __ov_start.  Symbol not found.
+**********************************************
+  [T] 0.00077 seconds
+
+SetBreakpointAtSymbol()
+  [I] ProcId: 2
+  [I] Symbol: _ov_start
+  [I] Type: 1
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+
+**********************************************
+* ERROR: Failed to set breakpoint at symbol _ov_start.  Symbol not found.
+**********************************************
+  [T] 0.00063 seconds
+
+GetFunctionBounds()
+  [I] ProcId: 2
+  [I] FunctionName: main
+  [O] TopOfFunction: 0x001c1b81
+  [O] TopOfBody: 0x001c1b84
+  [O] EndOfFunction: 0x001c1cba
+  [O] EndOfBody: 0x001c1cba
+  [T] 0.00023 seconds
+
+SetBreakpointAtAddress()
+  [I] ProcId: 2
+  [I] Address: 0x001c1b84
+  [I] Type: 0
+  [I] SkipCount: 0
+  [I] Expression: 
+  [I] Temporary: 0
+  [I] Enabled: 1
+  [T] 0.00388 seconds
+
+CreateMPGroup()
+  [O] groupId: 3
+  [T] 0.00015 seconds
+
+AddProcessorToMPGroup()
+  [I] groupId: 3
+  [I] procId: 0
+  [T] 0.00017 seconds
+
+AddProcessorToMPGroup()
+  [I] groupId: 3
+  [I] procId: 1
+  [T] 0.00010 seconds
+
+AddProcessorToMPGroup()
+  [I] groupId: 3
+  [I] procId: 2
+  [T] 0.00010 seconds
+
+Run()
+  [I] ProcId: 0
+  [I] Wait: 0
+  [I] Timeout: 0
+
+>> StateChange()
+  [I] State: Running
+  [I] Reason: Client Request
+  [I] ProcId: 0
+  [T] 0.12858 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 1
+  [O] Memory ids found: 33
+  [T] 0.00119 seconds
+
+Run()
+  [I] ProcId: 1
+  [I] Wait: 0
+  [I] Timeout: 0
+
+>> StateChange()
+  [I] State: Running
+  [I] Reason: Client Request
+  [I] ProcId: 1
+  [T] 0.03070 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 1
+  [I] MemId: 9
+  [O] Symbols Found: 48
+  [T] 0.00035 seconds
+
+Run()
+  [I] ProcId: 2
+  [I] Wait: 0
+  [I] Timeout: 0
+
+>> StateChange()
+  [I] State: Running
+  [I] Reason: Client Request
+  [I] ProcId: 2
+  [T] 0.05107 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 1
+  [O] Memory ids found: 33
+  [T] 0.00023 seconds
+
+GetStackFrames()
+  [I] ProcId: 1
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Breakpoint
+  [I] ProcId: 0
+
+**********************************************
+* ERROR: Failed to retrieve stack frame info: Processor is not halted.
+**********************************************
+  [T] 0.53689 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 1
+  [I] MemId: 9
+  [O] Symbols Found: 48
+  [T] 0.00090 seconds
+
+EvaluateExpression()
+  [I] ProcId: 0
+  [I] Expression: $PC
+  [I] Format: Hexadecimal
+  [O] Result: 0xc100a4e6
+  [T] 0.00058 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 1
+  [O] Memory ids found: 33
+  [T] 0.00042 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 1
+  [I] MemId: 9
+  [O] Symbols Found: 48
+  [T] 0.00043 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00007 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00012 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 1
+  [O] IsEnabled: 0
+  [T] 0.00052 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 1
+  [O] IsEnabled: 0
+  [T] 0.00009 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 1
+  [O] IsEnabled: 0
+  [T] 0.00015 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 1
+  [O] Memory ids found: 33
+  [T] 0.00022 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 1
+  [I] MemId: 9
+  [O] Symbols Found: 48
+  [T] 0.00013 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 2
+  [O] Memory ids found: 33
+  [T] 0.00090 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 2
+  [I] MemId: 9
+  [O] Symbols Found: 48
+  [T] 0.00014 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 2
+  [O] Memory ids found: 33
+  [T] 0.00008 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 2
+  [I] MemId: 9
+  [O] Symbols Found: 48
+  [T] 0.00014 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 2
+  [O] Memory ids found: 33
+  [T] 0.00004 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 2
+  [I] MemId: 9
+  [O] Symbols Found: 48
+  [T] 0.00012 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 2
+  [O] IsEnabled: 0
+  [T] 0.00020 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 2
+  [O] IsEnabled: 0
+  [T] 0.00003 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 2
+  [O] IsEnabled: 0
+  [T] 0.00004 seconds
+
+GetStackFrameDepth()
+  [I] ProcId: 0
+  [O] Stack Frame Depth: 1
+  [T] 0.00687 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00053 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00025 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00029 seconds
+
+SetActiveStackFrame()
+  [I] ProcId: 0
+  [I] FrameId: 0x20089000
+  [T] 0.00007 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00028 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00074 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00039 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00004 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00022 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00026 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00006 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00007 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00033 seconds
+
+GetMixedAssemblyByAddress()
+  [I] ProcId: 0
+  [I] Start Address: 0xc100a4e6
+  [I] End Address: 0xc100a572
+  [I] Instruction Type: -1
+  [O] Mixed Instructions Found: 12
+  [T] 0.55003 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00018 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00037 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00003 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00037 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00014 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00003 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00008 seconds
+
+GetStackFrameDepth()
+  [I] ProcId: 0
+  [O] Stack Frame Depth: 1
+  [T] 0.00032 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00020 seconds
+
+IsDebugLineInfoAvailable()
+  [I] Proc Id: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [O] Found: 1
+  [T] 0.00005 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsDebugLineInfoAvailable()
+  [I] Proc Id: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [O] Found: 1
+  [T] 0.00004 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 1
+  [O] Found: 0
+  [T] 0.00048 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 2
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 3
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 4
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 5
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 6
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 7
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 8
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 9
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 10
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 11
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 12
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 13
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 14
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 15
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 16
+  [O] Found: 1
+  [T] 0.00007 seconds
+
+IsFeatureSupported()
+  [I] procId: 0
+  [I] feature: 0
+  [O] supported: 1
+  [T] 0.00005 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsDebugLineInfoAvailable()
+  [I] Proc Id: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [O] Found: 1
+  [T] 0.00004 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsDebugLineInfoAvailable()
+  [I] Proc Id: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [O] Found: 1
+  [T] 0.00022 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 1
+  [O] Found: 0
+  [T] 0.00009 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 2
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 3
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 4
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 5
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 6
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 7
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 8
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 9
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 10
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 11
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 12
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 13
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 14
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 15
+  [O] Found: 0
+  [T] 0.00007 seconds
+
+IsAssemblyAtLine()
+  [I] ProcId: 0
+  [I] File Name: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\src\sc589_w25q128fv_dpia_Core0.cpp
+  [I] Line Number: 16
+  [O] Found: 1
+  [T] 0.00007 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsFeatureSupported()
+  [I] procId: 0
+  [I] feature: 0
+  [O] supported: 1
+  [T] 0.00004 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00033 seconds
+
+GetLocalVariables()
+  [I] ProcId: 0
+  [I] FrameId: 0x20089000
+  [O]   | VariableName : argc
+  [O]   | VariableName : argv
+  [T] 0.00614 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00021 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00026 seconds
+
+EvaluateExpression()
+  [I] ProcId: 0
+  [I] FrameLevel: 0
+  [I] Expression: $TYPEINFO(argc)
+  [I] Format: Hexadecimal
+  [O] Result: int
+  [T] 0.00030 seconds
+
+EvaluateExpression()
+  [I] ProcId: 0
+  [I] FrameLevel: 0
+  [I] Expression: $TYPEINFO(argv)
+  [I] Format: Hexadecimal
+  [O] Result: char**
+  [T] 0.00017 seconds
+
+EvaluateExpression()
+  [I] ProcId: 0
+  [I] FrameLevel: 0
+  [I] Expression: $TYPEINFO(argc)
+  [I] Format: Hexadecimal
+  [O] Result: int
+  [T] 0.00040 seconds
+
+EvaluateExpression()
+  [I] ProcId: 0
+  [I] FrameLevel: 0
+  [I] Expression: $TYPEINFO(argv)
+  [I] Format: Hexadecimal
+  [O] Result: char**
+  [T] 0.00015 seconds
+
+GetChildExpressions()
+  [I] ProcId: 0
+  [I] FrameLevel: 0
+  [I] Expression: argc
+  [O] Expression: argc
+  [T] 0.00013 seconds
+
+GetChildExpressions()
+  [I] ProcId: 0
+  [I] FrameLevel: 0
+  [I] Expression: argv
+  [O] Expression: argv
+  [O]   | Full Child      : *(argv)
+  [O]   | Child           : 
+  [T] 0.00017 seconds
+
+EvaluateExpression()
+  [I] ProcId: 0
+  [I] FrameLevel: 0
+  [I] Expression: argc
+  [I] Format: Integer
+  [O] Result: 0
+  [T] 0.00017 seconds
+
+EvaluateExpression()
+  [I] ProcId: 0
+  [I] FrameLevel: 0
+  [I] Expression: argv
+  [I] Format: Hexadecimal
+  [O] Result: 0xc100bdd4
+  [T] 0.00011 seconds
+
+GetStackFrameDepth()
+  [I] ProcId: 0
+  [O] Stack Frame Depth: 1
+  [T] 0.00020 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00026 seconds
+
+GetStackFrameDepth()
+  [I] ProcId: 0
+  [O] Stack Frame Depth: 1
+  [T] 0.00021 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00034 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00034 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00039 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00051 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00019 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00003 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00026 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00006 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00006 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00055 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00028 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00035 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00010 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00036 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00047 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00021 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00003 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00025 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00005 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00009 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00020 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00025 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00042 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00020 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00003 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00028 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00005 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00007 seconds
+
+GetStackFrameDepth()
+  [I] ProcId: 0
+  [O] Stack Frame Depth: 1
+  [T] 0.00031 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00023 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00028 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00040 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00043 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00021 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00003 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00017 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00004 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00005 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00044 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00022 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00025 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00005 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00079 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main(int, char**)
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\../src\sc589_w25q128fv_dpia_Core0.cpp
+  [O]   | LineNumber   : 22
+  [O]   | Address      : 0xc100a4e6
+  [O]   | FrameId      : 0x20089000
+  [T] 0.00036 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00017 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 1
+  [T] 0.00007 seconds
+
+GetStackFrameDepth()
+  [I] ProcId: 0
+  [O] Stack Frame Depth: 1
+  [T] 0.00036 seconds
+
+Run()
+  [I] ProcId: 0
+  [I] Wait: 0
+  [I] Timeout: 0
+
+>> StateChange()
+  [I] State: Running
+  [I] Reason: Client Request
+  [I] ProcId: 0
+  [T] 0.04855 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00019 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00029 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00003 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00016 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00003 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00005 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00022 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00025 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00009 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00026 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00005 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00020 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00003 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00004 seconds
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Breakpoint
+  [I] ProcId: 1
+
+EvaluateExpression()
+  [I] ProcId: 1
+  [I] Expression: $PC
+  [I] Format: Hexadecimal
+  [O] Result: 0x1c1b94
+  [T] 0.00015 seconds
+
+GetStackFrameDepth()
+  [I] ProcId: 1
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Breakpoint
+  [I] ProcId: 2
+
+**********************************************
+* ERROR: Failed to set the stack frame for processor 1
+**********************************************
+  [T] 0.00762 seconds
+
+EvaluateExpression()
+  [I] ProcId: 2
+  [I] Expression: $PC
+  [I] Format: Hexadecimal
+  [O] Result: 0x1c1b84
+  [T] 0.00023 seconds
+
+GetStackFrames()
+  [I] ProcId: 1
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Breakpoint
+  [I] ProcId: 0
+
+**********************************************
+* ERROR: Failed to set debug frame for processor 1
+**********************************************
+
+**********************************************
+* ERROR: Failed to set the stack frame for processor 1
+**********************************************
+  [T] 0.03111 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 1
+  [O] Memory ids found: 33
+  [T] 0.00027 seconds
+
+EvaluateExpression()
+  [I] ProcId: 0
+  [I] Expression: $PC
+  [I] Format: Hexadecimal
+  [O] Result: 0xc10065f8
+  [T] 0.00021 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 1
+  [I] MemId: 9
+  [O] Symbols Found: 48
+  [T] 0.00030 seconds
+
+EvaluateExpression()
+  [I] ProcId: 1
+  [I] FrameLevel: 0
+  [I] Expression: $TYPEINFO($PC)
+  [I] Format: Hexadecimal
+  [O] Result: ERROR: Cannot take the address of a literal
+  [T] 0.00021 seconds
+
+EvaluateExpression()
+  [I] ProcId: 1
+  [I] FrameLevel: 0
+  [I] Expression: $PC
+  [I] Format: Hexadecimal
+  [O] Result: 0x1c1b94
+  [T] 0.00008 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 1
+  [O] Memory ids found: 33
+  [T] 0.00026 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 1
+  [I] MemId: 9
+  [O] Symbols Found: 48
+  [T] 0.00021 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 1
+  [O] Memory ids found: 33
+  [T] 0.00006 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 1
+  [I] MemId: 9
+  [O] Symbols Found: 48
+  [T] 0.00019 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00003 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 1
+  [O] IsEnabled: 1
+  [T] 0.00023 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 1
+  [O] IsEnabled: 1
+  [T] 0.00004 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 1
+  [O] IsEnabled: 1
+  [T] 0.00012 seconds
+
+GetStackFrameDepth()
+  [I] ProcId: 2
+  [O] Stack Frame Depth: 1
+  [T] 0.00568 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00020 seconds
+
+IsFeatureSupported()
+  [I] procId: 1
+  [I] feature: 0
+  [O] supported: 1
+  [T] 0.00004 seconds
+
+GetMixedAssemblyByAddress()
+  [I] ProcId: 1
+  [I] Start Address: 0x001c1b94
+  [I] End Address: 0x001c1bc0
+  [I] Instruction Type: -1
+  [O] Mixed Instructions Found: 6
+  [T] 0.00829 seconds
+
+GetStackFrames()
+  [I] ProcId: 1
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+
+**********************************************
+* ERROR: Failed to retrieve the active stack frame for processor 1
+**********************************************
+  [T] 0.00015 seconds
+
+EvaluateExpression()
+  [I] ProcId: 1
+  [I] FrameLevel: 0
+  [I] Expression: $TYPEINFO($PC)
+  [I] Format: Hexadecimal
+  [O] Result: ERROR: Cannot take the address of a literal
+  [T] 0.00010 seconds
+
+EvaluateExpression()
+  [I] ProcId: 1
+  [I] FrameLevel: 0
+  [I] Expression: $PC
+  [I] Format: Hexadecimal
+  [O] Result: 0x1c1b94
+  [T] 0.00009 seconds
+
+GetStackFrames()
+  [I] ProcId: 1
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+
+**********************************************
+* ERROR: Failed to retrieve the active stack frame for processor 1
+**********************************************
+  [T] 0.00011 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 1
+  [O] Memory ids found: 33
+  [T] 0.00022 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 1
+  [I] MemId: 9
+  [O] Symbols Found: 48
+  [T] 0.00015 seconds
+
+GetStackFrameDepth()
+  [I] ProcId: 0
+  [O] Stack Frame Depth: 1
+  [T] 0.74022 seconds
+
+GetStackFrames()
+  [I] ProcId: 2
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main()
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc5xx_w25q128fv_dpia.c
+  [O]   | LineNumber   : 258
+  [O]   | Address      : 0x001c1b84
+  [O]   | FrameId      : 0x002592a8
+  [T] 0.00025 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00024 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : <_exit>
+  [O]   | FileName     : 
+  [O]   | LineNumber   : -1
+  [O]   | Address      : 0xc10065f8
+  [O]   | FrameId      : 0x20088ff8
+  [T] 0.00015 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00027 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : <_exit>
+  [O]   | FileName     : 
+  [O]   | LineNumber   : -1
+  [O]   | Address      : 0xc10065f8
+  [O]   | FrameId      : 0x20088ff8
+  [T] 0.00017 seconds
+
+SetActiveStackFrame()
+  [I] ProcId: 0
+  [I] FrameId: 0x20088ff8
+  [T] 0.00005 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00010 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : <_exit>
+  [O]   | FileName     : 
+  [O]   | LineNumber   : -1
+  [O]   | Address      : 0xc10065f8
+  [O]   | FrameId      : 0x20088ff8
+  [T] 0.00014 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00028 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00004 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00024 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00023 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00005 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00007 seconds
+
+GetMixedAssemblyByAddress()
+  [I] ProcId: 0
+  [I] Start Address: 0xc10065f8
+  [I] End Address: 0xc1006624
+  [I] Instruction Type: -1
+  [O] Mixed Instructions Found: 0
+  [T] 0.37372 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00021 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : <_exit>
+  [O]   | FileName     : 
+  [O]   | LineNumber   : -1
+  [O]   | Address      : 0xc10065f8
+  [O]   | FrameId      : 0x20088ff8
+  [T] 0.00022 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00044 seconds
+
+GetStackFrameDepth()
+  [I] ProcId: 1
+
+**********************************************
+* ERROR: Failed to retrieve the active stack frame for processor 1
+**********************************************
+  [T] 0.00029 seconds
+
+EvaluateExpression()
+  [I] ProcId: 0
+  [I] FrameLevel: 0
+  [I] Expression: $TYPEINFO($PC)
+  [I] Format: Hexadecimal
+  [O] Result: ERROR: Cannot take the address of a literal
+  [T] 0.00012 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00022 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00005 seconds
+
+GetLocalVariables()
+  [I] ProcId: 0
+  [I] FrameId: 0x20088ff8
+  [T] 0.00022 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : <_exit>
+  [O]   | FileName     : 
+  [O]   | LineNumber   : -1
+  [O]   | Address      : 0xc10065f8
+  [O]   | FrameId      : 0x20088ff8
+  [T] 0.00012 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00026 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00004 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00009 seconds
+
+GetAssemblyByAddress()
+  [I] ProcId: 0
+  [I] Start Address: 0xc10065f8
+  [I] End Address: 0xc1006624
+  [I] Instruction Type: -1
+  [O] Assembly Instructions Found: 17
+  [T] 0.35935 seconds
+
+GetStackFrameDepth()
+  [I] ProcId: 2
+  [O] Stack Frame Depth: 1
+  [T] 0.00014 seconds
+
+GetStackFrameDepth()
+  [I] ProcId: 0
+  [O] Stack Frame Depth: 1
+  [T] 0.00008 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00022 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00024 seconds
+
+GetStackFrameDepth()
+  [I] ProcId: 1
+
+**********************************************
+* ERROR: Failed to retrieve the active stack frame for processor 1
+**********************************************
+  [T] 0.00028 seconds
+
+GetStackFrames()
+  [I] ProcId: 0
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : <_exit>
+  [O]   | FileName     : 
+  [O]   | LineNumber   : -1
+  [O]   | Address      : 0xc10065f8
+  [O]   | FrameId      : 0x20088ff8
+  [T] 0.00014 seconds
+
+GetStackFrames()
+  [I] ProcId: 1
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+
+**********************************************
+* ERROR: Failed to retrieve the active stack frame for processor 1
+**********************************************
+  [T] 0.00015 seconds
+
+EvaluateExpression()
+  [I] ProcId: 1
+  [I] FrameLevel: 0
+  [I] Expression: $TYPEINFO($PC)
+  [I] Format: Hexadecimal
+  [O] Result: ERROR: Cannot take the address of a literal
+  [T] 0.00010 seconds
+
+EvaluateExpression()
+  [I] ProcId: 1
+  [I] FrameLevel: 0
+  [I] Expression: $PC
+  [I] Format: Hexadecimal
+  [O] Result: 0x1c1b94
+  [T] 0.00008 seconds
+
+Run()
+  [I] ProcId: 0
+  [I] Wait: 0
+  [I] Timeout: 0
+
+>> StateChange()
+  [I] State: Running
+  [I] Reason: Client Request
+  [I] ProcId: 0
+  [T] 0.16539 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00020 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00028 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00007 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00020 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00002 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00007 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00025 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00031 seconds
+
+GetProgramMemoryIds()
+  [I] procId: 0
+  [O] Memory ids found: 27
+  [T] 0.00008 seconds
+
+GetSymbolsByMemory()
+  [I] ProcId: 0
+  [I] MemId: 0
+  [O] Symbols Found: 127
+  [T] 0.00026 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00008 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00020 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00003 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 0
+  [O] IsEnabled: 0
+  [T] 0.00003 seconds
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Semihosting Request
+  [I] ProcId: 0
+
+>> StateChange()
+  [I] State: Running
+  [I] Reason: UNKNOWN
+  [I] ProcId: 0
+
+GetStackFrames()
+  [I] ProcId: 2
+  [I] StartIndex: 0
+  [I] EndIndex: -1
+  [O] Stack Frame: 0
+  [O]   | FunctionName : main()
+  [O]   | FileName     : C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc5xx_w25q128fv_dpia.c
+  [O]   | LineNumber   : 258
+  [O]   | Address      : 0x001c1b84
+  [O]   | FrameId      : 0x002592a8
+  [T] 0.00034 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00018 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 1
+  [O] IsEnabled: 1
+  [T] 0.00021 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 1
+  [O] IsEnabled: 1
+  [T] 0.00004 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 1
+  [O] IsEnabled: 1
+  [T] 0.00008 seconds
+
+Run()
+  [I] ProcId: 1
+  [I] Wait: 0
+  [I] Timeout: 0
+
+>> StateChange()
+  [I] State: Running
+  [I] Reason: Client Request
+  [I] ProcId: 1
+  [T] 0.05171 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00021 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 1
+  [O] IsEnabled: 0
+  [T] 0.00017 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 1
+  [O] IsEnabled: 0
+  [T] 0.00003 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 1
+  [O] IsEnabled: 0
+  [T] 0.00004 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00025 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00003 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 2
+  [O] IsEnabled: 1
+  [T] 0.00027 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 2
+  [O] IsEnabled: 1
+  [T] 0.00005 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 2
+  [O] IsEnabled: 1
+  [T] 0.00010 seconds
+
+Run()
+  [I] ProcId: 2
+  [I] Wait: 0
+  [I] Timeout: 0
+
+>> StateChange()
+  [I] State: Running
+  [I] Reason: Client Request
+  [I] ProcId: 2
+  [T] 0.06836 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00020 seconds
+
+GetProcessorCount()
+  [O] Count: 3
+  [T] 0.00002 seconds
+
+IsStepOutEnabled()
+  [I] ProcId: 2
+  [O] IsEnabled: 0
+  [T] 0.00019 seconds
+
+IsStepInEnabled()
+  [I] ProcId: 2
+  [O] IsEnabled: 0
+  [T] 0.00003 seconds
+
+IsStepOverEnabled()
+  [I] ProcId: 2
+  [O] IsEnabled: 0
+  [T] 0.00004 seconds
+
+Disconnect()
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Client Request
+  [I] ProcId: 0
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Client Request
+  [I] ProcId: 1
+
+>> StateChange()
+  [I] State: Halted
+  [I] Reason: Client Request
+  [I] ProcId: 2
+EMU[ emucorearm ]: Disconnecting from Core 0
+EMU[ emucoresharc11 ]: Disconnecting from Core 1
+EMU[ emucoresharc11 ]: Disconnecting from Core 2
+  [T] 0.72649 seconds

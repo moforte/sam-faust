@@ -1,0 +1,172 @@
+!SESSION 2017-02-01 12:48:58.020 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2017-02-01 12:49:00.100
+!MESSAGE Unable to acquire PluginConverter service during generation for: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\eclipse\features\com.analog.crosscore.help.bsp.sc58x.feature_2.0.0.201606150403.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2017-02-01 12:49:00.160
+!MESSAGE Unable to acquire PluginConverter service during generation for: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\eclipse\features\com.analog.crosscore.help.bsp.sc58x.feature_2.0.0.201606150403.jar.
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-02-01 12:49:51.170
+!MESSAGE Indexed 'w25q128fv_dpia_SC589_SHARC_Core0' (2 sources, 37 headers) in 6.4 sec: 273 declarations; 647 references; 0 unresolved inclusions; 24 syntax errors; 73 unresolved names (7.4%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-02-01 12:49:54.730
+!MESSAGE Indexed 'w25q128fv_dpia_SC589_SHARC_Core2' (6 sources, 55 headers) in 3.54 sec: 5,206 declarations; 9,531 references; 0 unresolved inclusions; 2 syntax errors; 347 unresolved names (2.3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-02-01 12:49:58.710
+!MESSAGE Indexed 'w25q128fv_dpia_SC589_SHARC_Core1' (7 sources, 55 headers) in 3.98 sec: 5,212 declarations; 9,581 references; 0 unresolved inclusions; 2 syntax errors; 347 unresolved names (2.3%)
+!SESSION 2017-02-02 10:53:25.880 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589
+
+!ENTRY com.analog.crosscore.debug 4 10004 2017-02-02 10:55:33.518
+!MESSAGE [TpsdkServer] Failed to load file: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\w25q128fv_dpia_SC589_SHARC_Core0 [Error: , Code=0x80047344]
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2017-02-02 10:55:33.549
+!MESSAGE Request for monitor: '[Lorg.eclipse.cdt.dsf.debug.service.IRunControl$IExecutionDMContext;@17dbeea' resulted in a rejected execution exception.
+
+!ENTRY com.analog.crosscore.debug 4 5012 2017-02-02 10:55:33.580
+!MESSAGE Error in launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: [TpsdkServer] Failed to load file: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\w25q128fv_dpia_SC589_SHARC_Core0 [Error: , Code=0x80047344]
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.loadProgram(LaunchDelegate.java:1233)
+	at com.analog.crosscore.debug.launch.LaunchDelegate.launch(LaunchDelegate.java:672)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2017-02-02 10:55:33.580
+!MESSAGE [TpsdkServer] Failed to load file: C:\Analog Devices\ADSP-SC5xx_EZ-KIT_Lite-Rel2.0.0\ADSP-SC5xx_EZ-KIT\Examples\Device_Programmer\sc589\sharc\sc589_w25q128fv_dpia_Core0\Debug\w25q128fv_dpia_SC589_SHARC_Core0 [Error: , Code=0x80047344]
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2017-02-02 10:55:33.580
+!MESSAGE Request for monitor: 'cces[0].core[1].frame[0]' resulted in a rejected execution exception.
+
+!ENTRY com.analog.crosscore.debug 4 10004 2017-02-02 10:55:33.596
+!MESSAGE Command control shut down.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2017-02-02 10:55:33.611
+!MESSAGE Composite status
+!SUBENTRY 1 com.analog.crosscore.debug 4 10004 2017-02-02 10:55:33.611
+!MESSAGE Command control shut down.
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10005 2017-02-02 10:55:33.611
+!MESSAGE Request for monitor: 'RequestMonitor (com.analog.crosscore.debug.service.Breakpoints$5@f96e3a): Status ERROR: com.analog.crosscore.debug code=10004 Command control shut down. null' resulted in a rejected execution exception.
+
+!ENTRY org.eclipse.ui 4 0 2017-02-02 10:55:33.689
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@1a2189d rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@19e4bba[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 219])
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@1a2189d rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@19e4bba[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 219]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2048)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:821)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:325)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:530)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:438)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:619)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:462)
+	at com.analog.crosscore.debug.ui.sourcelookup.SourceDisplayAdapter.doneStepping(SourceDisplayAdapter.java:116)
+	at com.analog.crosscore.debug.ui.sourcelookup.SourceDisplayAdapter.access$0(SourceDisplayAdapter.java:109)
+	at com.analog.crosscore.debug.ui.sourcelookup.SourceDisplayAdapter$1.run(SourceDisplayAdapter.java:94)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 23 more
+
+!ENTRY org.eclipse.core.jobs 2 2 2017-02-02 10:57:36.462
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.analog.crosscore.debug.service.CommandControl$CommandSendJob
+!SESSION 2017-02-02 11:40:54.193 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2017-02-02 11:44:11.258
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:531)
+	at org.eclipse.cdt.dsf.service.DsfSession.access$2(DsfSession.java:475)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:398)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:178)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:292)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@1925cee rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@8d96ef[Shutting down, pool size = 1, active threads = 1, queued tasks = 2, completed tasks = 918]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2048)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:821)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:325)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:530)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:438)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:619)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:462)
+	at com.analog.crosscore.debug.launch.CustomLaunch.doShutdown(CustomLaunch.java:509)
+	at com.analog.crosscore.debug.launch.CustomLaunch.shutdownServices(CustomLaunch.java:495)
+	at com.analog.crosscore.debug.launch.CustomLaunch.eventDispatched(CustomLaunch.java:350)
+	... 14 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@1925cee rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@8d96ef[Shutting down, pool size = 1, active threads = 1, queued tasks = 2, completed tasks = 918]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2048)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:821)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:325)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:530)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:438)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:619)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:462)
+	at com.analog.crosscore.debug.launch.CustomLaunch.doShutdown(CustomLaunch.java:509)
+	at com.analog.crosscore.debug.launch.CustomLaunch.shutdownServices(CustomLaunch.java:495)
+	at com.analog.crosscore.debug.launch.CustomLaunch.eventDispatched(CustomLaunch.java:350)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:531)
+	at org.eclipse.cdt.dsf.service.DsfSession.access$2(DsfSession.java:475)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:398)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:178)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:292)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
