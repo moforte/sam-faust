@@ -1,4 +1,4 @@
-#include "../../common/audio_system_config.h"
+#include "common/audio_system_config.h"
 #include "./samFaustDSPCore.h"
 #if USE_FAUST_ALGORITHM
 #ifndef FAST_POW2

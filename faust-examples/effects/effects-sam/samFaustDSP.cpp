@@ -1,4 +1,4 @@
-#include "../../common/audio_system_config.h"
+#include "common/audio_system_config.h"
 #include "./samFaustDSPCore.h"
 #if USE_FAUST_ALGORITHM
 #define MIDICTRL 1
@@ -1003,8 +1003,8 @@ class mydsp : public dsp {
 		fVslider9 = FAUSTFLOAT(0.5f);
 		fVslider10 = FAUSTFLOAT(0.5f);
 		fVslider11 = FAUSTFLOAT(0.0f);
-		fVslider12 = FAUSTFLOAT(0.29999999999999999f);
-		fVslider13 = FAUSTFLOAT(0.0f);
+		fVslider12 = FAUSTFLOAT(0.0f);
+		fVslider13 = FAUSTFLOAT(0.29999999999999999f);
 		fVslider14 = FAUSTFLOAT(0.5f);
 		fVslider15 = FAUSTFLOAT(0.5f);
 		fVslider16 = FAUSTFLOAT(0.0f);
@@ -1300,10 +1300,10 @@ class mydsp : public dsp {
 		ui_interface->declare(&fVslider15, "midi", "ctrl 60");
 		ui_interface->declare(&fVslider15, "style", "knob");
 		ui_interface->addVerticalSlider("DelayT60", &fVslider15, 0.5f, 0.0f, 100.0f, 0.00100000005f);
-		ui_interface->declare(&fVslider12, "2", "");
-		ui_interface->declare(&fVslider12, "midi", "ctrl 2");
-		ui_interface->declare(&fVslider12, "style", "knob");
-		ui_interface->addVerticalSlider("Feedback", &fVslider12, 0.300000012f, 0.0f, 1.0f, 9.99999975e-05f);
+		ui_interface->declare(&fVslider13, "2", "");
+		ui_interface->declare(&fVslider13, "midi", "ctrl 2");
+		ui_interface->declare(&fVslider13, "style", "knob");
+		ui_interface->addVerticalSlider("Feedback", &fVslider13, 0.300000012f, 0.0f, 1.0f, 9.99999975e-05f);
 		ui_interface->declare(&fVslider10, "3", "");
 		ui_interface->declare(&fVslider10, "midi", "ctrl 75");
 		ui_interface->declare(&fVslider10, "style", "knob");
@@ -1315,10 +1315,10 @@ class mydsp : public dsp {
 		ui_interface->closeBox();
 		ui_interface->declare(0, "1", "");
 		ui_interface->openVerticalBox("Switches");
-		ui_interface->declare(&fVslider13, "7", "");
-		ui_interface->declare(&fVslider13, "midi", "ctrl 105");
-		ui_interface->declare(&fVslider13, "style", "knob");
-		ui_interface->addVerticalSlider("EnableEcho", &fVslider13, 0.0f, 0.0f, 1.0f, 1.0f);
+		ui_interface->declare(&fVslider12, "7", "");
+		ui_interface->declare(&fVslider12, "midi", "ctrl 105");
+		ui_interface->declare(&fVslider12, "style", "knob");
+		ui_interface->addVerticalSlider("EnableEcho", &fVslider12, 0.0f, 0.0f, 1.0f, 1.0f);
 		ui_interface->closeBox();
 		ui_interface->closeBox();
 		ui_interface->declare(0, "5", "");
@@ -1436,8 +1436,8 @@ class mydsp : public dsp {
 		float fSlow12 = (fConst2 * float(fVslider10));
 		float fSlow13 = float(fastpow2(float((0.0f - (5.99794197f * float(fVslider11))))));
 		float fSlow14 = (1.0f - fSlow13);
-		float fSlow15 = float(fVslider12);
-		int iSlow16 = int((1.0f - float(fVslider13)));
+		int iSlow15 = int((1.0f - float(fVslider12)));
+		float fSlow16 = float(fVslider13);
 		float fSlow17 = (fConst0 * float(fVslider14));
 		float fSlow18 = float(fVslider15);
 		float fSlow19 = (((0.144717798f * fSlow18) > 0.0f)?expf((0.0f - (fConst5 / fSlow18))):0.0f);
@@ -1465,9 +1465,9 @@ class mydsp : public dsp {
 			fRec15[0] = ((fRec16[1] * fTemp2) + (fRec15[1] * fTemp3));
 			fRec16[0] = (((fRec16[1] * fTemp3) + (fRec15[1] * (0.0f - fTemp2))) + float((1 - iVec0[1])));
 			float fTemp4 = ((fSlow9 * (1.0f - fabsf(((2.0f * fRec13[0]) + -1.0f)))) + (fSlow11 * (fRec15[0] + 1.0f)));
+			float fTemp5 = (float(input0[i]) + float(input1[i]));
 			fRec17[0] = (fSlow12 + (fConst1 * fRec17[1]));
-			float fTemp5 = (float(input1[i]) + float(input0[i]));
-			fRec20[(IOTA & 65535)] = ((fSlow14 * fRec20[((IOTA - 1) & 65535)]) + (fSlow13 * ((fSlow15 * fRec18[1]) + (iSlow16?0.0f:fTemp5))));
+			fRec20[(IOTA & 65535)] = ((fSlow14 * fRec20[((IOTA - 1) & 65535)]) + (fSlow13 * ((iSlow15?0.0f:fTemp5) + (fSlow16 * fRec18[1]))));
 			fRec21[0] = (fSlow21 + (fSlow19 * fRec21[1]));
 			int iTemp6 = int(fRec21[0]);
 			float fTemp7 = floorf(fRec21[0]);
@@ -1478,7 +1478,7 @@ class mydsp : public dsp {
 			int iTemp8 = int(fRec22[0]);
 			float fTemp9 = floorf(fRec22[0]);
 			float fRec19 = ((fRec20[((IOTA - min(32769, max(0, iTemp8))) & 65535)] * (fTemp9 + (1.0f - fRec22[0]))) + ((fRec22[0] - fTemp9) * fRec20[((IOTA - min(32769, max(0, (iTemp8 + 1)))) & 65535)]));
-			float fTemp10 = ((fRec17[0] * fRec19) + fTemp5);
+			float fTemp10 = (fTemp5 + (fRec17[0] * fRec19));
 			float fTemp11 = (iSlow7?0.0f:fTemp10);
 			float fTemp12 = ((fRec12[0] * fRec11[1]) - fTemp11);
 			fVec1[(IOTA & 4095)] = fTemp12;

@@ -1,4 +1,4 @@
-#include "../../common/audio_system_config.h"
+#include "common/audio_system_config.h"
 #include "./samFaustDSPCore.h"
 #if USE_FAUST_ALGORITHM
 #define MIDICTRL 1
@@ -1020,10 +1020,10 @@ class mydsp : public dsp {
 		float fSlow3 = (6.2500003e-05f * float(fVslider3));
 		float fSlow4 = (fConst2 * float(fVslider4));
 		for (int i = 0; (i < count); i = (i + 1)) {
-			fRec0[0] = (fSlow1 + (fConst1 * fRec0[1]));
 			float fTemp0 = float(input0[i]);
 			float fTemp1 = (iSlow0?0.0f:fTemp0);
-			float fTemp2 = (fRec0[0] * fTemp1);
+			fRec0[0] = (fSlow1 + (fConst1 * fRec0[1]));
+			float fTemp2 = (fTemp1 * fRec0[0]);
 			fVec0[(IOTA & 8191)] = fTemp2;
 			fRec1[0] = (fSlow2 + (0.999000013f * fRec1[1]));
 			fRec2[0] = ((0.999000013f * fRec2[1]) + (fSlow3 * fRec1[0]));
@@ -1036,7 +1036,7 @@ class mydsp : public dsp {
 			fRec7[0] = (fTemp6 - floorf(fTemp6));
 			float fTemp7 = min(8192.0f, ((0.125f * fRec1[0]) + (fRec2[0] * ftbl1mydspSIG1[int((65536.0f * fRec7[0]))])));
 			int iTemp8 = int(fTemp7);
-			float fTemp9 = ((1.0f - fRec0[0]) * fTemp1);
+			float fTemp9 = (fTemp1 * (1.0f - fRec0[0]));
 			float fTemp10 = (fRec8[1] + (fConst5 * fRec5[0]));
 			fRec8[0] = (fTemp10 - floorf(fTemp10));
 			float fTemp11 = min(8192.0f, ((0.875f * fRec1[0]) + (fRec2[0] * (0.0f - ftbl0mydspSIG0[int((65536.0f * fRec8[0]))]))));

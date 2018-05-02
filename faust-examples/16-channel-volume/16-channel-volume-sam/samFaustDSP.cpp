@@ -1,4 +1,4 @@
-#include "../../common/audio_system_config.h"
+#include "common/audio_system_config.h"
 #include "./samFaustDSPCore.h"
 #if USE_FAUST_ALGORITHM
 #define MIDICTRL 1
@@ -1047,35 +1047,35 @@ class mydsp : public dsp {
 			fRec0[0] = (fSlow0 + (0.999000013f * fRec0[1]));
 			output0[i] = FAUSTFLOAT((float(input0[i]) * fRec0[0]));
 			fRec1[0] = (fSlow1 + (0.999000013f * fRec1[1]));
-			output1[i] = FAUSTFLOAT((float(input1[i]) * fRec1[0]));
+			output1[i] = FAUSTFLOAT((fRec1[0] * float(input1[i])));
 			fRec2[0] = (fSlow2 + (0.999000013f * fRec2[1]));
-			output2[i] = FAUSTFLOAT((float(input2[i]) * fRec2[0]));
+			output2[i] = FAUSTFLOAT((fRec2[0] * float(input2[i])));
 			fRec3[0] = (fSlow3 + (0.999000013f * fRec3[1]));
-			output3[i] = FAUSTFLOAT((float(input3[i]) * fRec3[0]));
+			output3[i] = FAUSTFLOAT((fRec3[0] * float(input3[i])));
 			fRec4[0] = (fSlow4 + (0.999000013f * fRec4[1]));
-			output4[i] = FAUSTFLOAT((float(input4[i]) * fRec4[0]));
+			output4[i] = FAUSTFLOAT((fRec4[0] * float(input4[i])));
 			fRec5[0] = (fSlow5 + (0.999000013f * fRec5[1]));
-			output5[i] = FAUSTFLOAT((float(input5[i]) * fRec5[0]));
+			output5[i] = FAUSTFLOAT((fRec5[0] * float(input5[i])));
 			fRec6[0] = (fSlow6 + (0.999000013f * fRec6[1]));
-			output6[i] = FAUSTFLOAT((float(input6[i]) * fRec6[0]));
+			output6[i] = FAUSTFLOAT((fRec6[0] * float(input6[i])));
 			fRec7[0] = (fSlow7 + (0.999000013f * fRec7[1]));
-			output7[i] = FAUSTFLOAT((float(input7[i]) * fRec7[0]));
+			output7[i] = FAUSTFLOAT((fRec7[0] * float(input7[i])));
 			fRec8[0] = (fSlow8 + (0.999000013f * fRec8[1]));
-			output8[i] = FAUSTFLOAT((float(input8[i]) * fRec8[0]));
+			output8[i] = FAUSTFLOAT((fRec8[0] * float(input8[i])));
 			fRec9[0] = (fSlow9 + (0.999000013f * fRec9[1]));
-			output9[i] = FAUSTFLOAT((float(input9[i]) * fRec9[0]));
+			output9[i] = FAUSTFLOAT((fRec9[0] * float(input9[i])));
 			fRec10[0] = (fSlow10 + (0.999000013f * fRec10[1]));
-			output10[i] = FAUSTFLOAT((float(input10[i]) * fRec10[0]));
+			output10[i] = FAUSTFLOAT((fRec10[0] * float(input10[i])));
 			fRec11[0] = (fSlow11 + (0.999000013f * fRec11[1]));
-			output11[i] = FAUSTFLOAT((float(input11[i]) * fRec11[0]));
+			output11[i] = FAUSTFLOAT((fRec11[0] * float(input11[i])));
 			fRec12[0] = (fSlow12 + (0.999000013f * fRec12[1]));
-			output12[i] = FAUSTFLOAT((float(input12[i]) * fRec12[0]));
+			output12[i] = FAUSTFLOAT((fRec12[0] * float(input12[i])));
 			fRec13[0] = (fSlow13 + (0.999000013f * fRec13[1]));
-			output13[i] = FAUSTFLOAT((float(input13[i]) * fRec13[0]));
+			output13[i] = FAUSTFLOAT((fRec13[0] * float(input13[i])));
 			fRec14[0] = (fSlow14 + (0.999000013f * fRec14[1]));
-			output14[i] = FAUSTFLOAT((float(input14[i]) * fRec14[0]));
+			output14[i] = FAUSTFLOAT((fRec14[0] * float(input14[i])));
 			fRec15[0] = (fSlow15 + (0.999000013f * fRec15[1]));
-			output15[i] = FAUSTFLOAT((float(input15[i]) * fRec15[0]));
+			output15[i] = FAUSTFLOAT((fRec15[0] * float(input15[i])));
 			fRec0[1] = fRec0[0];
 			fRec1[1] = fRec1[0];
 			fRec2[1] = fRec2[0];
