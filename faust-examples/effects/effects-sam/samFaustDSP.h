@@ -13,7 +13,7 @@
 
 //==========================================
 
-#define sam_SAMPLERATE 44100
+#define SAM_SAMPLERATE AUDIO_SAMPLE_RATE
 
 class FaustPolyEngine;
 class MidiUI;
