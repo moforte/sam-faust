@@ -14,19 +14,13 @@ These 3 files should be placed into the directory sam-baremetal/sam_baremetal_fr
 
 In addition there is a header file that is common across all cores called audio_system_config.h.   In this file the following pre-processor variables should be set in the following way.   The example below indicates that a Faust algorithm will only be running on Core1 and that Core2 will be simply passing audio to the codec. 
 
-       #define SAM_DIY_MIDI_BOARD_PRESENT          TRUE
-       …
-       #define FAUST_INSTALLED                     TRUE
-       …
        #define USE_FAUST_ALGORITHM_CORE1           TRUE
        #define USE_FAUST_ALGORITHM_CORE2           FALSE
-       …
-       #define MIDI_UART_MANAGED_BY_SHARC1_CORE    TRUE
 
 Once the project is compiled, linked and loaded to the SAM board, the MIDI control API is as follows:
 
 
-Invert		cc-49	Flanger	knob	Enable		cc-103	Flanger	switch	Delay		cc-50	Flanger	knob	Rate		cc-51	Flanger	knob	Depth		cc-52	Flanger	knob	Feedback	cc-53	Flanger	knob	Wave Shape	cc-54	Flanger	knob					Delay		cc-55	Chorus	knob	Enable		cc-104	Chorus	switch	Rate		cc-56	Chorus	knob	Depth		cc-57	Chorus	knob	Deviation	cc-58	Chorus	knob					enable		cc-102	Echo	switch	Delay Portament	cc-60	Echo	knob	Delay		cc-61	Echo	knob	Warp		cc-62	Echo	knob	Feedback	cc-63	Echo	knob	Amp		cc-75	Echo	knob	Feedback sm	cc-76	Echo	knob					Damp		cc-77	Reverb	knob	Enable		cc-105	Reverb	switch	Room Size	cc-78	Reverb	knob	Wet Dry		cc-79	Reverb	knob	
+Invert		cc-49	Flanger	knob	Enable		cc-102	Flanger	switch	Delay		cc-50	Flanger	knob	Rate		cc-51	Flanger	knob	Depth		cc-52	Flanger	knob	Feedback	cc-53	Flanger	knob	Wave Shape	cc-54	Flanger	knob					Delay		cc-55	Chorus	knob	Enable		cc-103	Chorus	switch	Rate		cc-56	Chorus	knob	Depth		cc-57	Chorus	knob	Deviation	cc-58	Chorus	knob					enable		cc-105	Echo	switch	Delay Portament	cc-60	Echo	knob	Delay		cc-61	Echo	knob	Warp		cc-62	Echo	knob	Feedback	cc-2	Echo	knob	Amp		cc-75	Echo	knob	Feedback sm	cc-76	Echo	knob					Damp		cc-3	Reverb	knob	Enable		cc-104	Reverb	switch	Room Size	cc-4	Reverb	knob	Wet Dry		cc-79	Reverb	knob	
 
 
 
