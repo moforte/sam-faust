@@ -25,8 +25,8 @@ Delay CC-4
 Warp CC-62
 Feedback CC-3
 Amp CC-2
-CC-76
-CC-102
+FeedbackSM CC-76
+Enable CC-102  
 
 Echo
 
