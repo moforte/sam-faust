@@ -13,8 +13,8 @@ Warp        | `CC-62`   | Warp moves the output delay-line tap at a rate control
 DelayT60    | `CC-60`   | DelayT60 controls the speed of Delay, Warp. It gives the time to DelayT60 to the next knob setting in seconds. contents.
 Amp         | `CC-2`    | Amplitude level of echoes relative to the direct signal
 Feedback    | `CC-3`    | Controls the number of echo repetitions between 1 and infinity.
-FeedbackSim |           | When an echo is fed back to echo again, it is also lowpass filtered according to this parameter. Tone = 0 ("Digital") corresponds to no filtering, while Tone = 1 ("Tape") gives maximum lowpass filtering, like an old magnetic tape.
-Enable      |           | Turn on/off the effect                                                                                                                                                                                                              
+FeedbackSim | `CC-76`   | When an echo is fed back to echo again, it is also lowpass filtered according to this parameter. Tone = 0 ("Digital") corresponds to no filtering, while Tone = 1 ("Tape") gives maximum lowpass filtering, like an old magnetic tape.
+Enable      | `CC-102`  | Turn the effect on/off                                                                                                              
 
 ## Building the Example
 
