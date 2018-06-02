@@ -4,7 +4,7 @@
 # Copyright (c) 2017 Analog Devices, Inc.  All rights reserved.
 #************************************************************************
 
-echo "Compiling all the Faust Examples into code for the sam"
+echo "Compiling all the Faust Examples into code for the SHARC Audio Module"
 
 cd 16-channel-volume
 /bin/rm -r *sam* >& /dev/null

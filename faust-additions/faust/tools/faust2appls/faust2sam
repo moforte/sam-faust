@@ -5,7 +5,7 @@
 #************************************************************************
 
 #####################################################################
-#    Generates inline faust objects for the SHARC sam dsp board     #
+#     Generates inline faust objects for the SHARC Audio Module     #
 #           Gregory Pat Scandalis, moForte, ADI                     #
 #           based on faust2api by Romain Michon                     #
 #####################################################################
@@ -33,7 +33,7 @@ EFFECT=""
 echoHelp ()
 {
     echo ""
-    echo "faust2sam can be used to generate faust-based dsp objects for the ADI SHARC sam board"
+    echo "faust2sam can be used to generate faust-based dsp objects for the ADI SHARC Audio Module board"
     echo ""
     echo ""
     echo "Global options:"
@@ -74,7 +74,7 @@ createAPI ()
     echo "#include \"common/audio_system_config.h\"" | cat - "$APIFOLDER/fast_pow2.h" > temp && mv temp "$APIFOLDER/fast_pow2.h"
     echo "#endif" >> "$APIFOLDER/fast_pow2.h"
     
-# fix things that won't compile on the sam
+    # fix things that won't compile on the sharc
     cat "$APIFOLDER/samFaustDSP.cpp"  | \
 	sed -e 's/replace(/std::replace(/' \
 	    -e 's/std::cerr/\/\/std::cerr/' \

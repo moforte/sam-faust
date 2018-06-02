@@ -1,17 +1,25 @@
 /************************************************************************
- ************************************************************************
- sam Faust Architecture File
- Copyright (c) 2017 Analog Devices, Inc.  All rights reserved.
- ************************************************************************
- ************************************************************************/
+  SHARC Audio Module Faust Architecture File
+  Copyright (c) 2018 Analog Devices, Inc. All rights reserved.
+ ---------------------------------------------------------------------
+ This Architecture section is free software; you can redistribute it
+ and/or modify it under the terms of the GNU General Public License
+ as published by the Free Software Foundation; either version 2 of
+ the License, or (at your option) any later version.
  
-/******************************************************************************
-*******************************************************************************
-
-						A sam audio driver
-
-*******************************************************************************
-*******************************************************************************/
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program; If not, see <http://www.gnu.org/licenses/>.
+ 
+ EXCEPTION : As a special exception, you may create a larger work
+ that contains this FAUST architecture section and distribute
+ that work under terms of your choice, so long as this FAUST
+ architecture section is not modified.
+ ************************************************************************/
 
 #ifndef __sam_audio__
 #define __sam_audio__
@@ -39,9 +47,7 @@ class samAudio : public audio {
         int iBufferSize;
         int iNumInputs;
         int iNumOutputs;
-    
-
-    
+      
         // sam convention for pointers to audio buffers.
         FAUSTFLOAT *fAudioChannelA_0_Left;
         FAUSTFLOAT *fAudioChannelA_0_Right;
@@ -64,10 +70,8 @@ class samAudio : public audio {
         // faust convention for input array
         FAUSTFLOAT *inputsArray[8];
         FAUSTFLOAT *outputsArray[8];
-    
 
     public:
-
     
         samAudio()
         {
@@ -80,15 +84,13 @@ class samAudio : public audio {
         }
     
     
-    virtual void setDSP_Parameters(int sampleRate, int bufferSize, int numInputs, int numOutputs)
-    {
-        iSampleRate = sampleRate;
-        iBufferSize = bufferSize;
-        iNumInputs = numInputs;
-        iNumOutputs = numOutputs;
-    }
-    
-    
+        virtual void setDSP_Parameters(int sampleRate, int bufferSize, int numInputs, int numOutputs)
+        {
+            iSampleRate = sampleRate;
+            iBufferSize = bufferSize;
+            iNumInputs = numInputs;
+            iNumOutputs = numOutputs;
+        }  
 
         // the sam hardware DSP supports up to 8 channels (4 stereo pairs).
         virtual void setDSP_ChannelBuffers(FAUSTFLOAT *AudioChannelA_0_Left,
@@ -144,8 +146,6 @@ class samAudio : public audio {
             outputsArray[5] = fAudioChannelA_2_Right;
             outputsArray[6] = fAudioChannelA_3_Left;
             outputsArray[7] = fAudioChannelA_3_Right;
-            
-
         }
     
         virtual bool init(const char* name, dsp* dsp)
@@ -154,11 +154,13 @@ class samAudio : public audio {
             fDSP->init(iSampleRate);   // this sets the sample rate
             return true;
         }
+
         virtual bool start()
         {
             // Nothing for now   Will want to find the sam way to start.
             return true;
         }
+
         virtual void stop()
         {
             // nothing for now.   Will want to find the sam way to stop.
@@ -169,16 +171,12 @@ class samAudio : public audio {
          {
             // faust compute function
            fDSP->compute(iBufferSize, inputsArray, outputsArray);
-         
          }
          
-
-
         virtual int getBufferSize() { return iBufferSize; }
         virtual int getSampleRate() { return iSampleRate; }
-        virtual int getNumInputs() { return iNumInputs; }
-        virtual int getNumOutputs() { return iNumOutputs; }
-    
+        virtual int getNumInputs()  { return iNumInputs;  }
+        virtual int getNumOutputs() { return iNumOutputs; }    
 };
 					
 #endif
