@@ -2,53 +2,62 @@
 
 ## Description
 
-An example of an [analog modeling synthesizer](https://en.wikipedia.org/wiki/Analog_modeling_synthesizer) which recreates vintage synthesizer sounds by modeling the original electronic circuitry.
+An example of an [analog modeling synthesizer](https://en.wikipedia.org/wiki/Analog_modeling_synthesizer) which recreates vintage synthesizer sounds by modeling the original electronic circuitry.   A full manual for this type of circuit model can be found at [Virtual Analog Synthesizer Manual](http://synthpalace.com/SynthPDFs/minimoog%20model%20d_manual.pdf)
 
 ## Parameters
 
-Parameter                   | MIDI CC # | Description
-----------------------------|-----------|------------
-Octave1                     | `CC-23`   |
-DeTuning1                   | `CC-24`   |
-Waveform1                   | `CC-25`   |
-Osc1 On                     | `CC-12`   |
-Osc1 Amp                    | `CC-26`   |
-On                          | `CC-13`   |
-Ext Input                   | `CC-27`   |
-Octave2                     | `CC-28`   |
-DeTuning2                   | `CC-29`   |
-Waveform2                   | `CC-30`   |
-Osc2 On                     | `CC-14`   |
-Osc2 Amp                    | `CC-31`   |
-Noise Amp                   | `CC-32`   |
-Noise On                    | `CC-15`   |
-White/Pink                  | `CC-16`   |
-Octave3                     | `CC-33`   |
-DeTuning3                   | `CC-34`   |
-Waveform3                   | `CC-35`   |
-Osc3 On                     | `CC-17`   |
-Osc3 Amp                    | `CC-36`   |
-VCF Freq Cutoff             | `CC-74`   |
-Corner Resonance            | `CC-37`   |
-Kbd Ctl                     | `CC-38`   |
-Filter Mod.                 | `CC-19`   |
-Amount of Contour (octaves) | `CC-39`   |
-AttackF                     | `CC-40`   |
-DecayF                      | `CC-41`   |
-SustainF                    | `CC-42`   |
-Decay                       | `CC-20`   |
-Glide                       | `CC-65`   |
-sustain                     | `CC-64`   |
-AttackA                     | `CC-43`   |
-DecayA                      | `CC-44`   |
-SustainA                    | `CC-45`   |
-mod                         | `CC-1`    |
-MasterVolume                | `CC-7`    |
-Tune                        | `CC-47`   |
-Glide                       | `CC-5`    |
-Mod. Mix                    | `CC-48`   |
-Osc. Mod.                   | `CC-22`   |
-Osc. 3 Ctl                  | `CC-9`    |
+
+
+| Function                    | MIDI CC    | Module                  | Type   | Notes                                                    |
+|-----------------------------|------------|-------------------------|--------|----------------------------------------------------------|
+| Tune                        | 47         | 1 - Controllers         | knob   | Master tuning                                            |
+| Glide                       | 5          | 1 - Controllers         | knob   | Portamento time                                          |
+| Modulation Mix              | 48         | 1 - Controllers         | knob   | Modulation mix between OSC3 and Noise                    |
+|                             |            |                         |        |                                                          |
+| Oscillator Modulation       | 22         | 2 - Oscillator Bank     | switch | Enable modulation control of OSC frequencies             |
+| OSC 1 Range                 | 23         | 2 - Oscillator Bank     | knob   | OSC 1 range                                              |
+| OSC 1 Detune                | 24         | 2 - Oscillator Bank     | knob   | OSC 1 detuning                                           |
+| OSC 1 Waveform              | 25         | 2 - Oscillator Bank     | knob   | OSC 1 waveform shape                                     |
+| OSC 2 Range                 | 28         | 2 - Oscillator Bank     | knob   | OSC 2 range                                              |
+| OSC 2 Detune                | 29         | 2 - Oscillator Bank     | knob   | OSC 2 detuning                                           |
+| OSC 2 Waveform              | 30         | 2 - Oscillator Bank     | knob   | OSC 2 waveform shape                                     |
+| OSC 3 Range                 | 33         | 2 - Oscillator Bank     | knob   | OSC 3 range                                              |
+| OSC 3 Detune                | 34         | 2 - Oscillator Bank     | knob   | OSC 3 detuning                                           |
+| OSC 3 Waveform              | 35         | 2 - Oscillator Bank     | knob   | OSC 3 waveform shape                                     |
+| OSC 3 Control               | 9          | 2 - Oscillator Bank     | switch | OSC 3 as a control signal or as an audio source          |
+|                             |            |                         |        |                                                          |
+| OSC 1 Amp                   | 26         | 3 - Mixer               | knob   | OSC 1 gain                                               |
+| Osc1 mixer switch           | 12         | 3 - Mixer               | switch | OSC 1 enable                                             |
+| OSC 2 Amp                   | 31         | 3 - Mixer               | knob   | OSC 2 gain                                               |
+| Osc2 mixer switch           | 14         | 3 - Mixer               | switch | OSC 2 enable                                             |
+| OSC3 Amp                    | 36         | 3 - Mixer               | knob   | OSC 3 gain                                               |
+| OSC3 mixer switch           | 17         | 3 - Mixer               | switch | OSC 3 enable                                             |
+| External Input amp          | 27         | 3 - Mixer               | knob   | Extrenal input gain                                      |
+| External Input mixer switch | 13         | 3 - Mixer               | switch | External input enable                                    |
+| Noise Amp                   | 32         | 3 - Mixer               | knob   | Noise gain                                               |
+| Noise mixer switch          | 15         | 3 - Mixer               | switch | Noise Enable                                             |
+| White/pink toggle           | 16         | 3 - Mixer               | switch | Noise pink/white                                         |
+|                             |            |                         |        |                                                          |
+| Filter Modulation Enable    | 19         | 4 - Filter              | switch | Enable modulation control of the filter cutoff frequency |
+| Keyboard Range              | 38         | 4 - Filter              | knob   | Add keyboard control of the filter cutoff frequency      |
+| Cutoff Frequency            | 74         | 4 - Filter              | knob   | Filter cutoff frequency                                  |
+| Emphasis                    | 37         | 4 - Filter              | knob   | Filter Resonance (Q)                                     |
+| Amount of Contour           | 39         | 4 - Filter              | knob   | Amount of envelope generator                             |
+| Attack Time                 | 40         | 4 - Filter              | knob   | VCF envelope generator attack time                       |
+| Decay Time                  | 41         | 4 - Filter              | knob   | VCF envelope generator decay time                        |
+| Sustain Level               | 42         | 4 - Filter              | knob   | VCF envelope generator sustain level                     |
+|                             |            |                         |        |                                                          |
+| Attack Time                 | 43         | 5 - Loudness Contour    | knob   | VCA envelope generator attack time                       |
+| Decay Time                  | 44         | 5 - Loudness Contour    | knob   | VCA envelope generator decay time                        |
+| Sustain Level               | 45         | 5 - Loudness Contour    | knob   | VCA envelope generator sustain level                     |
+|                             |            |                         |        |                                                          |
+| Decay                       | 20         | 6 - Keyboard            | switch | Enables using the decay stage as a release stage         |
+| Glide                       | 65         | 6 - Keyboard            | switch | Enable portamento                                        |
+| Pitch Wheel                 | pitchWheel | 6 - Keyboard            | knob   | Pitch Wheel                                              |
+| Mod Wheel                   | 1          | 6 - Keyboard            | knob   | Modulation Wheel control                                 |
+| Sustain                     | 64         | midi sustain foot pedal | switch | Note sustain, preempts the VCF/VCA release stage           |
+|                             |            |                         |        |                                                          |
+| Master Volume               | 7          | 5 - Output              | knob   | Master volume                                            |
 
 ## Building the Example
 

@@ -22,11 +22,11 @@ Flanger | **Rate**            | `CC-51`   | knob   | The Flanger Rate parameter 
 Flanger | **Depth**           | `CC-52`   | knob   | Depth of spectral notches - performable - Depth = 0 means no effect, Depth = 1 means maximum effect (spectral-notch gains go all the way down to zero).
 Flanger | **Feedback**        | `CC-53`   | knob   | Gain applied to the output signal and then summed with the input signal - performable
 Flanger | **Wave Shape**      | `CC-54`   | knob   |
-Chorus  | **Delay**           | `CC-55`   | knob   |
-Chorus  | **Enable**          | `CC-103`  | switch |
-Chorus  | **Rate**            | `CC-56`   | knob   |
-Chorus  | **Depth**           | `CC-57`   | knob   |
-Chorus  | **Deviation**       | `CC-58`   | knob   |
+Chorus  | **Delay**     | `CC-55`    | knob   | The variable delays range between zero and this value
+Chorus  |**Rate**      | `CC-56`    | knob   | The Chorus Rate (performable) sets the highest frequency used in its LFOs for modulating the delay-line lengths
+Chorus  |**Depth**     | `CC-57`    | knob   | The Depth parameter (performable) controls the mixture of the input sound with the delayed-and-scaled copies of itself: 0 means input only (no chorus effect), 1/2 means equal balance (maximum incidental "flanging" effects), and 1 means modulated delay-line outputs only (pure chorus effect containing only scaling, onset spreading, and decorrelated Doppler shift).
+Chorus  |**Deviation** | `CC-58`   | knob   | The Chorus Deviation sets the amplitude of its LFOs and therefore the range of delay-line length variation. The Deviation and Rate together determine the maximum Doppler shift applied to the sound.
+Chorus  |**Enable**    | `CC-103`  | knob   | Turn on/off the effect
 Echo    | **Enable**          | `CC-105`  | switch | Turn the effect on/off
 Echo    | **Delay Portament** | `CC-60`   | knob   | DelayT60 controls the speed of Delay, Warp. It gives the time to DelayT60 to the next knob setting in seconds. contents. - performable
 Echo    | **Delay**           | `CC-61`   | knob   | Time between echoes in seconds - performable. Under Expert there is a Delay Glide which is a portamento for changing the delay time, and is also performable.
