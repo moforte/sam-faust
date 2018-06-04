@@ -3,8 +3,8 @@
 #if USE_FAUST_ALGORITHM
 #define MIDICTRL 1
 /* ------------------------------------------------------------
-name: "16-channel-volume"
-Code generated with Faust 2.5.32 (https://faust.grame.fr)
+name: "16_channel_volume"
+Code generated with Faust 2.5.36 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -12,28 +12,13 @@ Compilation options: cpp, -scal -ftz 0
 #define  __mydsp_H__
 
 /************************************************************************
-  SHARC Audio Module Faust Architecture File
-  Copyright (c) 2018 Analog Devices, Inc. All rights reserved.
- ---------------------------------------------------------------------
- This Architecture section is free software; you can redistribute it
- and/or modify it under the terms of the GNU General Public License
- as published by the Free Software Foundation; either version 2 of
- the License, or (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- 
- You should have received a copy of the GNU General Public License
- along with this program; If not, see <http://www.gnu.org/licenses/>.
- 
- EXCEPTION : As a special exception, you may create a larger work
- that contains this FAUST architecture section and distribute
- that work under terms of your choice, so long as this FAUST
- architecture section is not modified.
+ ************************************************************************
+ sam Faust Architecture File
+ Copyright (c) 2017 Analog Devices, Inc.  All rights reserved.
+ ************************************************************************
  ************************************************************************/
- 
+
+
 #include <math.h>
 #include <cmath>
 
@@ -672,8 +657,8 @@ class mydsp : public dsp {
 	void metadata(Meta* m) { 
 		m->declare("basics.lib/name", "Faust Basic Element Library");
 		m->declare("basics.lib/version", "0.0");
-		m->declare("filename", "16-channel-volume");
-		m->declare("name", "16-channel-volume");
+		m->declare("filename", "16_channel_volume");
+		m->declare("name", "16_channel_volume");
 		m->declare("signals.lib/name", "Faust Signal Routing Library");
 		m->declare("signals.lib/version", "0.0");
 	}
@@ -955,7 +940,7 @@ class mydsp : public dsp {
 	}
 	
 	virtual void buildUserInterface(UI* ui_interface) {
-		ui_interface->openHorizontalBox("16-channel-volume");
+		ui_interface->openHorizontalBox("16_channel_volume");
 		ui_interface->openHorizontalBox("0x00");
 		ui_interface->declare(&fVslider0, "midi", "ctrl 1");
 		ui_interface->declare(&fVslider0, "tooltip CC-1", "");
@@ -1061,37 +1046,37 @@ class mydsp : public dsp {
 		float fSlow15 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider15))));
 		for (int i = 0; (i < count); i = (i + 1)) {
 			fRec0[0] = (fSlow0 + (0.999000013f * fRec0[1]));
-			output0[i] = FAUSTFLOAT((fRec0[0] * float(input0[i])));
+			output0[i] = FAUSTFLOAT((float(input0[i]) * fRec0[0]));
 			fRec1[0] = (fSlow1 + (0.999000013f * fRec1[1]));
-			output1[i] = FAUSTFLOAT((fRec1[0] * float(input1[i])));
+			output1[i] = FAUSTFLOAT((float(input1[i]) * fRec1[0]));
 			fRec2[0] = (fSlow2 + (0.999000013f * fRec2[1]));
-			output2[i] = FAUSTFLOAT((fRec2[0] * float(input2[i])));
+			output2[i] = FAUSTFLOAT((float(input2[i]) * fRec2[0]));
 			fRec3[0] = (fSlow3 + (0.999000013f * fRec3[1]));
-			output3[i] = FAUSTFLOAT((fRec3[0] * float(input3[i])));
+			output3[i] = FAUSTFLOAT((float(input3[i]) * fRec3[0]));
 			fRec4[0] = (fSlow4 + (0.999000013f * fRec4[1]));
-			output4[i] = FAUSTFLOAT((fRec4[0] * float(input4[i])));
+			output4[i] = FAUSTFLOAT((float(input4[i]) * fRec4[0]));
 			fRec5[0] = (fSlow5 + (0.999000013f * fRec5[1]));
-			output5[i] = FAUSTFLOAT((fRec5[0] * float(input5[i])));
+			output5[i] = FAUSTFLOAT((float(input5[i]) * fRec5[0]));
 			fRec6[0] = (fSlow6 + (0.999000013f * fRec6[1]));
-			output6[i] = FAUSTFLOAT((fRec6[0] * float(input6[i])));
+			output6[i] = FAUSTFLOAT((float(input6[i]) * fRec6[0]));
 			fRec7[0] = (fSlow7 + (0.999000013f * fRec7[1]));
-			output7[i] = FAUSTFLOAT((fRec7[0] * float(input7[i])));
+			output7[i] = FAUSTFLOAT((float(input7[i]) * fRec7[0]));
 			fRec8[0] = (fSlow8 + (0.999000013f * fRec8[1]));
-			output8[i] = FAUSTFLOAT((fRec8[0] * float(input8[i])));
+			output8[i] = FAUSTFLOAT((float(input8[i]) * fRec8[0]));
 			fRec9[0] = (fSlow9 + (0.999000013f * fRec9[1]));
-			output9[i] = FAUSTFLOAT((fRec9[0] * float(input9[i])));
+			output9[i] = FAUSTFLOAT((float(input9[i]) * fRec9[0]));
 			fRec10[0] = (fSlow10 + (0.999000013f * fRec10[1]));
-			output10[i] = FAUSTFLOAT((fRec10[0] * float(input10[i])));
+			output10[i] = FAUSTFLOAT((float(input10[i]) * fRec10[0]));
 			fRec11[0] = (fSlow11 + (0.999000013f * fRec11[1]));
-			output11[i] = FAUSTFLOAT((fRec11[0] * float(input11[i])));
+			output11[i] = FAUSTFLOAT((float(input11[i]) * fRec11[0]));
 			fRec12[0] = (fSlow12 + (0.999000013f * fRec12[1]));
-			output12[i] = FAUSTFLOAT((fRec12[0] * float(input12[i])));
+			output12[i] = FAUSTFLOAT((float(input12[i]) * fRec12[0]));
 			fRec13[0] = (fSlow13 + (0.999000013f * fRec13[1]));
-			output13[i] = FAUSTFLOAT((fRec13[0] * float(input13[i])));
+			output13[i] = FAUSTFLOAT((float(input13[i]) * fRec13[0]));
 			fRec14[0] = (fSlow14 + (0.999000013f * fRec14[1]));
-			output14[i] = FAUSTFLOAT((fRec14[0] * float(input14[i])));
+			output14[i] = FAUSTFLOAT((float(input14[i]) * fRec14[0]));
 			fRec15[0] = (fSlow15 + (0.999000013f * fRec15[1]));
-			output15[i] = FAUSTFLOAT((fRec15[0] * float(input15[i])));
+			output15[i] = FAUSTFLOAT((float(input15[i]) * fRec15[0]));
 			fRec0[1] = fRec0[0];
 			fRec1[1] = fRec1[0];
 			fRec2[1] = fRec2[0];
@@ -1605,13 +1590,13 @@ class JSONUIAux : public PathBuilder, public Meta, public UI
             addGenericBargraph(label, "vbargraph", min, max);
         }
     
-        virtual void addSoundfile(const char* label, const char* filename, Soundfile** zone)
+        virtual void addSoundfile(const char* label, const char* url, Soundfile** zone)
         {
             fUI << fCloseUIPar;
             tab(fTab, fUI); fUI << "{";
             tab(fTab + 1, fUI); fUI << "\"type\": \"" << "soundfile" << "\",";
             tab(fTab + 1, fUI); fUI << "\"label\": \"" << label << "\"" << ",";
-            tab(fTab + 1, fUI); fUI << "\"filename\": \"" << filename << "\"" << ",";
+            tab(fTab + 1, fUI); fUI << "\"url\": \"" << url << "\"" << ",";
             tab(fTab + 1, fUI); fUI << "\"address\": \"" << buildPath(label) << "\"" << ((fMetaAux.size() > 0) ? "," : "");
             addMeta(fTab + 1, false);
             tab(fTab, fUI); fUI << "}";
@@ -3422,7 +3407,7 @@ struct uiCallbackItem : public uiItem {
 	
 	virtual void reflectZone() 
     {		
-		FAUSTFLOAT 	v = *fZone;
+		FAUSTFLOAT v = *fZone;
 		fCache = v; 
 		fCallback(v, fData);	
 	}
@@ -7273,10 +7258,15 @@ void samFaustDSP::processAudioCallback()
     samAudioDriver->processAudioCallback();
 }
 
+
 void samFaustDSP::propagateMidi(int count, double time, int type, int channel, int data1, int data2)
 {
     fPolyEngine->propagateMidi(count, time, type, channel, data1, data2);
 }
+
+
+
+
 
 #endif
 #endif

@@ -4,7 +4,7 @@
 #define MIDICTRL 1
 /* ------------------------------------------------------------
 name: "chorus"
-Code generated with Faust 2.5.32 (https://faust.grame.fr)
+Code generated with Faust 2.5.36 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -12,28 +12,13 @@ Compilation options: cpp, -scal -ftz 0
 #define  __mydsp_H__
 
 /************************************************************************
-  SHARC Audio Module Faust Architecture File
-  Copyright (c) 2018 Analog Devices, Inc. All rights reserved.
- ---------------------------------------------------------------------
- This Architecture section is free software; you can redistribute it
- and/or modify it under the terms of the GNU General Public License
- as published by the Free Software Foundation; either version 2 of
- the License, or (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- 
- You should have received a copy of the GNU General Public License
- along with this program; If not, see <http://www.gnu.org/licenses/>.
- 
- EXCEPTION : As a special exception, you may create a larger work
- that contains this FAUST architecture section and distribute
- that work under terms of your choice, so long as this FAUST
- architecture section is not modified.
+ ************************************************************************
+ sam Faust Architecture File
+ Copyright (c) 2017 Analog Devices, Inc.  All rights reserved.
+ ************************************************************************
  ************************************************************************/
- 
+
+
 #include <math.h>
 #include <cmath>
 
@@ -678,7 +663,7 @@ class mydspSIG0 {
 	void fillmydspSIG0(int count, float* output) {
 		for (int i = 0; (i < count); i = (i + 1)) {
 			iRec3[0] = (iRec3[1] + 1);
-			output[i] = cosf((9.58738019e-05f * float((iRec3[0] + -1))));
+			output[i] = sinf((9.58738019e-05f * float((iRec3[0] + -1))));
 			iRec3[1] = iRec3[0];
 			
 		}
@@ -746,7 +731,7 @@ class mydspSIG1 {
 	void fillmydspSIG1(int count, float* output) {
 		for (int i = 0; (i < count); i = (i + 1)) {
 			iRec6[0] = (iRec6[1] + 1);
-			output[i] = sinf((9.58738019e-05f * float((iRec6[0] + -1))));
+			output[i] = cosf((9.58738019e-05f * float((iRec6[0] + -1))));
 			iRec6[1] = iRec6[0];
 			
 		}
@@ -897,8 +882,8 @@ class mydsp : public dsp {
 		fConst0 = min(192000.0f, max(1.0f, float(fSamplingFreq)));
 		fConst1 = expf((0.0f - (44.1223412f / fConst0)));
 		fConst2 = (1.0f - fConst1);
-		fConst3 = (0.333333343f / fConst0);
-		fConst4 = (1.0f / fConst0);
+		fConst3 = (1.0f / fConst0);
+		fConst4 = (0.333333343f / fConst0);
 		fConst5 = (0.142857149f / fConst0);
 		fConst6 = (0.5f / fConst0);
 		fConst7 = (0.25f / fConst0);
@@ -1036,49 +1021,49 @@ class mydsp : public dsp {
 		float fSlow3 = (6.2500003e-05f * float(fVslider3));
 		float fSlow4 = (fConst2 * float(fVslider4));
 		for (int i = 0; (i < count); i = (i + 1)) {
-			fRec0[0] = (fSlow1 + (fConst1 * fRec0[1]));
 			float fTemp0 = float(input0[i]);
 			float fTemp1 = (iSlow0?0.0f:fTemp0);
-			float fTemp2 = (fRec0[0] * fTemp1);
-			fVec0[(IOTA & 8191)] = fTemp2;
+			fRec0[0] = (fSlow1 + (fConst1 * fRec0[1]));
+			float fTemp2 = (fTemp1 * (1.0f - fRec0[0]));
+			float fTemp3 = (fTemp1 * fRec0[0]);
+			fVec0[(IOTA & 8191)] = fTemp3;
 			fRec1[0] = (fSlow2 + (0.999000013f * fRec1[1]));
 			fRec2[0] = ((0.999000013f * fRec2[1]) + (fSlow3 * fRec1[0]));
 			fRec5[0] = (fSlow4 + (fConst1 * fRec5[1]));
-			float fTemp3 = (fRec4[1] + (fConst3 * fRec5[0]));
-			fRec4[0] = (fTemp3 - floorf(fTemp3));
-			float fTemp4 = min(8192.0f, ((0.375f * fRec1[0]) + (fRec2[0] * ftbl0mydspSIG0[int((65536.0f * fRec4[0]))])));
-			int iTemp5 = int(fTemp4);
-			float fTemp6 = (fRec7[1] + (fConst4 * fRec5[0]));
-			fRec7[0] = (fTemp6 - floorf(fTemp6));
-			float fTemp7 = min(8192.0f, ((0.125f * fRec1[0]) + (fRec2[0] * ftbl1mydspSIG1[int((65536.0f * fRec7[0]))])));
-			int iTemp8 = int(fTemp7);
-			float fTemp9 = ((1.0f - fRec0[0]) * fTemp1);
+			float fTemp4 = (fRec4[1] + (fConst3 * fRec5[0]));
+			fRec4[0] = (fTemp4 - floorf(fTemp4));
+			float fTemp5 = min(8192.0f, ((0.125f * fRec1[0]) + (fRec2[0] * ftbl0mydspSIG0[int((65536.0f * fRec4[0]))])));
+			int iTemp6 = int(fTemp5);
+			float fTemp7 = (fRec7[1] + (fConst4 * fRec5[0]));
+			fRec7[0] = (fTemp7 - floorf(fTemp7));
+			float fTemp8 = min(8192.0f, ((0.375f * fRec1[0]) + (fRec2[0] * ftbl1mydspSIG1[int((65536.0f * fRec7[0]))])));
+			int iTemp9 = int(fTemp8);
 			float fTemp10 = (fRec8[1] + (fConst5 * fRec5[0]));
 			fRec8[0] = (fTemp10 - floorf(fTemp10));
-			float fTemp11 = min(8192.0f, ((0.875f * fRec1[0]) + (fRec2[0] * (0.0f - ftbl0mydspSIG0[int((65536.0f * fRec8[0]))]))));
+			float fTemp11 = min(8192.0f, ((0.875f * fRec1[0]) + (fRec2[0] * (0.0f - ftbl1mydspSIG1[int((65536.0f * fRec8[0]))]))));
 			int iTemp12 = int(fTemp11);
-			output0[i] = FAUSTFLOAT((iSlow0?fTemp0:(((0.707106769f * ((fVec0[((IOTA - (iTemp5 & 8191)) & 8191)] * (float(iTemp5) + (1.0f - fTemp4))) + ((fTemp4 - float(iTemp5)) * fVec0[((IOTA - ((iTemp5 + 1) & 8191)) & 8191)]))) + (((fTemp7 - float(iTemp8)) * fVec0[((IOTA - ((iTemp8 + 1) & 8191)) & 8191)]) + (fTemp9 + (fVec0[((IOTA - (iTemp8 & 8191)) & 8191)] * (float(iTemp8) + (1.0f - fTemp7)))))) - (0.707106769f * ((fVec0[((IOTA - (iTemp12 & 8191)) & 8191)] * (float(iTemp12) + (1.0f - fTemp11))) + ((fTemp11 - float(iTemp12)) * fVec0[((IOTA - ((iTemp12 + 1) & 8191)) & 8191)]))))));
+			output0[i] = FAUSTFLOAT((iSlow0?fTemp0:((((fTemp2 + (fVec0[((IOTA - (iTemp6 & 8191)) & 8191)] * (float(iTemp6) + (1.0f - fTemp5)))) + ((fTemp5 - float(iTemp6)) * fVec0[((IOTA - ((iTemp6 + 1) & 8191)) & 8191)])) + (0.707106769f * ((fVec0[((IOTA - (iTemp9 & 8191)) & 8191)] * (float(iTemp9) + (1.0f - fTemp8))) + ((fTemp8 - float(iTemp9)) * fVec0[((IOTA - ((iTemp9 + 1) & 8191)) & 8191)])))) - (0.707106769f * ((fVec0[((IOTA - (iTemp12 & 8191)) & 8191)] * (float(iTemp12) + (1.0f - fTemp11))) + ((fTemp11 - float(iTemp12)) * fVec0[((IOTA - ((iTemp12 + 1) & 8191)) & 8191)]))))));
 			float fTemp13 = (fRec9[1] + (fConst6 * fRec5[0]));
 			fRec9[0] = (fTemp13 - floorf(fTemp13));
 			int iTemp14 = int((65536.0f * fRec9[0]));
-			float fTemp15 = min(8192.0f, ((0.25f * fRec1[0]) + (fRec2[0] * ((0.707106769f * ftbl1mydspSIG1[iTemp14]) + (0.707106769f * ftbl0mydspSIG0[iTemp14])))));
+			float fTemp15 = min(8192.0f, ((0.25f * fRec1[0]) + (((0.707106769f * ftbl0mydspSIG0[iTemp14]) + (0.707106769f * ftbl1mydspSIG1[iTemp14])) * fRec2[0])));
 			int iTemp16 = int(fTemp15);
 			float fTemp17 = (fRec10[1] + (fConst7 * fRec5[0]));
 			fRec10[0] = (fTemp17 - floorf(fTemp17));
 			int iTemp18 = int((65536.0f * fRec10[0]));
-			float fTemp19 = min(8192.0f, ((0.5f * fRec1[0]) + (fRec2[0] * ((0.707106769f * ftbl0mydspSIG0[iTemp18]) - (0.707106769f * ftbl1mydspSIG1[iTemp18])))));
+			float fTemp19 = min(8192.0f, ((((0.707106769f * ftbl1mydspSIG1[iTemp18]) - (0.707106769f * ftbl0mydspSIG0[iTemp18])) * fRec2[0]) + (0.5f * fRec1[0])));
 			int iTemp20 = int(fTemp19);
 			float fTemp21 = (fRec11[1] + (fConst8 * fRec5[0]));
 			fRec11[0] = (fTemp21 - floorf(fTemp21));
 			int iTemp22 = int((65536.0f * fRec11[0]));
-			float fTemp23 = min(8192.0f, ((0.75f * fRec1[0]) + (fRec2[0] * (0.0f - ((0.707106769f * ftbl1mydspSIG1[iTemp22]) + (0.707106769f * ftbl0mydspSIG0[iTemp22]))))));
+			float fTemp23 = min(8192.0f, ((0.75f * fRec1[0]) + ((0.0f - ((0.707106769f * ftbl0mydspSIG0[iTemp22]) + (0.707106769f * ftbl1mydspSIG1[iTemp22]))) * fRec2[0])));
 			int iTemp24 = int(fTemp23);
 			float fTemp25 = (fRec12[1] + (fConst9 * fRec5[0]));
 			fRec12[0] = (fTemp25 - floorf(fTemp25));
 			int iTemp26 = int((65536.0f * fRec12[0]));
-			float fTemp27 = min(8192.0f, (fRec1[0] + (fRec2[0] * ((0.707106769f * ftbl1mydspSIG1[iTemp26]) - (0.707106769f * ftbl0mydspSIG0[iTemp26])))));
+			float fTemp27 = min(8192.0f, ((((0.707106769f * ftbl0mydspSIG0[iTemp26]) - (0.707106769f * ftbl1mydspSIG1[iTemp26])) * fRec2[0]) + fRec1[0]));
 			int iTemp28 = int(fTemp27);
-			output1[i] = FAUSTFLOAT((iSlow0?fTemp0:(fTemp9 - ((((0.382683426f * ((fVec0[((IOTA - (iTemp16 & 8191)) & 8191)] * (float(iTemp16) + (1.0f - fTemp15))) + ((fTemp15 - float(iTemp16)) * fVec0[((IOTA - ((iTemp16 + 1) & 8191)) & 8191)]))) + (0.923879504f * ((fVec0[((IOTA - (iTemp20 & 8191)) & 8191)] * (float(iTemp20) + (1.0f - fTemp19))) + ((fTemp19 - float(iTemp20)) * fVec0[((IOTA - ((iTemp20 + 1) & 8191)) & 8191)])))) + (0.923879504f * ((fVec0[((IOTA - (iTemp24 & 8191)) & 8191)] * (float(iTemp24) + (1.0f - fTemp23))) + ((fTemp23 - float(iTemp24)) * fVec0[((IOTA - ((iTemp24 + 1) & 8191)) & 8191)])))) + (0.382683426f * ((fVec0[((IOTA - (iTemp28 & 8191)) & 8191)] * (float(iTemp28) + (1.0f - fTemp27))) + ((fTemp27 - float(iTemp28)) * fVec0[((IOTA - ((iTemp28 + 1) & 8191)) & 8191)])))))));
+			output1[i] = FAUSTFLOAT((iSlow0?fTemp0:(fTemp2 - (((0.382683426f * ((fVec0[((IOTA - (iTemp16 & 8191)) & 8191)] * (float(iTemp16) + (1.0f - fTemp15))) + ((fTemp15 - float(iTemp16)) * fVec0[((IOTA - ((iTemp16 + 1) & 8191)) & 8191)]))) + (0.923879504f * (((fVec0[((IOTA - (iTemp20 & 8191)) & 8191)] * (float(iTemp20) + (1.0f - fTemp19))) + ((fTemp19 - float(iTemp20)) * fVec0[((IOTA - ((iTemp20 + 1) & 8191)) & 8191)])) + ((fVec0[((IOTA - (iTemp24 & 8191)) & 8191)] * (float(iTemp24) + (1.0f - fTemp23))) + ((fTemp23 - float(iTemp24)) * fVec0[((IOTA - ((iTemp24 + 1) & 8191)) & 8191)]))))) + (0.382683426f * ((fVec0[((IOTA - (iTemp28 & 8191)) & 8191)] * (float(iTemp28) + (1.0f - fTemp27))) + ((fTemp27 - float(iTemp28)) * fVec0[((IOTA - ((iTemp28 + 1) & 8191)) & 8191)])))))));
 			fRec0[1] = fRec0[0];
 			IOTA = (IOTA + 1);
 			fRec1[1] = fRec1[0];
@@ -1588,13 +1573,13 @@ class JSONUIAux : public PathBuilder, public Meta, public UI
             addGenericBargraph(label, "vbargraph", min, max);
         }
     
-        virtual void addSoundfile(const char* label, const char* filename, Soundfile** zone)
+        virtual void addSoundfile(const char* label, const char* url, Soundfile** zone)
         {
             fUI << fCloseUIPar;
             tab(fTab, fUI); fUI << "{";
             tab(fTab + 1, fUI); fUI << "\"type\": \"" << "soundfile" << "\",";
             tab(fTab + 1, fUI); fUI << "\"label\": \"" << label << "\"" << ",";
-            tab(fTab + 1, fUI); fUI << "\"filename\": \"" << filename << "\"" << ",";
+            tab(fTab + 1, fUI); fUI << "\"url\": \"" << url << "\"" << ",";
             tab(fTab + 1, fUI); fUI << "\"address\": \"" << buildPath(label) << "\"" << ((fMetaAux.size() > 0) ? "," : "");
             addMeta(fTab + 1, false);
             tab(fTab, fUI); fUI << "}";
@@ -3405,7 +3390,7 @@ struct uiCallbackItem : public uiItem {
 	
 	virtual void reflectZone() 
     {		
-		FAUSTFLOAT 	v = *fZone;
+		FAUSTFLOAT v = *fZone;
 		fCache = v; 
 		fCallback(v, fData);	
 	}
@@ -7256,10 +7241,15 @@ void samFaustDSP::processAudioCallback()
     samAudioDriver->processAudioCallback();
 }
 
+
 void samFaustDSP::propagateMidi(int count, double time, int type, int channel, int data1, int data2)
 {
     fPolyEngine->propagateMidi(count, time, type, channel, data1, data2);
 }
+
+
+
+
 
 #endif
 #endif

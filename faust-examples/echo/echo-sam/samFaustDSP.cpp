@@ -4,7 +4,7 @@
 #define MIDICTRL 1
 /* ------------------------------------------------------------
 name: "echo"
-Code generated with Faust 2.5.32 (https://faust.grame.fr)
+Code generated with Faust 2.5.36 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -12,28 +12,13 @@ Compilation options: cpp, -scal -ftz 0
 #define  __mydsp_H__
 
 /************************************************************************
-  SHARC Audio Module Faust Architecture File
-  Copyright (c) 2018 Analog Devices, Inc. All rights reserved.
- ---------------------------------------------------------------------
- This Architecture section is free software; you can redistribute it
- and/or modify it under the terms of the GNU General Public License
- as published by the Free Software Foundation; either version 2 of
- the License, or (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- 
- You should have received a copy of the GNU General Public License
- along with this program; If not, see <http://www.gnu.org/licenses/>.
- 
- EXCEPTION : As a special exception, you may create a larger work
- that contains this FAUST architecture section and distribute
- that work under terms of your choice, so long as this FAUST
- architecture section is not modified.
+ ************************************************************************
+ sam Faust Architecture File
+ Copyright (c) 2017 Analog Devices, Inc.  All rights reserved.
+ ************************************************************************
  ************************************************************************/
- 
+
+
 #include <math.h>
 #include <cmath>
 
@@ -1375,13 +1360,13 @@ class JSONUIAux : public PathBuilder, public Meta, public UI
             addGenericBargraph(label, "vbargraph", min, max);
         }
     
-        virtual void addSoundfile(const char* label, const char* filename, Soundfile** zone)
+        virtual void addSoundfile(const char* label, const char* url, Soundfile** zone)
         {
             fUI << fCloseUIPar;
             tab(fTab, fUI); fUI << "{";
             tab(fTab + 1, fUI); fUI << "\"type\": \"" << "soundfile" << "\",";
             tab(fTab + 1, fUI); fUI << "\"label\": \"" << label << "\"" << ",";
-            tab(fTab + 1, fUI); fUI << "\"filename\": \"" << filename << "\"" << ",";
+            tab(fTab + 1, fUI); fUI << "\"url\": \"" << url << "\"" << ",";
             tab(fTab + 1, fUI); fUI << "\"address\": \"" << buildPath(label) << "\"" << ((fMetaAux.size() > 0) ? "," : "");
             addMeta(fTab + 1, false);
             tab(fTab, fUI); fUI << "}";
@@ -3192,7 +3177,7 @@ struct uiCallbackItem : public uiItem {
 	
 	virtual void reflectZone() 
     {		
-		FAUSTFLOAT 	v = *fZone;
+		FAUSTFLOAT v = *fZone;
 		fCache = v; 
 		fCallback(v, fData);	
 	}
@@ -7043,10 +7028,15 @@ void samFaustDSP::processAudioCallback()
     samAudioDriver->processAudioCallback();
 }
 
+
 void samFaustDSP::propagateMidi(int count, double time, int type, int channel, int data1, int data2)
 {
     fPolyEngine->propagateMidi(count, time, type, channel, data1, data2);
 }
+
+
+
+
 
 #endif
 #endif

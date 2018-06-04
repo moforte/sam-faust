@@ -8,7 +8,7 @@ copyright: "(c) GRAME 2006 and MoForte Inc. 2017"
 license: "BSD"
 name: "freeverb"
 version: "1.0"
-Code generated with Faust 2.5.32 (https://faust.grame.fr)
+Code generated with Faust 2.5.36 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -16,28 +16,13 @@ Compilation options: cpp, -scal -ftz 0
 #define  __mydsp_H__
 
 /************************************************************************
-  SHARC Audio Module Faust Architecture File
-  Copyright (c) 2018 Analog Devices, Inc. All rights reserved.
- ---------------------------------------------------------------------
- This Architecture section is free software; you can redistribute it
- and/or modify it under the terms of the GNU General Public License
- as published by the Free Software Foundation; either version 2 of
- the License, or (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- 
- You should have received a copy of the GNU General Public License
- along with this program; If not, see <http://www.gnu.org/licenses/>.
- 
- EXCEPTION : As a special exception, you may create a larger work
- that contains this FAUST architecture section and distribute
- that work under terms of your choice, so long as this FAUST
- architecture section is not modified.
+ ************************************************************************
+ sam Faust Architecture File
+ Copyright (c) 2017 Analog Devices, Inc.  All rights reserved.
+ ************************************************************************
  ************************************************************************/
- 
+
+
 #include <math.h>
 #include <cmath>
 
@@ -956,9 +941,9 @@ class mydsp : public dsp {
 		float fSlow5 = (1.0f - fSlow1);
 		for (int i = 0; (i < count); i = (i + 1)) {
 			fRec9[0] = ((fSlow3 * fRec9[1]) + (fSlow4 * fRec8[1]));
-			float fTemp0 = float(input1[i]);
+			float fTemp0 = float(input0[i]);
 			float fTemp1 = (iSlow0?0.0f:fTemp0);
-			float fTemp2 = float(input0[i]);
+			float fTemp2 = float(input1[i]);
 			float fTemp3 = (iSlow0?0.0f:fTemp2);
 			float fTemp4 = (0.0149999997f * (fTemp1 + fTemp3));
 			fVec0[(IOTA & 2047)] = ((fSlow2 * fRec9[0]) + fTemp4);
@@ -998,8 +983,8 @@ class mydsp : public dsp {
 			fRec0[0] = fVec11[((IOTA - 225) & 255)];
 			float fRec1 = (fRec0[1] - fRec3);
 			float fTemp6 = (fSlow1 * fRec1);
-			output0[i] = FAUSTFLOAT((iSlow0?fTemp2:(fTemp6 + (fSlow5 * fTemp3))));
-			output1[i] = FAUSTFLOAT((iSlow0?fTemp0:(fTemp6 + (fSlow5 * fTemp1))));
+			output0[i] = FAUSTFLOAT((iSlow0?fTemp0:(fTemp6 + (fSlow5 * fTemp1))));
+			output1[i] = FAUSTFLOAT((iSlow0?fTemp2:(fTemp6 + (fSlow5 * fTemp3))));
 			fRec9[1] = fRec9[0];
 			IOTA = (IOTA + 1);
 			fRec8[1] = fRec8[0];
@@ -1518,13 +1503,13 @@ class JSONUIAux : public PathBuilder, public Meta, public UI
             addGenericBargraph(label, "vbargraph", min, max);
         }
     
-        virtual void addSoundfile(const char* label, const char* filename, Soundfile** zone)
+        virtual void addSoundfile(const char* label, const char* url, Soundfile** zone)
         {
             fUI << fCloseUIPar;
             tab(fTab, fUI); fUI << "{";
             tab(fTab + 1, fUI); fUI << "\"type\": \"" << "soundfile" << "\",";
             tab(fTab + 1, fUI); fUI << "\"label\": \"" << label << "\"" << ",";
-            tab(fTab + 1, fUI); fUI << "\"filename\": \"" << filename << "\"" << ",";
+            tab(fTab + 1, fUI); fUI << "\"url\": \"" << url << "\"" << ",";
             tab(fTab + 1, fUI); fUI << "\"address\": \"" << buildPath(label) << "\"" << ((fMetaAux.size() > 0) ? "," : "");
             addMeta(fTab + 1, false);
             tab(fTab, fUI); fUI << "}";
@@ -3335,7 +3320,7 @@ struct uiCallbackItem : public uiItem {
 	
 	virtual void reflectZone() 
     {		
-		FAUSTFLOAT 	v = *fZone;
+		FAUSTFLOAT v = *fZone;
 		fCache = v; 
 		fCallback(v, fData);	
 	}
@@ -7186,10 +7171,15 @@ void samFaustDSP::processAudioCallback()
     samAudioDriver->processAudioCallback();
 }
 
+
 void samFaustDSP::propagateMidi(int count, double time, int type, int channel, int data1, int data2)
 {
     fPolyEngine->propagateMidi(count, time, type, channel, data1, data2);
 }
+
+
+
+
 
 #endif
 #endif

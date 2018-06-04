@@ -6,16 +6,16 @@
 
 echo "Compiling all the Faust Examples into code for the SHARC Audio Module"
 
-cd 16-channel-volume
+cd 16_channel_volume
 /bin/rm -r *sam* >& /dev/null
 /bin/rm -r *.app >& /dev/null
 /bin/rm -r faust.* >& /dev/null
 
-faust2sam -midi 16-channel-volume.dsp
+faust2sam -midi 16_channel_volume.dsp
 
 if ($1 == "OSX") then
-echo "Creating OS X test App for 16-channel-volume.dsp"
-faust2caqt -midi 16-channel-volume.dsp
+echo "Creating OS X test App for 16_channel_volume.dsp"
+faust2caqt -midi 16_channel_volume.dsp
 endif
 
 unzip *.zip >& /dev/null

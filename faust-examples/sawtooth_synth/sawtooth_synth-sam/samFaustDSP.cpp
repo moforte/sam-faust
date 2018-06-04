@@ -5,7 +5,7 @@
 #define NVOICES 1
 /* ------------------------------------------------------------
 name: "sawtooth_synth"
-Code generated with Faust 2.5.32 (https://faust.grame.fr)
+Code generated with Faust 2.5.36 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -13,28 +13,13 @@ Compilation options: cpp, -scal -ftz 0
 #define  __mydsp_H__
 
 /************************************************************************
-  SHARC Audio Module Faust Architecture File
-  Copyright (c) 2018 Analog Devices, Inc. All rights reserved.
- ---------------------------------------------------------------------
- This Architecture section is free software; you can redistribute it
- and/or modify it under the terms of the GNU General Public License
- as published by the Free Software Foundation; either version 2 of
- the License, or (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- 
- You should have received a copy of the GNU General Public License
- along with this program; If not, see <http://www.gnu.org/licenses/>.
- 
- EXCEPTION : As a special exception, you may create a larger work
- that contains this FAUST architecture section and distribute
- that work under terms of your choice, so long as this FAUST
- architecture section is not modified.
+ ************************************************************************
+ sam Faust Architecture File
+ Copyright (c) 2017 Analog Devices, Inc.  All rights reserved.
+ ************************************************************************
  ************************************************************************/
- 
+
+
 #include <math.h>
 #include <cmath>
 
@@ -635,9 +620,9 @@ class mydsp : public dsp {
 	
  private:
 	
-	FAUSTFLOAT fHslider0;
 	FAUSTFLOAT fButton0;
 	float fVec0[2];
+	FAUSTFLOAT fHslider0;
 	FAUSTFLOAT fEntry0;
 	float fRec0[2];
 	int fSamplingFreq;
@@ -717,8 +702,8 @@ class mydsp : public dsp {
 	}
 	
 	virtual void instanceResetUserInterface() {
-		fHslider0 = FAUSTFLOAT(60.0f);
 		fButton0 = FAUSTFLOAT(0.0f);
+		fHslider0 = FAUSTFLOAT(60.0f);
 		fEntry0 = FAUSTFLOAT(1.0f);
 		fEntry1 = FAUSTFLOAT(200.0f);
 		fEntry2 = FAUSTFLOAT(1.0f);
@@ -779,15 +764,15 @@ class mydsp : public dsp {
 		FAUSTFLOAT* output0 = outputs[0];
 		FAUSTFLOAT* output1 = outputs[1];
 		float fSlow0 = float(fButton0);
-		float fSlow1 = (7.87401586e-06f * ((float(fHslider0) * fSlow0) * float(fEntry0)));
+		float fSlow1 = (7.87401586e-06f * ((fSlow0 * float(fHslider0)) * float(fEntry0)));
 		float fSlow2 = float(fEntry1);
-		int iSlow3 = (fSlow0 == 0.0f);
-		float fSlow4 = float(fEntry2);
+		float fSlow3 = float(fEntry2);
+		int iSlow4 = (fSlow0 == 0.0f);
 		for (int i = 0; (i < count); i = (i + 1)) {
 			fVec0[0] = fSlow0;
 			fRec0[0] = (fSlow1 + (0.999000013f * fRec0[1]));
-			int iTemp0 = ((fSlow0 == fVec0[1]) | iSlow3);
-			fRec3[0] = ((0.999000013f * (fRec3[1] * float(iTemp0))) + (fSlow4 * (1.0f - (0.999000013f * float(iTemp0)))));
+			int iTemp0 = ((fSlow0 == fVec0[1]) | iSlow4);
+			fRec3[0] = ((fSlow3 * (1.0f - (0.999000013f * float(iTemp0)))) + (0.999000013f * (float(iTemp0) * fRec3[1])));
 			float fTemp1 = max(1.00000001e-07f, fabsf((fSlow2 * fRec3[0])));
 			float fTemp2 = (fRec1[1] + (fConst1 * fTemp1));
 			float fTemp3 = (fTemp2 + -1.0f);
@@ -1298,13 +1283,13 @@ class JSONUIAux : public PathBuilder, public Meta, public UI
             addGenericBargraph(label, "vbargraph", min, max);
         }
     
-        virtual void addSoundfile(const char* label, const char* filename, Soundfile** zone)
+        virtual void addSoundfile(const char* label, const char* url, Soundfile** zone)
         {
             fUI << fCloseUIPar;
             tab(fTab, fUI); fUI << "{";
             tab(fTab + 1, fUI); fUI << "\"type\": \"" << "soundfile" << "\",";
             tab(fTab + 1, fUI); fUI << "\"label\": \"" << label << "\"" << ",";
-            tab(fTab + 1, fUI); fUI << "\"filename\": \"" << filename << "\"" << ",";
+            tab(fTab + 1, fUI); fUI << "\"url\": \"" << url << "\"" << ",";
             tab(fTab + 1, fUI); fUI << "\"address\": \"" << buildPath(label) << "\"" << ((fMetaAux.size() > 0) ? "," : "");
             addMeta(fTab + 1, false);
             tab(fTab, fUI); fUI << "}";
@@ -3115,7 +3100,7 @@ struct uiCallbackItem : public uiItem {
 	
 	virtual void reflectZone() 
     {		
-		FAUSTFLOAT 	v = *fZone;
+		FAUSTFLOAT v = *fZone;
 		fCache = v; 
 		fCallback(v, fData);	
 	}
@@ -6966,10 +6951,15 @@ void samFaustDSP::processAudioCallback()
     samAudioDriver->processAudioCallback();
 }
 
+
 void samFaustDSP::propagateMidi(int count, double time, int type, int channel, int data1, int data2)
 {
     fPolyEngine->propagateMidi(count, time, type, channel, data1, data2);
 }
+
+
+
+
 
 #endif
 #endif

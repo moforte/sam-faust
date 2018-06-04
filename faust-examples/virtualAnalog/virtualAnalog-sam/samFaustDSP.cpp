@@ -5,7 +5,7 @@
 #define NVOICES 1
 /* ------------------------------------------------------------
 name: "virtualAnalog"
-Code generated with Faust 2.5.32 (https://faust.grame.fr)
+Code generated with Faust 2.5.36 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -13,28 +13,13 @@ Compilation options: cpp, -scal -ftz 0
 #define  __mydsp_H__
 
 /************************************************************************
-  SHARC Audio Module Faust Architecture File
-  Copyright (c) 2018 Analog Devices, Inc. All rights reserved.
- ---------------------------------------------------------------------
- This Architecture section is free software; you can redistribute it
- and/or modify it under the terms of the GNU General Public License
- as published by the Free Software Foundation; either version 2 of
- the License, or (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- 
- You should have received a copy of the GNU General Public License
- along with this program; If not, see <http://www.gnu.org/licenses/>.
- 
- EXCEPTION : As a special exception, you may create a larger work
- that contains this FAUST architecture section and distribute
- that work under terms of your choice, so long as this FAUST
- architecture section is not modified.
+ ************************************************************************
+ sam Faust Architecture File
+ Copyright (c) 2017 Analog Devices, Inc.  All rights reserved.
+ ************************************************************************
  ************************************************************************/
- 
+
+
 #include <math.h>
 #include <cmath>
 
@@ -661,11 +646,11 @@ class mydsp : public dsp {
 	float fConst8;
 	FAUSTFLOAT fVslider8;
 	FAUSTFLOAT fHslider0;
-	FAUSTFLOAT fButton0;
-	FAUSTFLOAT fButton1;
-	FAUSTFLOAT fVslider9;
-	float fVec1[2];
 	FAUSTFLOAT fHslider1;
+	FAUSTFLOAT fButton0;
+	FAUSTFLOAT fVslider9;
+	FAUSTFLOAT fButton1;
+	float fVec1[2];
 	float fRec6[2];
 	float fRec5[2];
 	FAUSTFLOAT fVslider10;
@@ -848,8 +833,8 @@ class mydsp : public dsp {
 	
 	virtual void instanceResetUserInterface() {
 		fVslider0 = FAUSTFLOAT(0.69999999999999996f);
-		fVslider1 = FAUSTFLOAT(1.0f);
-		fVslider2 = FAUSTFLOAT(0.5f);
+		fVslider1 = FAUSTFLOAT(0.5f);
+		fVslider2 = FAUSTFLOAT(1.0f);
 		fVslider3 = FAUSTFLOAT(5.0f);
 		fVslider4 = FAUSTFLOAT(1.0f);
 		fVslider5 = FAUSTFLOAT(0.0f);
@@ -857,25 +842,25 @@ class mydsp : public dsp {
 		fVslider7 = FAUSTFLOAT(1.0f);
 		fVslider8 = FAUSTFLOAT(0.0080000000000000002f);
 		fHslider0 = FAUSTFLOAT(220.0f);
-		fButton0 = FAUSTFLOAT(0.0f);
-		fButton1 = FAUSTFLOAT(0.0f);
-		fVslider9 = FAUSTFLOAT(0.0f);
 		fHslider1 = FAUSTFLOAT(1.0f);
+		fButton0 = FAUSTFLOAT(0.0f);
+		fVslider9 = FAUSTFLOAT(0.0f);
+		fButton1 = FAUSTFLOAT(0.0f);
 		fVslider10 = FAUSTFLOAT(1.0f);
 		fVslider11 = FAUSTFLOAT(0.0f);
 		fVslider12 = FAUSTFLOAT(0.0f);
 		fVslider13 = FAUSTFLOAT(1.0f);
 		fVslider14 = FAUSTFLOAT(0.0f);
 		fVslider15 = FAUSTFLOAT(0.0f);
-		fVslider16 = FAUSTFLOAT(0.0f);
-		fVslider17 = FAUSTFLOAT(0.29999999999999999f);
-		fVslider18 = FAUSTFLOAT(1.0f);
-		fVslider19 = FAUSTFLOAT(0.5f);
+		fVslider16 = FAUSTFLOAT(0.29999999999999999f);
+		fVslider17 = FAUSTFLOAT(0.0f);
+		fVslider18 = FAUSTFLOAT(0.5f);
+		fVslider19 = FAUSTFLOAT(1.0f);
 		fVslider20 = FAUSTFLOAT(5.0f);
 		fVslider21 = FAUSTFLOAT(1.0f);
 		fVslider22 = FAUSTFLOAT(0.41666999999999998f);
-		fVslider23 = FAUSTFLOAT(0.0f);
-		fVslider24 = FAUSTFLOAT(0.5f);
+		fVslider23 = FAUSTFLOAT(0.5f);
+		fVslider24 = FAUSTFLOAT(0.0f);
 		fVslider25 = FAUSTFLOAT(0.0f);
 		fVslider26 = FAUSTFLOAT(0.0f);
 		fVslider27 = FAUSTFLOAT(0.0f);
@@ -1111,12 +1096,12 @@ class mydsp : public dsp {
 		ui_interface->closeBox();
 		ui_interface->declare(0, "1", "");
 		ui_interface->openHorizontalBox("Oscillator Tuning & Switching");
-		ui_interface->declare(&fVslider5, "0", "");
-		ui_interface->declare(&fVslider5, "midi", "ctrl 47");
-		ui_interface->declare(&fVslider5, "style", "knob");
-		ui_interface->declare(&fVslider5, "tooltip", "Frequency-shift up or down for all oscillators in Octaves");
-		ui_interface->declare(&fVslider5, "unit", "Octaves");
-		ui_interface->addVerticalSlider("Tune", &fVslider5, 0.0f, -1.0f, 1.0f, 0.00100000005f);
+		ui_interface->declare(&fVslider6, "0", "");
+		ui_interface->declare(&fVslider6, "midi", "ctrl 47");
+		ui_interface->declare(&fVslider6, "style", "knob");
+		ui_interface->declare(&fVslider6, "tooltip", "Frequency-shift up or down for all oscillators in Octaves");
+		ui_interface->declare(&fVslider6, "unit", "Octaves");
+		ui_interface->addVerticalSlider("Tune", &fVslider6, 0.0f, -1.0f, 1.0f, 0.00100000005f);
 		ui_interface->declare(0, "1", "");
 		ui_interface->openVerticalBox("Switches");
 		ui_interface->declare(&fVslider10, "0", "");
@@ -1124,11 +1109,11 @@ class mydsp : public dsp {
 		ui_interface->declare(&fVslider10, "midi", "ctrl 22");
 		ui_interface->declare(&fVslider10, "style", "knob");
 		ui_interface->addVerticalSlider("Osc. Mod.", &fVslider10, 1.0f, 0.0f, 1.0f, 1.0f);
-		ui_interface->declare(&fVslider16, "1", "");
-		ui_interface->declare(&fVslider16, "color", "red");
-		ui_interface->declare(&fVslider16, "midi", "ctrl 9");
-		ui_interface->declare(&fVslider16, "style", "knob");
-		ui_interface->addVerticalSlider("Osc. 3 Ctl", &fVslider16, 0.0f, 0.0f, 1.0f, 1.0f);
+		ui_interface->declare(&fVslider17, "1", "");
+		ui_interface->declare(&fVslider17, "color", "red");
+		ui_interface->declare(&fVslider17, "midi", "ctrl 9");
+		ui_interface->declare(&fVslider17, "style", "knob");
+		ui_interface->addVerticalSlider("Osc. 3 Ctl", &fVslider17, 0.0f, 0.0f, 1.0f, 1.0f);
 		ui_interface->closeBox();
 		ui_interface->closeBox();
 		ui_interface->declare(0, "2", "");
@@ -1155,11 +1140,11 @@ class mydsp : public dsp {
 		ui_interface->declare(&fVslider4, "midi", "ctrl 23");
 		ui_interface->declare(&fVslider4, "style", "knob");
 		ui_interface->addVerticalSlider("Octave1", &fVslider4, 1.0f, 0.0f, 5.0f, 1.0f);
-		ui_interface->declare(&fVslider6, "2", "");
-		ui_interface->declare(&fVslider6, "midi", "ctrl 24");
-		ui_interface->declare(&fVslider6, "style", "knob");
-		ui_interface->declare(&fVslider6, "units", "Octaves");
-		ui_interface->addVerticalSlider("DeTuning1", &fVslider6, 0.0f, -1.0f, 1.0f, 0.00100000005f);
+		ui_interface->declare(&fVslider5, "2", "");
+		ui_interface->declare(&fVslider5, "midi", "ctrl 24");
+		ui_interface->declare(&fVslider5, "style", "knob");
+		ui_interface->declare(&fVslider5, "units", "Octaves");
+		ui_interface->addVerticalSlider("DeTuning1", &fVslider5, 0.0f, -1.0f, 1.0f, 0.00100000005f);
 		ui_interface->declare(&fVslider3, "3", "");
 		ui_interface->declare(&fVslider3, "midi", "ctrl 25");
 		ui_interface->declare(&fVslider3, "style", "knob");
@@ -1187,11 +1172,11 @@ class mydsp : public dsp {
 		ui_interface->declare(&fVslider15, "midi", "ctrl 33");
 		ui_interface->declare(&fVslider15, "style", "knob");
 		ui_interface->addVerticalSlider("Octave3", &fVslider15, 0.0f, 0.0f, 5.0f, 1.0f);
-		ui_interface->declare(&fVslider17, "2", "");
-		ui_interface->declare(&fVslider17, "midi", "ctrl 34");
-		ui_interface->declare(&fVslider17, "style", "knob");
-		ui_interface->declare(&fVslider17, "units", "Octaves");
-		ui_interface->addVerticalSlider("DeTuning3", &fVslider17, 0.300000012f, -1.0f, 1.0f, 0.00100000005f);
+		ui_interface->declare(&fVslider16, "2", "");
+		ui_interface->declare(&fVslider16, "midi", "ctrl 34");
+		ui_interface->declare(&fVslider16, "style", "knob");
+		ui_interface->declare(&fVslider16, "units", "Octaves");
+		ui_interface->addVerticalSlider("DeTuning3", &fVslider16, 0.300000012f, -1.0f, 1.0f, 0.00100000005f);
 		ui_interface->declare(&fVslider14, "3", "");
 		ui_interface->declare(&fVslider14, "midi", "ctrl 35");
 		ui_interface->declare(&fVslider14, "style", "knob");
@@ -1202,15 +1187,15 @@ class mydsp : public dsp {
 		ui_interface->openVerticalBox("Mixer");
 		ui_interface->declare(0, "0", "");
 		ui_interface->openHorizontalBox("Osc1");
-		ui_interface->declare(&fVslider2, "0", "");
-		ui_interface->declare(&fVslider2, "midi", "ctrl 26");
-		ui_interface->declare(&fVslider2, "style", "knob");
-		ui_interface->addVerticalSlider("Osc1 Amp", &fVslider2, 0.5f, 0.0f, 1.0f, 0.00100000005f);
-		ui_interface->declare(&fVslider1, "1", "");
-		ui_interface->declare(&fVslider1, "color", "blue");
-		ui_interface->declare(&fVslider1, "midi", "ctrl 12");
+		ui_interface->declare(&fVslider1, "0", "");
+		ui_interface->declare(&fVslider1, "midi", "ctrl 26");
 		ui_interface->declare(&fVslider1, "style", "knob");
-		ui_interface->addVerticalSlider("On", &fVslider1, 1.0f, 0.0f, 1.0f, 1.0f);
+		ui_interface->addVerticalSlider("Osc1 Amp", &fVslider1, 0.5f, 0.0f, 1.0f, 0.00100000005f);
+		ui_interface->declare(&fVslider2, "1", "");
+		ui_interface->declare(&fVslider2, "color", "blue");
+		ui_interface->declare(&fVslider2, "midi", "ctrl 12");
+		ui_interface->declare(&fVslider2, "style", "knob");
+		ui_interface->addVerticalSlider("On", &fVslider2, 1.0f, 0.0f, 1.0f, 1.0f);
 		ui_interface->closeBox();
 		ui_interface->declare(0, "1", "");
 		ui_interface->openHorizontalBox("Ext In, KeyCtl");
@@ -1226,29 +1211,29 @@ class mydsp : public dsp {
 		ui_interface->closeBox();
 		ui_interface->declare(0, "2", "");
 		ui_interface->openHorizontalBox("Osc2");
-		ui_interface->declare(&fVslider19, "0", "");
-		ui_interface->declare(&fVslider19, "midi", "ctrl 31");
-		ui_interface->declare(&fVslider19, "style", "knob");
-		ui_interface->addVerticalSlider("Osc2 Amp", &fVslider19, 0.5f, 0.0f, 1.0f, 0.00100000005f);
-		ui_interface->declare(&fVslider18, "1", "");
-		ui_interface->declare(&fVslider18, "color", "blue");
-		ui_interface->declare(&fVslider18, "midi", "ctrl 14");
+		ui_interface->declare(&fVslider18, "0", "");
+		ui_interface->declare(&fVslider18, "midi", "ctrl 31");
 		ui_interface->declare(&fVslider18, "style", "knob");
-		ui_interface->addVerticalSlider("On", &fVslider18, 1.0f, 0.0f, 1.0f, 1.0f);
+		ui_interface->addVerticalSlider("Osc2 Amp", &fVslider18, 0.5f, 0.0f, 1.0f, 0.00100000005f);
+		ui_interface->declare(&fVslider19, "1", "");
+		ui_interface->declare(&fVslider19, "color", "blue");
+		ui_interface->declare(&fVslider19, "midi", "ctrl 14");
+		ui_interface->declare(&fVslider19, "style", "knob");
+		ui_interface->addVerticalSlider("On", &fVslider19, 1.0f, 0.0f, 1.0f, 1.0f);
 		ui_interface->closeBox();
 		ui_interface->declare(0, "3", "");
 		ui_interface->openHorizontalBox("Noise");
-		ui_interface->declare(&fVslider25, "0", "");
-		ui_interface->declare(&fVslider25, "midi", "ctrl 32");
-		ui_interface->declare(&fVslider25, "style", "knob");
-		ui_interface->addVerticalSlider("Noise Amp", &fVslider25, 0.0f, 0.0f, 1.0f, 0.00100000005f);
+		ui_interface->declare(&fVslider26, "0", "");
+		ui_interface->declare(&fVslider26, "midi", "ctrl 32");
+		ui_interface->declare(&fVslider26, "style", "knob");
+		ui_interface->addVerticalSlider("Noise Amp", &fVslider26, 0.0f, 0.0f, 1.0f, 0.00100000005f);
 		ui_interface->declare(0, "1", "");
 		ui_interface->openVerticalBox("0x00");
-		ui_interface->declare(&fVslider26, "0", "");
-		ui_interface->declare(&fVslider26, "color", "blue");
-		ui_interface->declare(&fVslider26, "midi", "ctrl 15");
-		ui_interface->declare(&fVslider26, "style", "knob");
-		ui_interface->addVerticalSlider("On", &fVslider26, 0.0f, 0.0f, 1.0f, 1.0f);
+		ui_interface->declare(&fVslider25, "0", "");
+		ui_interface->declare(&fVslider25, "color", "blue");
+		ui_interface->declare(&fVslider25, "midi", "ctrl 15");
+		ui_interface->declare(&fVslider25, "style", "knob");
+		ui_interface->addVerticalSlider("On", &fVslider25, 0.0f, 0.0f, 1.0f, 1.0f);
 		ui_interface->declare(&fVslider13, "1", "");
 		ui_interface->declare(&fVslider13, "color", "blue");
 		ui_interface->declare(&fVslider13, "midi", "ctrl 16");
@@ -1259,15 +1244,15 @@ class mydsp : public dsp {
 		ui_interface->closeBox();
 		ui_interface->declare(0, "4", "");
 		ui_interface->openHorizontalBox("Osc3");
-		ui_interface->declare(&fVslider24, "0", "");
-		ui_interface->declare(&fVslider24, "midi", "ctrl 36");
-		ui_interface->declare(&fVslider24, "style", "knob");
-		ui_interface->addVerticalSlider("Osc3 Amp", &fVslider24, 0.5f, 0.0f, 1.0f, 0.00100000005f);
-		ui_interface->declare(&fVslider23, "1", "");
-		ui_interface->declare(&fVslider23, "color", "blue");
-		ui_interface->declare(&fVslider23, "midi", "ctrl 17");
+		ui_interface->declare(&fVslider23, "0", "");
+		ui_interface->declare(&fVslider23, "midi", "ctrl 36");
 		ui_interface->declare(&fVslider23, "style", "knob");
-		ui_interface->addVerticalSlider("On", &fVslider23, 0.0f, 0.0f, 1.0f, 1.0f);
+		ui_interface->addVerticalSlider("Osc3 Amp", &fVslider23, 0.5f, 0.0f, 1.0f, 0.00100000005f);
+		ui_interface->declare(&fVslider24, "1", "");
+		ui_interface->declare(&fVslider24, "color", "blue");
+		ui_interface->declare(&fVslider24, "midi", "ctrl 17");
+		ui_interface->declare(&fVslider24, "style", "knob");
+		ui_interface->addVerticalSlider("On", &fVslider24, 0.0f, 0.0f, 1.0f, 1.0f);
 		ui_interface->closeBox();
 		ui_interface->closeBox();
 		ui_interface->declare(0, "3", "");
@@ -1425,13 +1410,13 @@ class mydsp : public dsp {
 		int iSlow7 = (iSlow6 == 0);
 		float fSlow8 = float(fVslider5);
 		float fSlow9 = float(fVslider6);
-		float fSlow10 = (fConst7 * powf(2.0f, ((float(iSlow6) + (fSlow8 + fSlow9)) + -2.0f)));
+		float fSlow10 = (fConst7 * powf(2.0f, ((fSlow8 + (fSlow9 + float(iSlow6))) + -2.0f)));
 		float fSlow11 = (int(float(fVslider7))?expf((0.0f - (fConst8 / float(fVslider8)))):0.5f);
 		float fSlow12 = float(fHslider0);
-		float fSlow13 = min(1.0f, (float(fButton0) + (float(fButton1) + float(fVslider9))));
-		int iSlow14 = (fSlow13 == 0.0f);
-		float fSlow15 = float(fHslider1);
-		float fSlow16 = (1.0f - fSlow11);
+		float fSlow13 = (1.0f - fSlow11);
+		float fSlow14 = float(fHslider1);
+		float fSlow15 = min(1.0f, ((float(fButton0) + float(fVslider9)) + float(fButton1)));
+		int iSlow16 = (fSlow15 == 0.0f);
 		int iSlow17 = int(float(fVslider10));
 		float fSlow18 = float(fVslider11);
 		float fSlow19 = float(fVslider12);
@@ -1443,13 +1428,13 @@ class mydsp : public dsp {
 		int iSlow25 = (iSlow22 >= 1);
 		int iSlow26 = int(float(fVslider15));
 		int iSlow27 = (iSlow26 == 0);
-		int iSlow28 = int(float(fVslider16));
-		float fSlow29 = (float(fVslider17) * (iSlow28?1.0f:3.0f));
-		float fSlow30 = powf(2.0f, ((float(iSlow26) + fSlow8) + (fSlow29 + -2.0f)));
+		int iSlow28 = int(float(fVslider17));
+		float fSlow29 = (float(fVslider16) * (iSlow28?1.0f:3.0f));
+		float fSlow30 = powf(2.0f, ((float(iSlow26) + fSlow9) + (fSlow29 + -2.0f)));
 		float fSlow31 = (3.0f * powf(2.0f, fSlow29));
 		int iSlow32 = (iSlow22 >= 5);
 		int iSlow33 = (iSlow22 >= 4);
-		float fSlow34 = (3.0f * powf(2.0f, fSlow9));
+		float fSlow34 = (3.0f * powf(2.0f, fSlow8));
 		int iSlow35 = (iSlow2 >= 5);
 		int iSlow36 = (iSlow2 >= 4);
 		float fSlow37 = (float(fVslider18) * float(fVslider19));
@@ -1460,7 +1445,7 @@ class mydsp : public dsp {
 		int iSlow42 = int(float(fVslider21));
 		int iSlow43 = (iSlow42 == 0);
 		float fSlow44 = float(fVslider22);
-		float fSlow45 = (fConst7 * powf(2.0f, ((float(iSlow42) + (fSlow8 + fSlow44)) + -2.0f)));
+		float fSlow45 = (fConst7 * powf(2.0f, ((fSlow44 + (fSlow9 + float(iSlow42))) + -2.0f)));
 		float fSlow46 = (3.0f * powf(2.0f, fSlow44));
 		int iSlow47 = (iSlow38 >= 5);
 		int iSlow48 = (iSlow38 >= 4);
@@ -1476,7 +1461,7 @@ class mydsp : public dsp {
 		int iSlow58 = int(float(fVslider30));
 		float fSlow59 = (fConst7 * float(fVslider31));
 		float fSlow60 = float(fVslider32);
-		int iSlow61 = (fSlow13 > 0.0f);
+		int iSlow61 = (fSlow15 > 0.0f);
 		int iSlow62 = int(float(fVslider33));
 		float fSlow63 = (0.00100000005f * float(fVslider34));
 		float fSlow64 = (iSlow62?fSlow63:0.00999999978f);
@@ -1496,17 +1481,17 @@ class mydsp : public dsp {
 		for (int i = 0; (i < count); i = (i + 1)) {
 			iVec0[0] = 1;
 			fRec1[0] = (fSlow0 + (fConst1 * fRec1[1]));
-			fVec1[0] = fSlow13;
-			int iTemp0 = ((fSlow13 == fVec1[1]) | iSlow14);
+			fVec1[0] = fSlow15;
+			int iTemp0 = ((fSlow15 == fVec1[1]) | iSlow16);
 			float fTemp1 = (1.0f - (0.999000013f * float(iTemp0)));
-			fRec6[0] = ((0.999000013f * (fRec6[1] * float(iTemp0))) + (fSlow15 * fTemp1));
-			fRec5[0] = ((fRec5[1] * fSlow11) + (fSlow12 * (fRec6[0] * fSlow16)));
-			fRec7[0] = ((0.999000013f * (fRec7[1] * float(iTemp0))) + (fSlow18 * fTemp1));
+			fRec6[0] = ((fSlow14 * fTemp1) + (0.999000013f * (float(iTemp0) * fRec6[1])));
+			fRec5[0] = ((fSlow11 * fRec5[1]) + (fSlow12 * (fSlow13 * fRec6[0])));
+			fRec7[0] = ((fSlow18 * fTemp1) + (0.999000013f * (float(iTemp0) * fRec7[1])));
 			iRec8[0] = ((1103515245 * iRec8[1]) + 12345);
 			float fTemp2 = (4.65661287e-10f * float(iRec8[0]));
 			fRec9[0] = (((0.522189379f * fRec9[3]) + (fTemp2 + (2.49495602f * fRec9[1]))) - (2.0172658f * fRec9[2]));
 			float fTemp3 = (iSlow20?(10.0f * (((0.0499220341f * fRec9[0]) + (0.0506126992f * fRec9[2])) - ((0.0959935337f * fRec9[1]) + (0.00440878607f * fRec9[3])))):fTemp2);
-			fRec10[0] = ((fConst6 * fRec10[1]) + (fConst7 * ((iSlow28?fRec5[0]:369.993988f) * fSlow30)));
+			fRec10[0] = ((fConst6 * fRec10[1]) + (fConst7 * (fSlow30 * (iSlow28?fRec5[0]:369.993988f))));
 			float fTemp4 = (iSlow27?fSlow31:fRec10[0]);
 			fVec2[0] = fTemp4;
 			float fTemp5 = max(fTemp4, 23.4489498f);
@@ -1516,7 +1501,7 @@ class mydsp : public dsp {
 			fRec12[0] = (fTemp7 - floorf(fTemp7));
 			float fTemp8 = mydsp_faustpower2_f(((2.0f * fRec12[0]) + -1.0f));
 			fVec4[0] = fTemp8;
-			float fTemp9 = (((fTemp8 - fVec4[1]) * float(iVec0[1])) / fTemp6);
+			float fTemp9 = ((float(iVec0[1]) * (fTemp8 - fVec4[1])) / fTemp6);
 			fVec5[(IOTA & 4095)] = fTemp9;
 			float fTemp10 = max(0.0f, min(2047.0f, (fConst9 / fTemp5)));
 			int iTemp11 = int(fTemp10);
@@ -1554,7 +1539,7 @@ class mydsp : public dsp {
 			fRec3[0] = (fTemp35 - floorf(fTemp35));
 			float fTemp36 = mydsp_faustpower2_f(((2.0f * fRec3[0]) + -1.0f));
 			fVec8[0] = fTemp36;
-			float fTemp37 = (((fTemp36 - fVec8[1]) * float(iVec0[1])) / fTemp34);
+			float fTemp37 = ((float(iVec0[1]) * (fTemp36 - fVec8[1])) / fTemp34);
 			fVec9[(IOTA & 4095)] = fTemp37;
 			float fTemp38 = max(0.0f, min(2047.0f, (fConst9 / fTemp33)));
 			int iTemp39 = int(fTemp38);
@@ -1588,7 +1573,7 @@ class mydsp : public dsp {
 			fRec20[0] = (fTemp59 - floorf(fTemp59));
 			float fTemp60 = mydsp_faustpower2_f(((2.0f * fRec20[0]) + -1.0f));
 			fVec12[0] = fTemp60;
-			float fTemp61 = (((fTemp60 - fVec12[1]) * float(iVec0[1])) / fTemp58);
+			float fTemp61 = ((float(iVec0[1]) * (fTemp60 - fVec12[1])) / fTemp58);
 			fVec13[(IOTA & 4095)] = fTemp61;
 			float fTemp62 = max(0.0f, min(2047.0f, (fConst9 / fTemp57)));
 			int iTemp63 = int(fTemp62);
@@ -2200,13 +2185,13 @@ class JSONUIAux : public PathBuilder, public Meta, public UI
             addGenericBargraph(label, "vbargraph", min, max);
         }
     
-        virtual void addSoundfile(const char* label, const char* filename, Soundfile** zone)
+        virtual void addSoundfile(const char* label, const char* url, Soundfile** zone)
         {
             fUI << fCloseUIPar;
             tab(fTab, fUI); fUI << "{";
             tab(fTab + 1, fUI); fUI << "\"type\": \"" << "soundfile" << "\",";
             tab(fTab + 1, fUI); fUI << "\"label\": \"" << label << "\"" << ",";
-            tab(fTab + 1, fUI); fUI << "\"filename\": \"" << filename << "\"" << ",";
+            tab(fTab + 1, fUI); fUI << "\"url\": \"" << url << "\"" << ",";
             tab(fTab + 1, fUI); fUI << "\"address\": \"" << buildPath(label) << "\"" << ((fMetaAux.size() > 0) ? "," : "");
             addMeta(fTab + 1, false);
             tab(fTab, fUI); fUI << "}";
@@ -4017,7 +4002,7 @@ struct uiCallbackItem : public uiItem {
 	
 	virtual void reflectZone() 
     {		
-		FAUSTFLOAT 	v = *fZone;
+		FAUSTFLOAT v = *fZone;
 		fCache = v; 
 		fCallback(v, fData);	
 	}
@@ -7868,10 +7853,15 @@ void samFaustDSP::processAudioCallback()
     samAudioDriver->processAudioCallback();
 }
 
+
 void samFaustDSP::propagateMidi(int count, double time, int type, int channel, int data1, int data2)
 {
     fPolyEngine->propagateMidi(count, time, type, channel, data1, data2);
 }
+
+
+
+
 
 #endif
 #endif
