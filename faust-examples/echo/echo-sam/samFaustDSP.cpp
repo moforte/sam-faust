@@ -4,7 +4,7 @@
 #define MIDICTRL 1
 /* ------------------------------------------------------------
 name: "echo"
-Code generated with Faust 2.5.36 (https://faust.grame.fr)
+Code generated with Faust 2.6.00 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -12,13 +12,28 @@ Compilation options: cpp, -scal -ftz 0
 #define  __mydsp_H__
 
 /************************************************************************
- ************************************************************************
- sam Faust Architecture File
- Copyright (c) 2017 Analog Devices, Inc.  All rights reserved.
- ************************************************************************
+  SHARC Audio Module Faust Architecture File
+  Copyright (c) 2018 Analog Devices, Inc. All rights reserved.
+ ---------------------------------------------------------------------
+ This Architecture section is free software; you can redistribute it
+ and/or modify it under the terms of the GNU General Public License
+ as published by the Free Software Foundation; either version 2 of
+ the License, or (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program; If not, see <http://www.gnu.org/licenses/>.
+ 
+ EXCEPTION : As a special exception, you may create a larger work
+ that contains this FAUST architecture section and distribute
+ that work under terms of your choice, so long as this FAUST
+ architecture section is not modified.
  ************************************************************************/
-
-
+ 
 #include <math.h>
 #include <cmath>
 
@@ -845,13 +860,13 @@ class mydsp : public dsp {
 			fRec0[0] = (fSlow0 + (fConst1 * fRec0[1]));
 			float fTemp0 = float(input0[i]);
 			fRec3[(IOTA & 65535)] = ((fSlow2 * fRec3[((IOTA - 1) & 65535)]) + (fSlow1 * ((fSlow3 * fRec1[1]) + (iSlow4?0.0f:fTemp0))));
-			fRec4[0] = ((fRec4[1] * fSlow6) + fSlow9);
+			fRec4[0] = ((fSlow6 * fRec4[1]) + fSlow9);
 			int iTemp1 = int(fRec4[0]);
 			float fTemp2 = floorf(fRec4[0]);
 			fRec1[0] = ((fRec3[((IOTA - min(32769, max(0, iTemp1))) & 65535)] * (fTemp2 + (1.0f - fRec4[0]))) + ((fRec4[0] - fTemp2) * fRec3[((IOTA - min(32769, max(0, (iTemp1 + 1)))) & 65535)]));
-			fRec6[0] = ((fRec6[1] * fSlow6) + fSlow10);
-			fRec7[0] = (fRec7[1] * fSlow6);
-			fRec5[0] = ((fRec5[1] * fSlow6) + (fSlow7 * (((fRec6[0] + mydsp_faustpower2_f(fRec7[0])) + 1.0f) * fSlow8)));
+			fRec6[0] = ((fSlow6 * fRec6[1]) + fSlow10);
+			fRec7[0] = (fSlow6 * fRec7[1]);
+			fRec5[0] = ((fSlow6 * fRec5[1]) + (fSlow7 * (((fRec6[0] + mydsp_faustpower2_f(fRec7[0])) + 1.0f) * fSlow8)));
 			int iTemp3 = int(fRec5[0]);
 			float fTemp4 = floorf(fRec5[0]);
 			float fRec2 = ((fRec3[((IOTA - min(32769, max(0, iTemp3))) & 65535)] * (fTemp4 + (1.0f - fRec5[0]))) + ((fRec5[0] - fTemp4) * fRec3[((IOTA - min(32769, max(0, (iTemp3 + 1)))) & 65535)]));
@@ -7028,15 +7043,10 @@ void samFaustDSP::processAudioCallback()
     samAudioDriver->processAudioCallback();
 }
 
-
 void samFaustDSP::propagateMidi(int count, double time, int type, int channel, int data1, int data2)
 {
     fPolyEngine->propagateMidi(count, time, type, channel, data1, data2);
 }
-
-
-
-
 
 #endif
 #endif
