@@ -652,8 +652,8 @@ class mydsp : public dsp {
 	int IOTA;
 	float fRec3[65536];
 	FAUSTFLOAT fVslider4;
-	float fConst3;
 	FAUSTFLOAT fVslider5;
+	float fConst3;
 	float fRec4[2];
 	float fRec1[2];
 	FAUSTFLOAT fVslider6;
@@ -737,8 +737,8 @@ class mydsp : public dsp {
 	virtual void instanceResetUserInterface() {
 		fVslider0 = FAUSTFLOAT(0.5f);
 		fVslider1 = FAUSTFLOAT(0.0f);
-		fVslider2 = FAUSTFLOAT(0.29999999999999999f);
-		fVslider3 = FAUSTFLOAT(0.0f);
+		fVslider2 = FAUSTFLOAT(0.0f);
+		fVslider3 = FAUSTFLOAT(0.29999999999999999f);
 		fVslider4 = FAUSTFLOAT(0.5f);
 		fVslider5 = FAUSTFLOAT(0.5f);
 		fVslider6 = FAUSTFLOAT(0.0f);
@@ -804,22 +804,22 @@ class mydsp : public dsp {
 		ui_interface->openHorizontalBox("Echo");
 		ui_interface->declare(0, "0", "");
 		ui_interface->openVerticalBox("Knobs");
-		ui_interface->declare(&fVslider5, "0", "");
-		ui_interface->declare(&fVslider5, "midi", "ctrl 4");
-		ui_interface->declare(&fVslider5, "style", "knob");
-		ui_interface->addVerticalSlider("Delay", &fVslider5, 0.5f, 0.00100000005f, 0.742038548f, 0.00100000005f);
+		ui_interface->declare(&fVslider4, "0", "");
+		ui_interface->declare(&fVslider4, "midi", "ctrl 4");
+		ui_interface->declare(&fVslider4, "style", "knob");
+		ui_interface->addVerticalSlider("Delay", &fVslider4, 0.5f, 0.00100000005f, 0.742038548f, 0.00100000005f);
 		ui_interface->declare(&fVslider6, "0", "");
 		ui_interface->declare(&fVslider6, "midi", "ctrl 62");
 		ui_interface->declare(&fVslider6, "style", "knob");
 		ui_interface->addVerticalSlider("Warp", &fVslider6, 0.0f, -1.0f, 1.0f, 0.00100000005f);
-		ui_interface->declare(&fVslider4, "1", "");
-		ui_interface->declare(&fVslider4, "midi", "ctrl 60");
-		ui_interface->declare(&fVslider4, "style", "knob");
-		ui_interface->addVerticalSlider("DelayT60", &fVslider4, 0.5f, 0.0f, 100.0f, 0.00100000005f);
-		ui_interface->declare(&fVslider2, "2", "");
-		ui_interface->declare(&fVslider2, "midi", "ctrl 3");
-		ui_interface->declare(&fVslider2, "style", "knob");
-		ui_interface->addVerticalSlider("Feedback", &fVslider2, 0.300000012f, 0.0f, 1.0f, 9.99999975e-05f);
+		ui_interface->declare(&fVslider5, "1", "");
+		ui_interface->declare(&fVslider5, "midi", "ctrl 60");
+		ui_interface->declare(&fVslider5, "style", "knob");
+		ui_interface->addVerticalSlider("DelayT60", &fVslider5, 0.5f, 0.0f, 100.0f, 0.00100000005f);
+		ui_interface->declare(&fVslider3, "2", "");
+		ui_interface->declare(&fVslider3, "midi", "ctrl 3");
+		ui_interface->declare(&fVslider3, "style", "knob");
+		ui_interface->addVerticalSlider("Feedback", &fVslider3, 0.300000012f, 0.0f, 1.0f, 9.99999975e-05f);
 		ui_interface->declare(&fVslider0, "3", "");
 		ui_interface->declare(&fVslider0, "midi", "ctrl 2");
 		ui_interface->declare(&fVslider0, "style", "knob");
@@ -831,10 +831,10 @@ class mydsp : public dsp {
 		ui_interface->closeBox();
 		ui_interface->declare(0, "1", "");
 		ui_interface->openVerticalBox("Switches");
-		ui_interface->declare(&fVslider3, "7", "");
-		ui_interface->declare(&fVslider3, "midi", "ctrl 102");
-		ui_interface->declare(&fVslider3, "style", "knob");
-		ui_interface->addVerticalSlider("EnableEcho", &fVslider3, 0.0f, 0.0f, 1.0f, 1.0f);
+		ui_interface->declare(&fVslider2, "7", "");
+		ui_interface->declare(&fVslider2, "midi", "ctrl 102");
+		ui_interface->declare(&fVslider2, "style", "knob");
+		ui_interface->addVerticalSlider("EnableEcho", &fVslider2, 0.0f, 0.0f, 1.0f, 1.0f);
 		ui_interface->closeBox();
 		ui_interface->closeBox();
 		ui_interface->closeBox();
@@ -848,29 +848,29 @@ class mydsp : public dsp {
 		float fSlow0 = (fConst2 * float(fVslider0));
 		float fSlow1 = float(fastpow2(float((0.0f - (5.99794197f * float(fVslider1))))));
 		float fSlow2 = (1.0f - fSlow1);
-		float fSlow3 = float(fVslider2);
-		int iSlow4 = int((1.0f - float(fVslider3)));
-		float fSlow5 = float(fVslider4);
-		float fSlow6 = (((0.144717798f * fSlow5) > 0.0f)?expf((0.0f - (fConst3 / fSlow5))):0.0f);
-		float fSlow7 = (fConst0 * float(fVslider5));
-		float fSlow8 = (1.0f - fSlow6);
-		float fSlow9 = (fSlow7 * fSlow8);
+		int iSlow3 = int((1.0f - float(fVslider2)));
+		float fSlow4 = float(fVslider3);
+		float fSlow5 = (fConst0 * float(fVslider4));
+		float fSlow6 = float(fVslider5);
+		float fSlow7 = (((0.144717798f * fSlow6) > 0.0f)?expf((0.0f - (fConst3 / fSlow6))):0.0f);
+		float fSlow8 = (1.0f - fSlow7);
+		float fSlow9 = (fSlow5 * fSlow8);
 		float fSlow10 = (float(fVslider6) * fSlow8);
 		for (int i = 0; (i < count); i = (i + 1)) {
-			fRec0[0] = (fSlow0 + (fConst1 * fRec0[1]));
 			float fTemp0 = float(input0[i]);
-			fRec3[(IOTA & 65535)] = ((fSlow2 * fRec3[((IOTA - 1) & 65535)]) + (fSlow1 * ((fSlow3 * fRec1[1]) + (iSlow4?0.0f:fTemp0))));
-			fRec4[0] = ((fSlow6 * fRec4[1]) + fSlow9);
+			fRec0[0] = (fSlow0 + (fConst1 * fRec0[1]));
+			fRec3[(IOTA & 65535)] = ((fSlow2 * fRec3[((IOTA - 1) & 65535)]) + (fSlow1 * ((iSlow3?0.0f:fTemp0) + (fSlow4 * fRec1[1]))));
+			fRec4[0] = (fSlow9 + (fSlow7 * fRec4[1]));
 			int iTemp1 = int(fRec4[0]);
 			float fTemp2 = floorf(fRec4[0]);
 			fRec1[0] = ((fRec3[((IOTA - min(32769, max(0, iTemp1))) & 65535)] * (fTemp2 + (1.0f - fRec4[0]))) + ((fRec4[0] - fTemp2) * fRec3[((IOTA - min(32769, max(0, (iTemp1 + 1)))) & 65535)]));
-			fRec6[0] = ((fSlow6 * fRec6[1]) + fSlow10);
-			fRec7[0] = (fSlow6 * fRec7[1]);
-			fRec5[0] = ((fSlow6 * fRec5[1]) + (fSlow7 * (((fRec6[0] + mydsp_faustpower2_f(fRec7[0])) + 1.0f) * fSlow8)));
+			fRec6[0] = (fSlow10 + (fSlow7 * fRec6[1]));
+			fRec7[0] = (fSlow7 * fRec7[1]);
+			fRec5[0] = ((fSlow7 * fRec5[1]) + (fSlow5 * (fSlow8 * ((fRec6[0] + mydsp_faustpower2_f(fRec7[0])) + 1.0f))));
 			int iTemp3 = int(fRec5[0]);
 			float fTemp4 = floorf(fRec5[0]);
 			float fRec2 = ((fRec3[((IOTA - min(32769, max(0, iTemp3))) & 65535)] * (fTemp4 + (1.0f - fRec5[0]))) + ((fRec5[0] - fTemp4) * fRec3[((IOTA - min(32769, max(0, (iTemp3 + 1)))) & 65535)]));
-			output0[i] = FAUSTFLOAT(((fRec0[0] * fRec2) + fTemp0));
+			output0[i] = FAUSTFLOAT((fTemp0 + (fRec0[0] * fRec2)));
 			fRec0[1] = fRec0[0];
 			IOTA = (IOTA + 1);
 			fRec4[1] = fRec4[0];
@@ -5355,7 +5355,9 @@ struct dsp_voice : public MapUI, public decorator_dsp {
     std::string fGatePath;  // Path of 'gate' control
     std::string fGainPath;  // Path of 'gain' control
     std::string fFreqPath;  // Path of 'freq' control
-
+    FAUSTFLOAT** fInputsSlice;
+    FAUSTFLOAT** fOutputsSlice;
+ 
     dsp_voice(dsp* dsp):decorator_dsp(dsp)
     {
         dsp->buildUserInterface(this);
@@ -5364,6 +5366,13 @@ struct dsp_voice : public MapUI, public decorator_dsp {
         fDate = 0;
         fTrigger = false;
         extractPaths(fGatePath, fFreqPath, fGainPath);
+        fInputsSlice = new FAUSTFLOAT*[dsp->getNumInputs()];
+        fOutputsSlice = new FAUSTFLOAT*[dsp->getNumOutputs()];
+    }
+    virtual ~dsp_voice()
+    {
+        delete [] fInputsSlice;
+        delete [] fOutputsSlice;
     }
 
     void extractPaths(std::string& gate, std::string& freq, std::string& gain)
@@ -5436,17 +5445,13 @@ struct dsp_voice : public MapUI, public decorator_dsp {
     void computeSlice(int offset, int slice, FAUSTFLOAT** inputs, FAUSTFLOAT** outputs)
     {
         if (slice > 0) {
-            FAUSTFLOAT** inputs_slice = (FAUSTFLOAT**)malloc(getNumInputs() * sizeof(FAUSTFLOAT*));
             for (int chan = 0; chan < getNumInputs(); chan++) {
-                inputs_slice[chan] = &(inputs[chan][offset]);
+                fInputsSlice[chan] = &(inputs[chan][offset]);
             }
-
-            FAUSTFLOAT** outputs_slice = (FAUSTFLOAT**)malloc(getNumOutputs() * sizeof(FAUSTFLOAT*));
             for (int chan = 0; chan < getNumOutputs(); chan++) {
-                outputs_slice[chan] = &(outputs[chan][offset]);
+                fOutputsSlice[chan] = &(outputs[chan][offset]);
             }
-
-            compute(slice, inputs_slice, outputs_slice);std::free(inputs_slice);std::free(outputs_slice);
+            compute(slice, fInputsSlice, fOutputsSlice);
         }
     }
 
@@ -6101,17 +6106,25 @@ class dsp_parallelizer : public dsp {
         
         dsp* fDSP1;
         dsp* fDSP2;
-         
+    
+        FAUSTFLOAT** fInputsDSP2;
+        FAUSTFLOAT** fOutputsDSP2;
+    
     public:
         
         dsp_parallelizer(dsp* dsp1, dsp* dsp2, int buffer_size = 4096)
             :fDSP1(dsp1), fDSP2(dsp2)
-        {}
+        {
+            fInputsDSP2 = new FAUSTFLOAT*[fDSP2->getNumInputs()];
+            fOutputsDSP2 = new FAUSTFLOAT*[fDSP2->getNumOutputs()];
+        }
         
         virtual ~dsp_parallelizer()
         {
             delete fDSP1;
             delete fDSP2;
+            delete [] fInputsDSP2;
+            delete [] fOutputsDSP2;
         }
                
         virtual int getNumInputs() { return fDSP1->getNumInputs() + fDSP2->getNumInputs(); }
@@ -6180,17 +6193,14 @@ class dsp_parallelizer : public dsp {
             fDSP1->compute(count, inputs, outputs);
             
             // Shift inputs/outputs channels for fDSP2
-            FAUSTFLOAT** inputs_dsp2 = (FAUSTFLOAT**)malloc(fDSP2->getNumInputs() * sizeof(FAUSTFLOAT*));
             for (int chan = 0; chan < fDSP2->getNumInputs(); chan++) {
-                inputs_dsp2[chan] = inputs[fDSP1->getNumInputs() + chan];
+                fInputsDSP2[chan] = inputs[fDSP1->getNumInputs() + chan];
             }
-            
-            FAUSTFLOAT** outputs_dsp2 = (FAUSTFLOAT**)malloc(fDSP2->getNumOutputs() * sizeof(FAUSTFLOAT*));
             for (int chan = 0; chan < fDSP2->getNumOutputs(); chan++) {
-                outputs_dsp2[chan] = outputs[fDSP1->getNumOutputs() + chan];
+                fOutputsDSP2[chan] = outputs[fDSP1->getNumOutputs() + chan];
             }
             
-            fDSP2->compute(count, inputs_dsp2, outputs_dsp2);std::free(inputs_dsp2);std::free(outputs_dsp2);
+            fDSP2->compute(count, fInputsDSP2, fOutputsDSP2);
         }
         virtual void compute(double date_usec, int count, FAUSTFLOAT** inputs, FAUSTFLOAT** outputs) { compute(count, inputs, outputs); }
 };
@@ -6819,27 +6829,8 @@ class samAudio : public audio {
         int iBufferSize;
         int iNumInputs;
         int iNumOutputs;
-      
-        // sam convention for pointers to audio buffers.
-        FAUSTFLOAT *fAudioChannelA_0_Left;
-        FAUSTFLOAT *fAudioChannelA_0_Right;
-        FAUSTFLOAT *fAudioChannelA_1_Left;
-        FAUSTFLOAT *fAudioChannelA_1_Right;
-        FAUSTFLOAT *fAudioChannelA_2_Left;
-        FAUSTFLOAT *fAudioChannelA_2_Right;
-        FAUSTFLOAT *fAudioChannelA_3_Left;
-        FAUSTFLOAT *fAudioChannelA_3_Right;
     
-        FAUSTFLOAT *fAudioChannelB_0_Left;
-        FAUSTFLOAT *fAudioChannelB_0_Right;
-        FAUSTFLOAT *fAudioChannelB_1_Left;
-        FAUSTFLOAT *fAudioChannelB_1_Right;
-        FAUSTFLOAT *fAudioChannelB_2_Left;
-        FAUSTFLOAT *fAudioChannelB_2_Right;
-        FAUSTFLOAT *fAudioChannelB_3_Left;
-        FAUSTFLOAT *fAudioChannelB_3_Right;
-    
-        // faust convention for input array
+        // Faust convention for input/output arrays
         FAUSTFLOAT *inputsArray[8];
         FAUSTFLOAT *outputsArray[8];
 
@@ -6854,7 +6845,6 @@ class samAudio : public audio {
         {
             // nothing for now
         }
-    
     
         virtual void setDSP_Parameters(int sampleRate, int bufferSize, int numInputs, int numOutputs)
         {
@@ -6882,42 +6872,24 @@ class samAudio : public audio {
                                        FAUSTFLOAT *AudioChannelB_3_Left,
                                        FAUSTFLOAT *AudioChannelB_3_Right)
         {
-            
-            fAudioChannelA_0_Left  = AudioChannelA_0_Left;
-            fAudioChannelA_0_Right = AudioChannelA_0_Right;
-            fAudioChannelA_1_Left  = AudioChannelA_1_Left;
-            fAudioChannelA_1_Right = AudioChannelA_1_Right;
-            fAudioChannelA_2_Left  = AudioChannelA_2_Left;
-            fAudioChannelA_2_Right = AudioChannelA_2_Right;
-            fAudioChannelA_3_Left  = AudioChannelA_3_Left;
-            fAudioChannelA_3_Right = AudioChannelA_3_Right;
-            fAudioChannelB_0_Left  = AudioChannelB_0_Left;
-            fAudioChannelB_0_Right = AudioChannelB_0_Right;
-            fAudioChannelB_1_Left  = AudioChannelB_1_Left;
-            fAudioChannelB_1_Right = AudioChannelB_1_Right;
-            fAudioChannelB_2_Left  = AudioChannelB_2_Left;
-            fAudioChannelB_2_Right = AudioChannelB_2_Right;
-            fAudioChannelB_3_Left  = AudioChannelB_3_Left;
-            fAudioChannelB_3_Right = AudioChannelB_3_Right;
-            
             // set the pointers, generalized for the sam's 8 channels.
-            inputsArray [0] = fAudioChannelB_0_Left;
-            inputsArray [1] = fAudioChannelB_0_Right;
-            inputsArray [2] = fAudioChannelB_1_Left;
-            inputsArray [3] = fAudioChannelB_1_Right;
-            inputsArray [4] = fAudioChannelB_2_Left;
-            inputsArray [5] = fAudioChannelB_2_Right;
-            inputsArray [6] = fAudioChannelB_3_Left;
-            inputsArray [7] = fAudioChannelB_3_Right;
+            inputsArray[0] = AudioChannelB_0_Left;
+            inputsArray[1] = AudioChannelB_0_Right;
+            inputsArray[2] = AudioChannelB_1_Left;
+            inputsArray[3] = AudioChannelB_1_Right;
+            inputsArray[4] = AudioChannelB_2_Left;
+            inputsArray[5] = AudioChannelB_2_Right;
+            inputsArray[6] = AudioChannelB_3_Left;
+            inputsArray[7] = AudioChannelB_3_Right;
             
-            outputsArray[0] = fAudioChannelA_0_Left;
-            outputsArray[1] = fAudioChannelA_0_Right;
-            outputsArray[2] = fAudioChannelA_1_Left;
-            outputsArray[3] = fAudioChannelA_1_Right;
-            outputsArray[4] = fAudioChannelA_2_Left;
-            outputsArray[5] = fAudioChannelA_2_Right;
-            outputsArray[6] = fAudioChannelA_3_Left;
-            outputsArray[7] = fAudioChannelA_3_Right;
+            outputsArray[0] = AudioChannelA_0_Left;
+            outputsArray[1] = AudioChannelA_0_Right;
+            outputsArray[2] = AudioChannelA_1_Left;
+            outputsArray[3] = AudioChannelA_1_Right;
+            outputsArray[4] = AudioChannelA_2_Left;
+            outputsArray[5] = AudioChannelA_2_Right;
+            outputsArray[6] = AudioChannelA_3_Left;
+            outputsArray[7] = AudioChannelA_3_Right;
         }
     
         virtual bool init(const char* name, dsp* dsp)
@@ -6929,21 +6901,20 @@ class samAudio : public audio {
 
         virtual bool start()
         {
-            // Nothing for now   Will want to find the sam way to start.
+            // Nothing for now. Will want to find the sam way to start.
             return true;
         }
 
         virtual void stop()
         {
-            // nothing for now.   Will want to find the sam way to stop.
+            // nothing for now. Will want to find the sam way to stop.
         }
-
-         
-         void 	processAudioCallback( )
-         {
+    
+        void processAudioCallback()
+        {
             // faust compute function
-           fDSP->compute(iBufferSize, inputsArray, outputsArray);
-         }
+            fDSP->compute(iBufferSize, inputsArray, outputsArray);
+        }
          
         virtual int getBufferSize() { return iBufferSize; }
         virtual int getSampleRate() { return iSampleRate; }
@@ -6965,16 +6936,16 @@ ztimedmap GUI::gTimedZoneMap;
 // constructor
 samFaustDSP::samFaustDSP(int sampleRate, int bufferSize, int numInputs, int numOutputs)
 {
-    // create a new instace of the dsp object
-    aMyDSP = new mydsp;
-    aMyDSP->init(sampleRate);
+    // create a new instance of the dsp object
+    fDSP = new mydsp;
+    fDSP->init(sampleRate);
     
     // create a new instance of the audio driver.
-    samAudioDriver = new samAudio;
-    samAudioDriver->setDSP_Parameters(sampleRate, bufferSize, numInputs, numOutputs);
+    fAudioDriver = new samAudio;
+    fAudioDriver->setDSP_Parameters(sampleRate, bufferSize, numInputs, numOutputs);
     
     // create a new instance of the FaustPolyEngine
-    fPolyEngine = new FaustPolyEngine(aMyDSP, samAudioDriver);
+    fPolyEngine = new FaustPolyEngine(fDSP, fAudioDriver);
     // the constructor calls init
     
 #if MIDICTRL
@@ -6984,7 +6955,6 @@ samFaustDSP::samFaustDSP(int sampleRate, int bufferSize, int numInputs, int numO
 #endif
 }
 
-
 // destructor
 samFaustDSP::~samFaustDSP()
 {
@@ -6992,10 +6962,7 @@ samFaustDSP::~samFaustDSP()
     // might need this
     //delete fMidiUI;
 #endif
-    delete aMyDSP;
-    delete samAudioDriver;
     delete fPolyEngine;
-
 }
 
 // setup the sampleRate and bufferSize
@@ -7016,31 +6983,29 @@ void samFaustDSP::setDSP_ChannelBuffers(FAUSTFLOAT *AudioChannelA_0_Left,
                        FAUSTFLOAT *AudioChannelB_2_Right,
                        FAUSTFLOAT *AudioChannelB_3_Left,
                        FAUSTFLOAT *AudioChannelB_3_Right)
-
 {
-    ((samAudio *)samAudioDriver)->setDSP_ChannelBuffers(AudioChannelA_0_Left,
-                                                    AudioChannelA_0_Right,
-                                                    AudioChannelA_1_Left,
-                                                    AudioChannelA_1_Right,
-                                                    AudioChannelA_2_Left,
-                                                    AudioChannelA_2_Right,
-                                                    AudioChannelA_3_Left,
-                                                    AudioChannelA_3_Right,
-                                                    AudioChannelB_0_Left,
-                                                    AudioChannelB_0_Right,
-                                                    AudioChannelB_1_Left,
-                                                    AudioChannelB_1_Right,
-                                                    AudioChannelB_2_Left,
-                                                    AudioChannelB_2_Right,
-                                                    AudioChannelB_3_Left,
-                                                    AudioChannelB_3_Right);
-
+    fAudioDriver->setDSP_ChannelBuffers(AudioChannelA_0_Left,
+                                        AudioChannelA_0_Right,
+                                        AudioChannelA_1_Left,
+                                        AudioChannelA_1_Right,
+                                        AudioChannelA_2_Left,
+                                        AudioChannelA_2_Right,
+                                        AudioChannelA_3_Left,
+                                        AudioChannelA_3_Right,
+                                        AudioChannelB_0_Left,
+                                        AudioChannelB_0_Right,
+                                        AudioChannelB_1_Left,
+                                        AudioChannelB_1_Right,
+                                        AudioChannelB_2_Left,
+                                        AudioChannelB_2_Right,
+                                        AudioChannelB_3_Left,
+                                        AudioChannelB_3_Right);
 }
 
 void samFaustDSP::processAudioCallback()
 {
     // ask the driver to process the audio callback
-    samAudioDriver->processAudioCallback();
+    fAudioDriver->processAudioCallback();
 }
 
 void samFaustDSP::propagateMidi(int count, double time, int type, int channel, int data1, int data2)
