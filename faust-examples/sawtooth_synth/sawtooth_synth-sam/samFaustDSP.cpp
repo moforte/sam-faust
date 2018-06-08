@@ -635,10 +635,10 @@ class mydsp : public dsp {
 	
  private:
 	
-	FAUSTFLOAT fButton0;
-	float fVec0[2];
 	FAUSTFLOAT fHslider0;
 	FAUSTFLOAT fEntry0;
+	FAUSTFLOAT fButton0;
+	float fVec0[2];
 	float fRec0[2];
 	int fSamplingFreq;
 	float fConst0;
@@ -717,9 +717,9 @@ class mydsp : public dsp {
 	}
 	
 	virtual void instanceResetUserInterface() {
-		fButton0 = FAUSTFLOAT(0.0f);
 		fHslider0 = FAUSTFLOAT(60.0f);
 		fEntry0 = FAUSTFLOAT(1.0f);
+		fButton0 = FAUSTFLOAT(0.0f);
 		fEntry1 = FAUSTFLOAT(200.0f);
 		fEntry2 = FAUSTFLOAT(1.0f);
 		
@@ -779,15 +779,15 @@ class mydsp : public dsp {
 		FAUSTFLOAT* output0 = outputs[0];
 		FAUSTFLOAT* output1 = outputs[1];
 		float fSlow0 = float(fButton0);
-		float fSlow1 = (7.87401586e-06f * ((fSlow0 * float(fHslider0)) * float(fEntry0)));
+		float fSlow1 = (7.87401586e-06f * ((float(fHslider0) * float(fEntry0)) * fSlow0));
 		float fSlow2 = float(fEntry1);
-		float fSlow3 = float(fEntry2);
-		int iSlow4 = (fSlow0 == 0.0f);
+		int iSlow3 = (fSlow0 == 0.0f);
+		float fSlow4 = float(fEntry2);
 		for (int i = 0; (i < count); i = (i + 1)) {
 			fVec0[0] = fSlow0;
 			fRec0[0] = (fSlow1 + (0.999000013f * fRec0[1]));
-			int iTemp0 = ((fSlow0 == fVec0[1]) | iSlow4);
-			fRec3[0] = ((fSlow3 * (1.0f - (0.999000013f * float(iTemp0)))) + (0.999000013f * (float(iTemp0) * fRec3[1])));
+			int iTemp0 = ((fSlow0 == fVec0[1]) | iSlow3);
+			fRec3[0] = ((0.999000013f * (fRec3[1] * float(iTemp0))) + (fSlow4 * (1.0f - (0.999000013f * float(iTemp0)))));
 			float fTemp1 = max(1.00000001e-07f, fabsf((fSlow2 * fRec3[0])));
 			float fTemp2 = (fRec1[1] + (fConst1 * fTemp1));
 			float fTemp3 = (fTemp2 + -1.0f);

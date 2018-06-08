@@ -754,8 +754,8 @@ class mydsp : public dsp {
 		float fSlow0 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider0))));
 		for (int i = 0; (i < count); i = (i + 1)) {
 			fRec0[0] = (fSlow0 + (0.999000013f * fRec0[1]));
-			output0[i] = FAUSTFLOAT((float(input0[i]) * fRec0[0]));
-			output1[i] = FAUSTFLOAT((float(input1[i]) * fRec0[0]));
+			output0[i] = FAUSTFLOAT((fRec0[0] * float(input0[i])));
+			output1[i] = FAUSTFLOAT((fRec0[0] * float(input1[i])));
 			fRec0[1] = fRec0[0];
 			
 		}
