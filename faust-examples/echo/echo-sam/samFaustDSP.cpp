@@ -4,7 +4,7 @@
 #define MIDICTRL 1
 /* ------------------------------------------------------------
 name: "echo"
-Code generated with Faust 2.6.00 (https://faust.grame.fr)
+Code generated with Faust 2.6.1 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -67,6 +67,7 @@ Compilation options: cpp, -scal -ftz 0
 #include <map>
 #include <string.h>
 #include <stdlib.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File
@@ -122,7 +123,7 @@ inline int int2pow2(int x)		{ int r = 0; while ((1<<r) < x) r++; return r; }
 inline long lopt(char* argv[], const char* name, long def)
 {
 	int	i;
-	for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
+    for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
 	return def;
 }
 
@@ -620,6 +621,7 @@ class dsp_sample_adapter : public decorator_dsp {
 
 /* link with : "" */
 #include "fast_pow2.h"
+#include <algorithm>
 #include <cmath>
 #include <math.h>
 
@@ -652,8 +654,8 @@ class mydsp : public dsp {
 	int IOTA;
 	float fRec3[65536];
 	FAUSTFLOAT fVslider4;
-	float fConst3;
 	FAUSTFLOAT fVslider5;
+	float fConst3;
 	float fRec4[2];
 	float fRec1[2];
 	FAUSTFLOAT fVslider6;
@@ -727,8 +729,8 @@ class mydsp : public dsp {
 	
 	virtual void instanceConstants(int samplingFreq) {
 		fSamplingFreq = samplingFreq;
-		fConst0 = min(192000.0f, max(1.0f, float(fSamplingFreq)));
-		fConst1 = expf((0.0f - (44.1223412f / fConst0)));
+		fConst0 = std::min(192000.0f, std::max(1.0f, float(fSamplingFreq)));
+		fConst1 = std::exp((0.0f - (44.1223412f / fConst0)));
 		fConst2 = (1.0f - fConst1);
 		fConst3 = (6.90999985f / fConst0);
 		
@@ -737,8 +739,8 @@ class mydsp : public dsp {
 	virtual void instanceResetUserInterface() {
 		fVslider0 = FAUSTFLOAT(0.5f);
 		fVslider1 = FAUSTFLOAT(0.0f);
-		fVslider2 = FAUSTFLOAT(0.29999999999999999f);
-		fVslider3 = FAUSTFLOAT(0.0f);
+		fVslider2 = FAUSTFLOAT(0.0f);
+		fVslider3 = FAUSTFLOAT(0.29999999999999999f);
 		fVslider4 = FAUSTFLOAT(0.5f);
 		fVslider5 = FAUSTFLOAT(0.5f);
 		fVslider6 = FAUSTFLOAT(0.0f);
@@ -804,22 +806,22 @@ class mydsp : public dsp {
 		ui_interface->openHorizontalBox("Echo");
 		ui_interface->declare(0, "0", "");
 		ui_interface->openVerticalBox("Knobs");
-		ui_interface->declare(&fVslider5, "0", "");
-		ui_interface->declare(&fVslider5, "midi", "ctrl 4");
-		ui_interface->declare(&fVslider5, "style", "knob");
-		ui_interface->addVerticalSlider("Delay", &fVslider5, 0.5f, 0.00100000005f, 0.742038548f, 0.00100000005f);
+		ui_interface->declare(&fVslider4, "0", "");
+		ui_interface->declare(&fVslider4, "midi", "ctrl 4");
+		ui_interface->declare(&fVslider4, "style", "knob");
+		ui_interface->addVerticalSlider("Delay", &fVslider4, 0.5f, 0.00100000005f, 0.742038548f, 0.00100000005f);
 		ui_interface->declare(&fVslider6, "0", "");
 		ui_interface->declare(&fVslider6, "midi", "ctrl 62");
 		ui_interface->declare(&fVslider6, "style", "knob");
 		ui_interface->addVerticalSlider("Warp", &fVslider6, 0.0f, -1.0f, 1.0f, 0.00100000005f);
-		ui_interface->declare(&fVslider4, "1", "");
-		ui_interface->declare(&fVslider4, "midi", "ctrl 60");
-		ui_interface->declare(&fVslider4, "style", "knob");
-		ui_interface->addVerticalSlider("DelayT60", &fVslider4, 0.5f, 0.0f, 100.0f, 0.00100000005f);
-		ui_interface->declare(&fVslider2, "2", "");
-		ui_interface->declare(&fVslider2, "midi", "ctrl 3");
-		ui_interface->declare(&fVslider2, "style", "knob");
-		ui_interface->addVerticalSlider("Feedback", &fVslider2, 0.300000012f, 0.0f, 1.0f, 9.99999975e-05f);
+		ui_interface->declare(&fVslider5, "1", "");
+		ui_interface->declare(&fVslider5, "midi", "ctrl 60");
+		ui_interface->declare(&fVslider5, "style", "knob");
+		ui_interface->addVerticalSlider("DelayT60", &fVslider5, 0.5f, 0.0f, 100.0f, 0.00100000005f);
+		ui_interface->declare(&fVslider3, "2", "");
+		ui_interface->declare(&fVslider3, "midi", "ctrl 3");
+		ui_interface->declare(&fVslider3, "style", "knob");
+		ui_interface->addVerticalSlider("Feedback", &fVslider3, 0.300000012f, 0.0f, 1.0f, 9.99999975e-05f);
 		ui_interface->declare(&fVslider0, "3", "");
 		ui_interface->declare(&fVslider0, "midi", "ctrl 2");
 		ui_interface->declare(&fVslider0, "style", "knob");
@@ -831,10 +833,10 @@ class mydsp : public dsp {
 		ui_interface->closeBox();
 		ui_interface->declare(0, "1", "");
 		ui_interface->openVerticalBox("Switches");
-		ui_interface->declare(&fVslider3, "7", "");
-		ui_interface->declare(&fVslider3, "midi", "ctrl 102");
-		ui_interface->declare(&fVslider3, "style", "knob");
-		ui_interface->addVerticalSlider("EnableEcho", &fVslider3, 0.0f, 0.0f, 1.0f, 1.0f);
+		ui_interface->declare(&fVslider2, "7", "");
+		ui_interface->declare(&fVslider2, "midi", "ctrl 102");
+		ui_interface->declare(&fVslider2, "style", "knob");
+		ui_interface->addVerticalSlider("EnableEcho", &fVslider2, 0.0f, 0.0f, 1.0f, 1.0f);
 		ui_interface->closeBox();
 		ui_interface->closeBox();
 		ui_interface->closeBox();
@@ -848,28 +850,28 @@ class mydsp : public dsp {
 		float fSlow0 = (fConst2 * float(fVslider0));
 		float fSlow1 = float(fastpow2(float((0.0f - (5.99794197f * float(fVslider1))))));
 		float fSlow2 = (1.0f - fSlow1);
-		float fSlow3 = float(fVslider2);
-		int iSlow4 = int((1.0f - float(fVslider3)));
-		float fSlow5 = float(fVslider4);
-		float fSlow6 = (((0.144717798f * fSlow5) > 0.0f)?expf((0.0f - (fConst3 / fSlow5))):0.0f);
-		float fSlow7 = (fConst0 * float(fVslider5));
-		float fSlow8 = (1.0f - fSlow6);
-		float fSlow9 = (fSlow7 * fSlow8);
+		int iSlow3 = int((1.0f - float(fVslider2)));
+		float fSlow4 = float(fVslider3);
+		float fSlow5 = (fConst0 * float(fVslider4));
+		float fSlow6 = float(fVslider5);
+		float fSlow7 = (((0.144717798f * fSlow6) > 0.0f)?std::exp((0.0f - (fConst3 / fSlow6))):0.0f);
+		float fSlow8 = (1.0f - fSlow7);
+		float fSlow9 = (fSlow5 * fSlow8);
 		float fSlow10 = (float(fVslider6) * fSlow8);
 		for (int i = 0; (i < count); i = (i + 1)) {
 			float fTemp0 = float(input0[i]);
 			fRec0[0] = (fSlow0 + (fConst1 * fRec0[1]));
-			fRec3[(IOTA & 65535)] = ((fSlow2 * fRec3[((IOTA - 1) & 65535)]) + (fSlow1 * ((fSlow3 * fRec1[1]) + (iSlow4?0.0f:fTemp0))));
-			fRec4[0] = ((fRec4[1] * fSlow6) + fSlow9);
+			fRec3[(IOTA & 65535)] = ((fSlow2 * fRec3[((IOTA - 1) & 65535)]) + (fSlow1 * ((iSlow3?0.0f:fTemp0) + (fSlow4 * fRec1[1]))));
+			fRec4[0] = (fSlow9 + (fSlow7 * fRec4[1]));
 			int iTemp1 = int(fRec4[0]);
-			float fTemp2 = floorf(fRec4[0]);
-			fRec1[0] = ((fRec3[((IOTA - min(32769, max(0, iTemp1))) & 65535)] * (fTemp2 + (1.0f - fRec4[0]))) + ((fRec4[0] - fTemp2) * fRec3[((IOTA - min(32769, max(0, (iTemp1 + 1)))) & 65535)]));
-			fRec6[0] = ((fRec6[1] * fSlow6) + fSlow10);
-			fRec7[0] = (fRec7[1] * fSlow6);
-			fRec5[0] = ((fRec5[1] * fSlow6) + (fSlow7 * (((fRec6[0] + mydsp_faustpower2_f(fRec7[0])) + 1.0f) * fSlow8)));
+			float fTemp2 = std::floor(fRec4[0]);
+			fRec1[0] = ((fRec3[((IOTA - std::min(32769, std::max(0, iTemp1))) & 65535)] * (fTemp2 + (1.0f - fRec4[0]))) + ((fRec4[0] - fTemp2) * fRec3[((IOTA - std::min(32769, std::max(0, (iTemp1 + 1)))) & 65535)]));
+			fRec6[0] = (fSlow10 + (fSlow7 * fRec6[1]));
+			fRec7[0] = (fSlow7 * fRec7[1]);
+			fRec5[0] = ((fSlow7 * fRec5[1]) + (fSlow5 * (fSlow8 * ((fRec6[0] + mydsp_faustpower2_f(fRec7[0])) + 1.0f))));
 			int iTemp3 = int(fRec5[0]);
-			float fTemp4 = floorf(fRec5[0]);
-			float fRec2 = ((fRec3[((IOTA - min(32769, max(0, iTemp3))) & 65535)] * (fTemp4 + (1.0f - fRec5[0]))) + ((fRec5[0] - fTemp4) * fRec3[((IOTA - min(32769, max(0, (iTemp3 + 1)))) & 65535)]));
+			float fTemp4 = std::floor(fRec5[0]);
+			float fRec2 = ((fRec3[((IOTA - std::min(32769, std::max(0, iTemp3))) & 65535)] * (fTemp4 + (1.0f - fRec5[0]))) + ((fRec5[0] - fTemp4) * fRec3[((IOTA - std::min(32769, std::max(0, (iTemp3 + 1)))) & 65535)]));
 			output0[i] = FAUSTFLOAT((fTemp0 + (fRec0[0] * fRec2)));
 			fRec0[1] = fRec0[0];
 			IOTA = (IOTA + 1);
@@ -1711,11 +1713,11 @@ class LogValueConverter : public LinearValueConverter
     public:
 
         LogValueConverter(double umin, double umax, double fmin, double fmax) :
-            LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), log(std::max<double>(DBL_MIN, fmax)))
+        LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), std::log(std::max<double>(DBL_MIN, fmax)))
         {}
 
-        virtual double ui2faust(double x) 	{ return exp(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(log(std::max<double>(x, DBL_MIN))); }
+        virtual double ui2faust(double x) 	{ return std::exp(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(std::log(std::max<double>(x, DBL_MIN))); }
 
 };
 
@@ -1731,8 +1733,8 @@ class ExpValueConverter : public LinearValueConverter
             LinearValueConverter(umin, umax, exp(fmin), exp(fmax))
         {}
 
-        virtual double ui2faust(double x) { return log(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(exp(x)); }
+        virtual double ui2faust(double x) { return std::log(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(std::exp(x)); }
 
 };
 
@@ -2567,6 +2569,8 @@ class APIUI : public PathBuilder, public Meta, public UI
 #include <string>
 #include <utility>
 #include <iostream>
+#include <cstdlib>
+#include <cmath>
 
 /************************************************************************
  FAUST Architecture File
@@ -3817,7 +3821,7 @@ class uiMidiPitchWheel : public uiMidiItem
 
         int bend2wheel(float v)
         {
-            return (int)((12*log(v)/log(2.0)+2)/4*16383);
+            return (int)((12*std::log(v)/std::log(2.0)+2)/4*16383);
         }
  
     public:
@@ -4200,13 +4204,13 @@ class MidiUI : public GUI, public midi
 
 #include <stdio.h>
 #include <string>
-#include <math.h>
-#include <float.h>
+#include <cmath>
 #include <algorithm>
 #include <ostream>
 #include <sstream>
 #include <vector>
 #include <limits.h>
+#include <float.h>
 
 /************************************************************************
  FAUST Architecture File
@@ -4428,6 +4432,7 @@ class MapUI : public UI, public PathBuilder
 #include <map>
 #include <utility>
 #include <assert.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File

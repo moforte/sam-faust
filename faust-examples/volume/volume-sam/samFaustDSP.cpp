@@ -4,7 +4,7 @@
 #define MIDICTRL 1
 /* ------------------------------------------------------------
 name: "volume"
-Code generated with Faust 2.6.00 (https://faust.grame.fr)
+Code generated with Faust 2.6.1 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -67,6 +67,7 @@ Compilation options: cpp, -scal -ftz 0
 #include <map>
 #include <string.h>
 #include <stdlib.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File
@@ -122,7 +123,7 @@ inline int int2pow2(int x)		{ int r = 0; while ((1<<r) < x) r++; return r; }
 inline long lopt(char* argv[], const char* name, long def)
 {
 	int	i;
-	for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
+    for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
 	return def;
 }
 
@@ -618,6 +619,7 @@ class dsp_sample_adapter : public decorator_dsp {
 #define FAUSTFLOAT float
 #endif 
 
+#include <algorithm>
 #include <cmath>
 
 
@@ -751,11 +753,11 @@ class mydsp : public dsp {
 		FAUSTFLOAT* input1 = inputs[1];
 		FAUSTFLOAT* output0 = outputs[0];
 		FAUSTFLOAT* output1 = outputs[1];
-		float fSlow0 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider0))));
+		float fSlow0 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider0))));
 		for (int i = 0; (i < count); i = (i + 1)) {
 			fRec0[0] = (fSlow0 + (0.999000013f * fRec0[1]));
-			output0[i] = FAUSTFLOAT((fRec0[0] * float(input0[i])));
-			output1[i] = FAUSTFLOAT((fRec0[0] * float(input1[i])));
+			output0[i] = FAUSTFLOAT((float(input0[i]) * fRec0[0]));
+			output1[i] = FAUSTFLOAT((float(input1[i]) * fRec0[0]));
 			fRec0[1] = fRec0[0];
 			
 		}
@@ -1590,11 +1592,11 @@ class LogValueConverter : public LinearValueConverter
     public:
 
         LogValueConverter(double umin, double umax, double fmin, double fmax) :
-            LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), log(std::max<double>(DBL_MIN, fmax)))
+        LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), std::log(std::max<double>(DBL_MIN, fmax)))
         {}
 
-        virtual double ui2faust(double x) 	{ return exp(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(log(std::max<double>(x, DBL_MIN))); }
+        virtual double ui2faust(double x) 	{ return std::exp(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(std::log(std::max<double>(x, DBL_MIN))); }
 
 };
 
@@ -1610,8 +1612,8 @@ class ExpValueConverter : public LinearValueConverter
             LinearValueConverter(umin, umax, exp(fmin), exp(fmax))
         {}
 
-        virtual double ui2faust(double x) { return log(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(exp(x)); }
+        virtual double ui2faust(double x) { return std::log(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(std::exp(x)); }
 
 };
 
@@ -2446,6 +2448,8 @@ class APIUI : public PathBuilder, public Meta, public UI
 #include <string>
 #include <utility>
 #include <iostream>
+#include <cstdlib>
+#include <cmath>
 
 /************************************************************************
  FAUST Architecture File
@@ -3696,7 +3700,7 @@ class uiMidiPitchWheel : public uiMidiItem
 
         int bend2wheel(float v)
         {
-            return (int)((12*log(v)/log(2.0)+2)/4*16383);
+            return (int)((12*std::log(v)/std::log(2.0)+2)/4*16383);
         }
  
     public:
@@ -4079,13 +4083,13 @@ class MidiUI : public GUI, public midi
 
 #include <stdio.h>
 #include <string>
-#include <math.h>
-#include <float.h>
+#include <cmath>
 #include <algorithm>
 #include <ostream>
 #include <sstream>
 #include <vector>
 #include <limits.h>
+#include <float.h>
 
 /************************************************************************
  FAUST Architecture File
@@ -4307,6 +4311,7 @@ class MapUI : public UI, public PathBuilder
 #include <map>
 #include <utility>
 #include <assert.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File

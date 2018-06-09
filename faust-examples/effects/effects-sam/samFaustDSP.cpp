@@ -4,7 +4,7 @@
 #define MIDICTRL 1
 /* ------------------------------------------------------------
 name: "effects"
-Code generated with Faust 2.6.00 (https://faust.grame.fr)
+Code generated with Faust 2.6.1 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -67,6 +67,7 @@ Compilation options: cpp, -scal -ftz 0
 #include <map>
 #include <string.h>
 #include <stdlib.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File
@@ -122,7 +123,7 @@ inline int int2pow2(int x)		{ int r = 0; while ((1<<r) < x) r++; return r; }
 inline long lopt(char* argv[], const char* name, long def)
 {
 	int	i;
-	for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
+    for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
 	return def;
 }
 
@@ -620,6 +621,7 @@ class dsp_sample_adapter : public decorator_dsp {
 
 /* link with : "" */
 #include "fast_pow2.h"
+#include <algorithm>
 #include <cmath>
 #include <math.h>
 
@@ -680,7 +682,7 @@ class mydspSIG0 {
 	void fillmydspSIG0(int count, float* output) {
 		for (int i = 0; (i < count); i = (i + 1)) {
 			iRec28[0] = (iRec28[1] + 1);
-			output[i] = cosf((9.58738019e-05f * float((iRec28[0] + -1))));
+			output[i] = std::cos((9.58738019e-05f * float((iRec28[0] + -1))));
 			iRec28[1] = iRec28[0];
 			
 		}
@@ -748,7 +750,7 @@ class mydspSIG1 {
 	void fillmydspSIG1(int count, float* output) {
 		for (int i = 0; (i < count); i = (i + 1)) {
 			iRec31[0] = (iRec31[1] + 1);
-			output[i] = sinf((9.58738019e-05f * float((iRec31[0] + -1))));
+			output[i] = std::sin((9.58738019e-05f * float((iRec31[0] + -1))));
 			iRec31[1] = iRec31[0];
 			
 		}
@@ -990,8 +992,8 @@ class mydsp : public dsp {
 	
 	virtual void instanceConstants(int samplingFreq) {
 		fSamplingFreq = samplingFreq;
-		fConst0 = min(192000.0f, max(1.0f, float(fSamplingFreq)));
-		fConst1 = expf((0.0f - (44.1223412f / fConst0)));
+		fConst0 = std::min(192000.0f, std::max(1.0f, float(fSamplingFreq)));
+		fConst1 = std::exp((0.0f - (44.1223412f / fConst0)));
 		fConst2 = (1.0f - fConst1);
 		fConst3 = (1.0f / fConst0);
 		fConst4 = (6.28318548f / fConst0);
@@ -1456,7 +1458,7 @@ class mydsp : public dsp {
 		float fSlow16 = float(fVslider13);
 		float fSlow17 = (fConst0 * float(fVslider14));
 		float fSlow18 = float(fVslider15);
-		float fSlow19 = (((0.144717798f * fSlow18) > 0.0f)?expf((0.0f - (fConst5 / fSlow18))):0.0f);
+		float fSlow19 = (((0.144717798f * fSlow18) > 0.0f)?std::exp((0.0f - (fConst5 / fSlow18))):0.0f);
 		float fSlow20 = (1.0f - fSlow19);
 		float fSlow21 = (fSlow17 * fSlow20);
 		float fSlow22 = (float(fVslider16) * fSlow20);
@@ -1474,27 +1476,27 @@ class mydsp : public dsp {
 			fRec12[0] = (fSlow8 + (fConst1 * fRec12[1]));
 			fRec14[0] = (fSlow10 + (fConst1 * fRec14[1]));
 			float fTemp0 = (fRec13[1] + (fConst3 * fRec14[1]));
-			fRec13[0] = (fTemp0 - floorf(fTemp0));
+			fRec13[0] = (fTemp0 - std::floor(fTemp0));
 			float fTemp1 = (fConst4 * fRec14[0]);
-			float fTemp2 = sinf(fTemp1);
-			float fTemp3 = cosf(fTemp1);
+			float fTemp2 = std::sin(fTemp1);
+			float fTemp3 = std::cos(fTemp1);
 			fRec15[0] = ((fRec16[1] * fTemp2) + (fRec15[1] * fTemp3));
 			fRec16[0] = (((fRec16[1] * fTemp3) + (fRec15[1] * (0.0f - fTemp2))) + float((1 - iVec0[1])));
-			float fTemp4 = ((fSlow9 * (1.0f - fabsf(((2.0f * fRec13[0]) + -1.0f)))) + (fSlow11 * (fRec15[0] + 1.0f)));
+			float fTemp4 = ((fSlow9 * (1.0f - std::fabs(((2.0f * fRec13[0]) + -1.0f)))) + (fSlow11 * (fRec15[0] + 1.0f)));
 			float fTemp5 = float(input1[i]);
 			fRec17[0] = (fSlow12 + (fConst1 * fRec17[1]));
 			float fTemp6 = float(input0[i]);
 			fRec20[(IOTA & 65535)] = ((fSlow14 * fRec20[((IOTA - 1) & 65535)]) + (fSlow13 * ((iSlow15?0.0f:(fTemp6 + fTemp5)) + (fSlow16 * fRec18[1]))));
 			fRec21[0] = (fSlow21 + (fSlow19 * fRec21[1]));
 			int iTemp7 = int(fRec21[0]);
-			float fTemp8 = floorf(fRec21[0]);
-			fRec18[0] = ((fRec20[((IOTA - min(32769, max(0, iTemp7))) & 65535)] * (fTemp8 + (1.0f - fRec21[0]))) + ((fRec21[0] - fTemp8) * fRec20[((IOTA - min(32769, max(0, (iTemp7 + 1)))) & 65535)]));
+			float fTemp8 = std::floor(fRec21[0]);
+			fRec18[0] = ((fRec20[((IOTA - std::min(32769, std::max(0, iTemp7))) & 65535)] * (fTemp8 + (1.0f - fRec21[0]))) + ((fRec21[0] - fTemp8) * fRec20[((IOTA - std::min(32769, std::max(0, (iTemp7 + 1)))) & 65535)]));
 			fRec23[0] = (fSlow22 + (fSlow19 * fRec23[1]));
 			fRec24[0] = (fSlow19 * fRec24[1]);
 			fRec22[0] = ((fSlow19 * fRec22[1]) + (fSlow17 * (fSlow20 * ((fRec23[0] + mydsp_faustpower2_f(fRec24[0])) + 1.0f))));
 			int iTemp9 = int(fRec22[0]);
-			float fTemp10 = floorf(fRec22[0]);
-			float fRec19 = ((fRec20[((IOTA - min(32769, max(0, iTemp9))) & 65535)] * (fTemp10 + (1.0f - fRec22[0]))) + ((fRec22[0] - fTemp10) * fRec20[((IOTA - min(32769, max(0, (iTemp9 + 1)))) & 65535)]));
+			float fTemp10 = std::floor(fRec22[0]);
+			float fRec19 = ((fRec20[((IOTA - std::min(32769, std::max(0, iTemp9))) & 65535)] * (fTemp10 + (1.0f - fRec22[0]))) + ((fRec22[0] - fTemp10) * fRec20[((IOTA - std::min(32769, std::max(0, (iTemp9 + 1)))) & 65535)]));
 			float fTemp11 = (fTemp5 + ((fRec17[0] * fRec19) + fTemp6));
 			float fTemp12 = (iSlow7?0.0f:fTemp11);
 			float fTemp13 = ((fRec12[0] * fRec11[1]) - fTemp12);
@@ -1502,8 +1504,8 @@ class mydsp : public dsp {
 			float fTemp14 = (fSlow23 * fTemp4);
 			float fTemp15 = (fTemp14 + 44.0f);
 			int iTemp16 = int(fTemp15);
-			float fTemp17 = floorf(fTemp15);
-			fRec11[0] = ((fVec1[((IOTA - min(2049, max(0, iTemp16))) & 4095)] * (fTemp17 + (-43.0f - fTemp14))) + ((fTemp14 + (44.0f - fTemp17)) * fVec1[((IOTA - min(2049, max(0, (iTemp16 + 1)))) & 4095)]));
+			float fTemp17 = std::floor(fTemp15);
+			fRec11[0] = ((fVec1[((IOTA - std::min(2049, std::max(0, iTemp16))) & 4095)] * (fTemp17 + (-43.0f - fTemp14))) + ((fTemp14 + (44.0f - fTemp17)) * fVec1[((IOTA - std::min(2049, std::max(0, (iTemp16 + 1)))) & 4095)]));
 			fRec25[0] = (fSlow25 + (fConst1 * fRec25[1]));
 			float fTemp18 = (iSlow7?fTemp11:(((fRec11[0] * (iSlow24?(0.0f - fRec25[0]):fRec25[0])) + fTemp12) / (fRec25[0] + 1.0f)));
 			float fTemp19 = (iSlow5?0.0f:fTemp18);
@@ -1513,39 +1515,39 @@ class mydsp : public dsp {
 			fRec27[0] = ((0.999000013f * fRec27[1]) + (fSlow27 * fRec26[0]));
 			fRec30[0] = (fSlow28 + (fConst1 * fRec30[1]));
 			float fTemp21 = (fRec29[1] + (fConst6 * fRec30[0]));
-			fRec29[0] = (fTemp21 - floorf(fTemp21));
-			float fTemp22 = min(8192.0f, ((0.375f * fRec26[0]) + (fRec27[0] * ftbl0mydspSIG0[int((65536.0f * fRec29[0]))])));
+			fRec29[0] = (fTemp21 - std::floor(fTemp21));
+			float fTemp22 = std::min(8192.0f, ((0.375f * fRec26[0]) + (fRec27[0] * ftbl0mydspSIG0[int((65536.0f * fRec29[0]))])));
 			int iTemp23 = int(fTemp22);
 			float fTemp24 = (fRec32[1] + (fConst7 * fRec30[0]));
-			fRec32[0] = (fTemp24 - floorf(fTemp24));
-			float fTemp25 = min(8192.0f, ((0.125f * fRec26[0]) + (fRec27[0] * ftbl1mydspSIG1[int((65536.0f * fRec32[0]))])));
+			fRec32[0] = (fTemp24 - std::floor(fTemp24));
+			float fTemp25 = std::min(8192.0f, ((0.125f * fRec26[0]) + (fRec27[0] * ftbl1mydspSIG1[int((65536.0f * fRec32[0]))])));
 			int iTemp26 = int(fTemp25);
 			float fTemp27 = ((1.0f - fRec10[0]) * fTemp19);
 			float fTemp28 = (fRec33[1] + (fConst8 * fRec30[0]));
-			fRec33[0] = (fTemp28 - floorf(fTemp28));
-			float fTemp29 = min(8192.0f, ((0.875f * fRec26[0]) + (fRec27[0] * (0.0f - ftbl0mydspSIG0[int((65536.0f * fRec33[0]))]))));
+			fRec33[0] = (fTemp28 - std::floor(fTemp28));
+			float fTemp29 = std::min(8192.0f, ((0.875f * fRec26[0]) + (fRec27[0] * (0.0f - ftbl0mydspSIG0[int((65536.0f * fRec33[0]))]))));
 			int iTemp30 = int(fTemp29);
 			float fTemp31 = (iSlow5?fTemp18:(((0.707106769f * ((fVec2[((IOTA - (iTemp23 & 8191)) & 8191)] * (float(iTemp23) + (1.0f - fTemp22))) + ((fTemp22 - float(iTemp23)) * fVec2[((IOTA - ((iTemp23 + 1) & 8191)) & 8191)]))) + (((fTemp25 - float(iTemp26)) * fVec2[((IOTA - ((iTemp26 + 1) & 8191)) & 8191)]) + (fTemp27 + (fVec2[((IOTA - (iTemp26 & 8191)) & 8191)] * (float(iTemp26) + (1.0f - fTemp25)))))) - (0.707106769f * ((fVec2[((IOTA - (iTemp30 & 8191)) & 8191)] * (float(iTemp30) + (1.0f - fTemp29))) + ((fTemp29 - float(iTemp30)) * fVec2[((IOTA - ((iTemp30 + 1) & 8191)) & 8191)])))));
 			float fTemp32 = (iSlow0?0.0f:fTemp31);
 			float fTemp33 = (fRec34[1] + (fConst9 * fRec30[0]));
-			fRec34[0] = (fTemp33 - floorf(fTemp33));
+			fRec34[0] = (fTemp33 - std::floor(fTemp33));
 			int iTemp34 = int((65536.0f * fRec34[0]));
-			float fTemp35 = min(8192.0f, ((0.25f * fRec26[0]) + (fRec27[0] * ((0.707106769f * ftbl1mydspSIG1[iTemp34]) + (0.707106769f * ftbl0mydspSIG0[iTemp34])))));
+			float fTemp35 = std::min(8192.0f, ((0.25f * fRec26[0]) + (fRec27[0] * ((0.707106769f * ftbl1mydspSIG1[iTemp34]) + (0.707106769f * ftbl0mydspSIG0[iTemp34])))));
 			int iTemp36 = int(fTemp35);
 			float fTemp37 = (fRec35[1] + (fConst10 * fRec30[0]));
-			fRec35[0] = (fTemp37 - floorf(fTemp37));
+			fRec35[0] = (fTemp37 - std::floor(fTemp37));
 			int iTemp38 = int((65536.0f * fRec35[0]));
-			float fTemp39 = min(8192.0f, ((0.5f * fRec26[0]) + (fRec27[0] * ((0.707106769f * ftbl0mydspSIG0[iTemp38]) - (0.707106769f * ftbl1mydspSIG1[iTemp38])))));
+			float fTemp39 = std::min(8192.0f, ((0.5f * fRec26[0]) + (fRec27[0] * ((0.707106769f * ftbl0mydspSIG0[iTemp38]) - (0.707106769f * ftbl1mydspSIG1[iTemp38])))));
 			int iTemp40 = int(fTemp39);
 			float fTemp41 = (fRec36[1] + (fConst11 * fRec30[0]));
-			fRec36[0] = (fTemp41 - floorf(fTemp41));
+			fRec36[0] = (fTemp41 - std::floor(fTemp41));
 			int iTemp42 = int((65536.0f * fRec36[0]));
-			float fTemp43 = min(8192.0f, ((0.75f * fRec26[0]) + (fRec27[0] * (0.0f - ((0.707106769f * ftbl1mydspSIG1[iTemp42]) + (0.707106769f * ftbl0mydspSIG0[iTemp42]))))));
+			float fTemp43 = std::min(8192.0f, ((0.75f * fRec26[0]) + (fRec27[0] * (0.0f - ((0.707106769f * ftbl1mydspSIG1[iTemp42]) + (0.707106769f * ftbl0mydspSIG0[iTemp42]))))));
 			int iTemp44 = int(fTemp43);
 			float fTemp45 = (fRec37[1] + (fConst12 * fRec30[0]));
-			fRec37[0] = (fTemp45 - floorf(fTemp45));
+			fRec37[0] = (fTemp45 - std::floor(fTemp45));
 			int iTemp46 = int((65536.0f * fRec37[0]));
-			float fTemp47 = min(8192.0f, (fRec26[0] + (fRec27[0] * ((0.707106769f * ftbl1mydspSIG1[iTemp46]) - (0.707106769f * ftbl0mydspSIG0[iTemp46])))));
+			float fTemp47 = std::min(8192.0f, (fRec26[0] + (fRec27[0] * ((0.707106769f * ftbl1mydspSIG1[iTemp46]) - (0.707106769f * ftbl0mydspSIG0[iTemp46])))));
 			int iTemp48 = int(fTemp47);
 			float fTemp49 = (iSlow5?fTemp18:(fTemp27 - (((0.382683426f * ((fVec2[((IOTA - (iTemp36 & 8191)) & 8191)] * (float(iTemp36) + (1.0f - fTemp35))) + ((fTemp35 - float(iTemp36)) * fVec2[((IOTA - ((iTemp36 + 1) & 8191)) & 8191)]))) + (0.923879504f * (((fVec2[((IOTA - (iTemp40 & 8191)) & 8191)] * (float(iTemp40) + (1.0f - fTemp39))) + ((fTemp39 - float(iTemp40)) * fVec2[((IOTA - ((iTemp40 + 1) & 8191)) & 8191)])) + ((fVec2[((IOTA - (iTemp44 & 8191)) & 8191)] * (float(iTemp44) + (1.0f - fTemp43))) + ((fTemp43 - float(iTemp44)) * fVec2[((IOTA - ((iTemp44 + 1) & 8191)) & 8191)]))))) + (0.382683426f * ((fVec2[((IOTA - (iTemp48 & 8191)) & 8191)] * (float(iTemp48) + (1.0f - fTemp47))) + ((fTemp47 - float(iTemp48)) * fVec2[((IOTA - ((iTemp48 + 1) & 8191)) & 8191)]))))));
 			float fTemp50 = (iSlow0?0.0f:fTemp49);
@@ -1571,7 +1573,7 @@ class mydsp : public dsp {
 			fVec9[(IOTA & 2047)] = (fTemp51 + (fSlow2 * fRec49[0]));
 			fRec48[0] = fVec9[((IOTA - 1557) & 2047)];
 			fRec51[0] = ((fSlow3 * fRec51[1]) + (fSlow4 * fRec50[1]));
-			fVec10[(IOTA & 2047)] = ((fSlow2 * fRec51[0]) + fTemp51);
+			fVec10[(IOTA & 2047)] = (fTemp51 + (fSlow2 * fRec51[0]));
 			fRec50[0] = fVec10[((IOTA - 1617) & 2047)];
 			float fTemp52 = (((((((fRec8[0] + fRec38[0]) + fRec40[0]) + fRec42[0]) + fRec44[0]) + fRec46[0]) + fRec48[0]) + fRec50[0]);
 			fVec11[(IOTA & 1023)] = (fTemp52 + (0.5f * fRec6[1]));
@@ -2468,11 +2470,11 @@ class LogValueConverter : public LinearValueConverter
     public:
 
         LogValueConverter(double umin, double umax, double fmin, double fmax) :
-            LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), log(std::max<double>(DBL_MIN, fmax)))
+        LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), std::log(std::max<double>(DBL_MIN, fmax)))
         {}
 
-        virtual double ui2faust(double x) 	{ return exp(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(log(std::max<double>(x, DBL_MIN))); }
+        virtual double ui2faust(double x) 	{ return std::exp(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(std::log(std::max<double>(x, DBL_MIN))); }
 
 };
 
@@ -2488,8 +2490,8 @@ class ExpValueConverter : public LinearValueConverter
             LinearValueConverter(umin, umax, exp(fmin), exp(fmax))
         {}
 
-        virtual double ui2faust(double x) { return log(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(exp(x)); }
+        virtual double ui2faust(double x) { return std::log(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(std::exp(x)); }
 
 };
 
@@ -3324,6 +3326,8 @@ class APIUI : public PathBuilder, public Meta, public UI
 #include <string>
 #include <utility>
 #include <iostream>
+#include <cstdlib>
+#include <cmath>
 
 /************************************************************************
  FAUST Architecture File
@@ -4574,7 +4578,7 @@ class uiMidiPitchWheel : public uiMidiItem
 
         int bend2wheel(float v)
         {
-            return (int)((12*log(v)/log(2.0)+2)/4*16383);
+            return (int)((12*std::log(v)/std::log(2.0)+2)/4*16383);
         }
  
     public:
@@ -4957,13 +4961,13 @@ class MidiUI : public GUI, public midi
 
 #include <stdio.h>
 #include <string>
-#include <math.h>
-#include <float.h>
+#include <cmath>
 #include <algorithm>
 #include <ostream>
 #include <sstream>
 #include <vector>
 #include <limits.h>
+#include <float.h>
 
 /************************************************************************
  FAUST Architecture File
@@ -5185,6 +5189,7 @@ class MapUI : public UI, public PathBuilder
 #include <map>
 #include <utility>
 #include <assert.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File

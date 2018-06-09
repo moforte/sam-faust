@@ -8,7 +8,7 @@ copyright: "(c) GRAME 2006 and MoForte Inc. 2017"
 license: "BSD"
 name: "freeverb"
 version: "1.0"
-Code generated with Faust 2.6.00 (https://faust.grame.fr)
+Code generated with Faust 2.6.1 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -71,6 +71,7 @@ Compilation options: cpp, -scal -ftz 0
 #include <map>
 #include <string.h>
 #include <stdlib.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File
@@ -126,7 +127,7 @@ inline int int2pow2(int x)		{ int r = 0; while ((1<<r) < x) r++; return r; }
 inline long lopt(char* argv[], const char* name, long def)
 {
 	int	i;
-	for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
+    for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
 	return def;
 }
 
@@ -622,6 +623,7 @@ class dsp_sample_adapter : public decorator_dsp {
 #define FAUSTFLOAT float
 #endif 
 
+#include <algorithm>
 #include <cmath>
 
 
@@ -1854,11 +1856,11 @@ class LogValueConverter : public LinearValueConverter
     public:
 
         LogValueConverter(double umin, double umax, double fmin, double fmax) :
-            LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), log(std::max<double>(DBL_MIN, fmax)))
+        LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), std::log(std::max<double>(DBL_MIN, fmax)))
         {}
 
-        virtual double ui2faust(double x) 	{ return exp(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(log(std::max<double>(x, DBL_MIN))); }
+        virtual double ui2faust(double x) 	{ return std::exp(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(std::log(std::max<double>(x, DBL_MIN))); }
 
 };
 
@@ -1874,8 +1876,8 @@ class ExpValueConverter : public LinearValueConverter
             LinearValueConverter(umin, umax, exp(fmin), exp(fmax))
         {}
 
-        virtual double ui2faust(double x) { return log(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(exp(x)); }
+        virtual double ui2faust(double x) { return std::log(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(std::exp(x)); }
 
 };
 
@@ -2710,6 +2712,8 @@ class APIUI : public PathBuilder, public Meta, public UI
 #include <string>
 #include <utility>
 #include <iostream>
+#include <cstdlib>
+#include <cmath>
 
 /************************************************************************
  FAUST Architecture File
@@ -3960,7 +3964,7 @@ class uiMidiPitchWheel : public uiMidiItem
 
         int bend2wheel(float v)
         {
-            return (int)((12*log(v)/log(2.0)+2)/4*16383);
+            return (int)((12*std::log(v)/std::log(2.0)+2)/4*16383);
         }
  
     public:
@@ -4343,13 +4347,13 @@ class MidiUI : public GUI, public midi
 
 #include <stdio.h>
 #include <string>
-#include <math.h>
-#include <float.h>
+#include <cmath>
 #include <algorithm>
 #include <ostream>
 #include <sstream>
 #include <vector>
 #include <limits.h>
+#include <float.h>
 
 /************************************************************************
  FAUST Architecture File
@@ -4571,6 +4575,7 @@ class MapUI : public UI, public PathBuilder
 #include <map>
 #include <utility>
 #include <assert.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File

@@ -4,7 +4,7 @@
 #define MIDICTRL 1
 /* ------------------------------------------------------------
 name: "16_channel_volume"
-Code generated with Faust 2.6.00 (https://faust.grame.fr)
+Code generated with Faust 2.6.1 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -67,6 +67,7 @@ Compilation options: cpp, -scal -ftz 0
 #include <map>
 #include <string.h>
 #include <stdlib.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File
@@ -122,7 +123,7 @@ inline int int2pow2(int x)		{ int r = 0; while ((1<<r) < x) r++; return r; }
 inline long lopt(char* argv[], const char* name, long def)
 {
 	int	i;
-	for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
+    for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
 	return def;
 }
 
@@ -618,6 +619,7 @@ class dsp_sample_adapter : public decorator_dsp {
 #define FAUSTFLOAT float
 #endif 
 
+#include <algorithm>
 #include <cmath>
 
 
@@ -1043,22 +1045,22 @@ class mydsp : public dsp {
 		FAUSTFLOAT* output13 = outputs[13];
 		FAUSTFLOAT* output14 = outputs[14];
 		FAUSTFLOAT* output15 = outputs[15];
-		float fSlow0 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider0))));
-		float fSlow1 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider1))));
-		float fSlow2 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider2))));
-		float fSlow3 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider3))));
-		float fSlow4 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider4))));
-		float fSlow5 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider5))));
-		float fSlow6 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider6))));
-		float fSlow7 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider7))));
-		float fSlow8 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider8))));
-		float fSlow9 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider9))));
-		float fSlow10 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider10))));
-		float fSlow11 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider11))));
-		float fSlow12 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider12))));
-		float fSlow13 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider13))));
-		float fSlow14 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider14))));
-		float fSlow15 = (0.00100000005f * powf(10.0f, (0.0500000007f * float(fVslider15))));
+		float fSlow0 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider0))));
+		float fSlow1 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider1))));
+		float fSlow2 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider2))));
+		float fSlow3 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider3))));
+		float fSlow4 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider4))));
+		float fSlow5 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider5))));
+		float fSlow6 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider6))));
+		float fSlow7 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider7))));
+		float fSlow8 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider8))));
+		float fSlow9 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider9))));
+		float fSlow10 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider10))));
+		float fSlow11 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider11))));
+		float fSlow12 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider12))));
+		float fSlow13 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider13))));
+		float fSlow14 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider14))));
+		float fSlow15 = (0.00100000005f * std::pow(10.0f, (0.0500000007f * float(fVslider15))));
 		for (int i = 0; (i < count); i = (i + 1)) {
 			fRec0[0] = (fSlow0 + (0.999000013f * fRec0[1]));
 			output0[i] = FAUSTFLOAT((float(input0[i]) * fRec0[0]));
@@ -1083,15 +1085,15 @@ class mydsp : public dsp {
 			fRec10[0] = (fSlow10 + (0.999000013f * fRec10[1]));
 			output10[i] = FAUSTFLOAT((float(input10[i]) * fRec10[0]));
 			fRec11[0] = (fSlow11 + (0.999000013f * fRec11[1]));
-			output11[i] = FAUSTFLOAT((fRec11[0] * float(input11[i])));
+			output11[i] = FAUSTFLOAT((float(input11[i]) * fRec11[0]));
 			fRec12[0] = (fSlow12 + (0.999000013f * fRec12[1]));
-			output12[i] = FAUSTFLOAT((fRec12[0] * float(input12[i])));
+			output12[i] = FAUSTFLOAT((float(input12[i]) * fRec12[0]));
 			fRec13[0] = (fSlow13 + (0.999000013f * fRec13[1]));
-			output13[i] = FAUSTFLOAT((fRec13[0] * float(input13[i])));
+			output13[i] = FAUSTFLOAT((float(input13[i]) * fRec13[0]));
 			fRec14[0] = (fSlow14 + (0.999000013f * fRec14[1]));
-			output14[i] = FAUSTFLOAT((fRec14[0] * float(input14[i])));
+			output14[i] = FAUSTFLOAT((float(input14[i]) * fRec14[0]));
 			fRec15[0] = (fSlow15 + (0.999000013f * fRec15[1]));
-			output15[i] = FAUSTFLOAT((fRec15[0] * float(input15[i])));
+			output15[i] = FAUSTFLOAT((float(input15[i]) * fRec15[0]));
 			fRec0[1] = fRec0[0];
 			fRec1[1] = fRec1[0];
 			fRec2[1] = fRec2[0];
@@ -1941,11 +1943,11 @@ class LogValueConverter : public LinearValueConverter
     public:
 
         LogValueConverter(double umin, double umax, double fmin, double fmax) :
-            LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), log(std::max<double>(DBL_MIN, fmax)))
+        LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), std::log(std::max<double>(DBL_MIN, fmax)))
         {}
 
-        virtual double ui2faust(double x) 	{ return exp(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(log(std::max<double>(x, DBL_MIN))); }
+        virtual double ui2faust(double x) 	{ return std::exp(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(std::log(std::max<double>(x, DBL_MIN))); }
 
 };
 
@@ -1961,8 +1963,8 @@ class ExpValueConverter : public LinearValueConverter
             LinearValueConverter(umin, umax, exp(fmin), exp(fmax))
         {}
 
-        virtual double ui2faust(double x) { return log(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(exp(x)); }
+        virtual double ui2faust(double x) { return std::log(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(std::exp(x)); }
 
 };
 
@@ -2797,6 +2799,8 @@ class APIUI : public PathBuilder, public Meta, public UI
 #include <string>
 #include <utility>
 #include <iostream>
+#include <cstdlib>
+#include <cmath>
 
 /************************************************************************
  FAUST Architecture File
@@ -4047,7 +4051,7 @@ class uiMidiPitchWheel : public uiMidiItem
 
         int bend2wheel(float v)
         {
-            return (int)((12*log(v)/log(2.0)+2)/4*16383);
+            return (int)((12*std::log(v)/std::log(2.0)+2)/4*16383);
         }
  
     public:
@@ -4430,13 +4434,13 @@ class MidiUI : public GUI, public midi
 
 #include <stdio.h>
 #include <string>
-#include <math.h>
-#include <float.h>
+#include <cmath>
 #include <algorithm>
 #include <ostream>
 #include <sstream>
 #include <vector>
 #include <limits.h>
+#include <float.h>
 
 /************************************************************************
  FAUST Architecture File
@@ -4658,6 +4662,7 @@ class MapUI : public UI, public PathBuilder
 #include <map>
 #include <utility>
 #include <assert.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File

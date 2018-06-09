@@ -4,7 +4,7 @@
 #define MIDICTRL 1
 /* ------------------------------------------------------------
 name: "chorus"
-Code generated with Faust 2.6.00 (https://faust.grame.fr)
+Code generated with Faust 2.6.1 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -67,6 +67,7 @@ Compilation options: cpp, -scal -ftz 0
 #include <map>
 #include <string.h>
 #include <stdlib.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File
@@ -122,7 +123,7 @@ inline int int2pow2(int x)		{ int r = 0; while ((1<<r) < x) r++; return r; }
 inline long lopt(char* argv[], const char* name, long def)
 {
 	int	i;
-	for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
+    for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
 	return def;
 }
 
@@ -618,6 +619,7 @@ class dsp_sample_adapter : public decorator_dsp {
 #define FAUSTFLOAT float
 #endif 
 
+#include <algorithm>
 #include <cmath>
 #include <math.h>
 
@@ -626,7 +628,7 @@ class mydspSIG0 {
 	
   private:
 	
-	int iRec3[2];
+	int iRec2[2];
 	
   public:
 	
@@ -668,8 +670,8 @@ class mydspSIG0 {
 	}
 	
 	void instanceInitmydspSIG0(int samplingFreq) {
-		for (int l4 = 0; (l4 < 2); l4 = (l4 + 1)) {
-			iRec3[l4] = 0;
+		for (int l3 = 0; (l3 < 2); l3 = (l3 + 1)) {
+			iRec2[l3] = 0;
 			
 		}
 		
@@ -677,9 +679,9 @@ class mydspSIG0 {
 	
 	void fillmydspSIG0(int count, float* output) {
 		for (int i = 0; (i < count); i = (i + 1)) {
-			iRec3[0] = (iRec3[1] + 1);
-			output[i] = cosf((9.58738019e-05f * float((iRec3[0] + -1))));
-			iRec3[1] = iRec3[0];
+			iRec2[0] = (iRec2[1] + 1);
+			output[i] = std::sin((9.58738019e-05f * float((iRec2[0] + -1))));
+			iRec2[1] = iRec2[0];
 			
 		}
 		
@@ -746,7 +748,7 @@ class mydspSIG1 {
 	void fillmydspSIG1(int count, float* output) {
 		for (int i = 0; (i < count); i = (i + 1)) {
 			iRec6[0] = (iRec6[1] + 1);
-			output[i] = sinf((9.58738019e-05f * float((iRec6[0] + -1))));
+			output[i] = std::cos((9.58738019e-05f * float((iRec6[0] + -1))));
 			iRec6[1] = iRec6[0];
 			
 		}
@@ -783,12 +785,12 @@ class mydsp : public dsp {
 	float fVec0[8192];
 	FAUSTFLOAT fVslider2;
 	float fRec1[2];
-	FAUSTFLOAT fVslider3;
-	float fRec2[2];
 	float fConst3;
+	FAUSTFLOAT fVslider3;
+	float fRec4[2];
+	float fRec3[2];
 	FAUSTFLOAT fVslider4;
 	float fRec5[2];
-	float fRec4[2];
 	float fConst4;
 	float fRec7[2];
 	float fConst5;
@@ -894,11 +896,11 @@ class mydsp : public dsp {
 	
 	virtual void instanceConstants(int samplingFreq) {
 		fSamplingFreq = samplingFreq;
-		fConst0 = min(192000.0f, max(1.0f, float(fSamplingFreq)));
-		fConst1 = expf((0.0f - (44.1223412f / fConst0)));
+		fConst0 = std::min(192000.0f, std::max(1.0f, float(fSamplingFreq)));
+		fConst1 = std::exp((0.0f - (44.1223412f / fConst0)));
 		fConst2 = (1.0f - fConst1);
-		fConst3 = (0.333333343f / fConst0);
-		fConst4 = (1.0f / fConst0);
+		fConst3 = (1.0f / fConst0);
+		fConst4 = (0.333333343f / fConst0);
 		fConst5 = (0.142857149f / fConst0);
 		fConst6 = (0.5f / fConst0);
 		fConst7 = (0.25f / fConst0);
@@ -930,16 +932,16 @@ class mydsp : public dsp {
 			fRec1[l2] = 0.0f;
 			
 		}
-		for (int l3 = 0; (l3 < 2); l3 = (l3 + 1)) {
-			fRec2[l3] = 0.0f;
+		for (int l4 = 0; (l4 < 2); l4 = (l4 + 1)) {
+			fRec4[l4] = 0.0f;
 			
 		}
 		for (int l5 = 0; (l5 < 2); l5 = (l5 + 1)) {
-			fRec5[l5] = 0.0f;
+			fRec3[l5] = 0.0f;
 			
 		}
 		for (int l6 = 0; (l6 < 2); l6 = (l6 + 1)) {
-			fRec4[l6] = 0.0f;
+			fRec5[l6] = 0.0f;
 			
 		}
 		for (int l8 = 0; (l8 < 2); l8 = (l8 + 1)) {
@@ -999,19 +1001,19 @@ class mydsp : public dsp {
 		ui_interface->declare(&fVslider2, "midi", "ctrl 4");
 		ui_interface->declare(&fVslider2, "style", "knob");
 		ui_interface->addVerticalSlider("Delay", &fVslider2, 0.5f, 0.0f, 1.0f, 1.0f);
-		ui_interface->declare(&fVslider4, "1", "");
-		ui_interface->declare(&fVslider4, "midi", "ctrl 2");
-		ui_interface->declare(&fVslider4, "style", "knob");
-		ui_interface->declare(&fVslider4, "unit", "Hz");
-		ui_interface->addVerticalSlider("Rate", &fVslider4, 0.5f, 0.00999999978f, 7.0f, 9.99999975e-05f);
+		ui_interface->declare(&fVslider3, "1", "");
+		ui_interface->declare(&fVslider3, "midi", "ctrl 2");
+		ui_interface->declare(&fVslider3, "style", "knob");
+		ui_interface->declare(&fVslider3, "unit", "Hz");
+		ui_interface->addVerticalSlider("Rate", &fVslider3, 0.5f, 0.00999999978f, 7.0f, 9.99999975e-05f);
 		ui_interface->declare(&fVslider1, "4", "");
 		ui_interface->declare(&fVslider1, "midi", "ctrl 3");
 		ui_interface->declare(&fVslider1, "style", "knob");
 		ui_interface->addVerticalSlider("Depth", &fVslider1, 0.5f, 0.0f, 1.0f, 0.00100000005f);
-		ui_interface->declare(&fVslider3, "6", "");
-		ui_interface->declare(&fVslider3, "midi", "ctrl 58");
-		ui_interface->declare(&fVslider3, "style", "knob");
-		ui_interface->addVerticalSlider("Deviation", &fVslider3, 0.5f, 0.0f, 1.0f, 0.00100000005f);
+		ui_interface->declare(&fVslider4, "6", "");
+		ui_interface->declare(&fVslider4, "midi", "ctrl 58");
+		ui_interface->declare(&fVslider4, "style", "knob");
+		ui_interface->addVerticalSlider("Deviation", &fVslider4, 0.5f, 0.0f, 1.0f, 0.00100000005f);
 		ui_interface->closeBox();
 		ui_interface->declare(0, "1", "");
 		ui_interface->openVerticalBox("Switches");
@@ -1033,8 +1035,8 @@ class mydsp : public dsp {
 		int iSlow0 = (1 - int(float(fVslider0)));
 		float fSlow1 = (fConst2 * float(fVslider1));
 		float fSlow2 = (8.19200039f * float(fVslider2));
-		float fSlow3 = (6.2500003e-05f * float(fVslider3));
-		float fSlow4 = (fConst2 * float(fVslider4));
+		float fSlow3 = (fConst2 * float(fVslider3));
+		float fSlow4 = (6.2500003e-05f * float(fVslider4));
 		for (int i = 0; (i < count); i = (i + 1)) {
 			float fTemp0 = float(input0[i]);
 			float fTemp1 = (iSlow0?0.0f:fTemp0);
@@ -1042,49 +1044,49 @@ class mydsp : public dsp {
 			float fTemp2 = (fTemp1 * fRec0[0]);
 			fVec0[(IOTA & 8191)] = fTemp2;
 			fRec1[0] = (fSlow2 + (0.999000013f * fRec1[1]));
-			fRec2[0] = ((0.999000013f * fRec2[1]) + (fSlow3 * fRec1[0]));
-			fRec5[0] = (fSlow4 + (fConst1 * fRec5[1]));
-			float fTemp3 = (fRec4[1] + (fConst3 * fRec5[0]));
-			fRec4[0] = (fTemp3 - floorf(fTemp3));
-			float fTemp4 = min(8192.0f, ((0.375f * fRec1[0]) + (fRec2[0] * ftbl0mydspSIG0[int((65536.0f * fRec4[0]))])));
+			fRec4[0] = (fSlow3 + (fConst1 * fRec4[1]));
+			float fTemp3 = (fRec3[1] + (fConst3 * fRec4[0]));
+			fRec3[0] = (fTemp3 - std::floor(fTemp3));
+			fRec5[0] = ((0.999000013f * fRec5[1]) + (fSlow4 * fRec1[0]));
+			float fTemp4 = std::min(8192.0f, ((0.125f * fRec1[0]) + (ftbl0mydspSIG0[int((65536.0f * fRec3[0]))] * fRec5[0])));
 			int iTemp5 = int(fTemp4);
-			float fTemp6 = (fRec7[1] + (fConst4 * fRec5[0]));
-			fRec7[0] = (fTemp6 - floorf(fTemp6));
-			float fTemp7 = min(8192.0f, ((0.125f * fRec1[0]) + (fRec2[0] * ftbl1mydspSIG1[int((65536.0f * fRec7[0]))])));
+			float fTemp6 = (fRec7[1] + (fConst4 * fRec4[0]));
+			fRec7[0] = (fTemp6 - std::floor(fTemp6));
+			float fTemp7 = std::min(8192.0f, ((0.375f * fRec1[0]) + (ftbl1mydspSIG1[int((65536.0f * fRec7[0]))] * fRec5[0])));
 			int iTemp8 = int(fTemp7);
 			float fTemp9 = (fTemp1 * (1.0f - fRec0[0]));
-			float fTemp10 = (fRec8[1] + (fConst5 * fRec5[0]));
-			fRec8[0] = (fTemp10 - floorf(fTemp10));
-			float fTemp11 = min(8192.0f, ((0.875f * fRec1[0]) + (fRec2[0] * (0.0f - ftbl0mydspSIG0[int((65536.0f * fRec8[0]))]))));
+			float fTemp10 = (fRec8[1] + (fConst5 * fRec4[0]));
+			fRec8[0] = (fTemp10 - std::floor(fTemp10));
+			float fTemp11 = std::min(8192.0f, ((0.875f * fRec1[0]) + ((0.0f - ftbl1mydspSIG1[int((65536.0f * fRec8[0]))]) * fRec5[0])));
 			int iTemp12 = int(fTemp11);
-			output0[i] = FAUSTFLOAT((iSlow0?fTemp0:(((0.707106769f * ((fVec0[((IOTA - (iTemp5 & 8191)) & 8191)] * (float(iTemp5) + (1.0f - fTemp4))) + ((fTemp4 - float(iTemp5)) * fVec0[((IOTA - ((iTemp5 + 1) & 8191)) & 8191)]))) + (((fTemp7 - float(iTemp8)) * fVec0[((IOTA - ((iTemp8 + 1) & 8191)) & 8191)]) + (fTemp9 + (fVec0[((IOTA - (iTemp8 & 8191)) & 8191)] * (float(iTemp8) + (1.0f - fTemp7)))))) - (0.707106769f * ((fVec0[((IOTA - (iTemp12 & 8191)) & 8191)] * (float(iTemp12) + (1.0f - fTemp11))) + ((fTemp11 - float(iTemp12)) * fVec0[((IOTA - ((iTemp12 + 1) & 8191)) & 8191)]))))));
-			float fTemp13 = (fRec9[1] + (fConst6 * fRec5[0]));
-			fRec9[0] = (fTemp13 - floorf(fTemp13));
+			output0[i] = FAUSTFLOAT((iSlow0?fTemp0:(((((fVec0[((IOTA - (iTemp5 & 8191)) & 8191)] * (float(iTemp5) + (1.0f - fTemp4))) + ((fTemp4 - float(iTemp5)) * fVec0[((IOTA - ((iTemp5 + 1) & 8191)) & 8191)])) + (0.707106769f * ((fVec0[((IOTA - (iTemp8 & 8191)) & 8191)] * (float(iTemp8) + (1.0f - fTemp7))) + ((fTemp7 - float(iTemp8)) * fVec0[((IOTA - ((iTemp8 + 1) & 8191)) & 8191)])))) + fTemp9) - (0.707106769f * ((fVec0[((IOTA - (iTemp12 & 8191)) & 8191)] * (float(iTemp12) + (1.0f - fTemp11))) + ((fTemp11 - float(iTemp12)) * fVec0[((IOTA - ((iTemp12 + 1) & 8191)) & 8191)]))))));
+			float fTemp13 = (fRec9[1] + (fConst6 * fRec4[0]));
+			fRec9[0] = (fTemp13 - std::floor(fTemp13));
 			int iTemp14 = int((65536.0f * fRec9[0]));
-			float fTemp15 = min(8192.0f, ((0.25f * fRec1[0]) + (fRec2[0] * ((0.707106769f * ftbl1mydspSIG1[iTemp14]) + (0.707106769f * ftbl0mydspSIG0[iTemp14])))));
+			float fTemp15 = std::min(8192.0f, ((0.25f * fRec1[0]) + (((0.707106769f * ftbl0mydspSIG0[iTemp14]) + (0.707106769f * ftbl1mydspSIG1[iTemp14])) * fRec5[0])));
 			int iTemp16 = int(fTemp15);
-			float fTemp17 = (fRec10[1] + (fConst7 * fRec5[0]));
-			fRec10[0] = (fTemp17 - floorf(fTemp17));
+			float fTemp17 = (fRec10[1] + (fConst7 * fRec4[0]));
+			fRec10[0] = (fTemp17 - std::floor(fTemp17));
 			int iTemp18 = int((65536.0f * fRec10[0]));
-			float fTemp19 = min(8192.0f, ((0.5f * fRec1[0]) + (fRec2[0] * ((0.707106769f * ftbl0mydspSIG0[iTemp18]) - (0.707106769f * ftbl1mydspSIG1[iTemp18])))));
+			float fTemp19 = std::min(8192.0f, ((((0.707106769f * ftbl1mydspSIG1[iTemp18]) - (0.707106769f * ftbl0mydspSIG0[iTemp18])) * fRec5[0]) + (0.5f * fRec1[0])));
 			int iTemp20 = int(fTemp19);
-			float fTemp21 = (fRec11[1] + (fConst8 * fRec5[0]));
-			fRec11[0] = (fTemp21 - floorf(fTemp21));
+			float fTemp21 = (fRec11[1] + (fConst8 * fRec4[0]));
+			fRec11[0] = (fTemp21 - std::floor(fTemp21));
 			int iTemp22 = int((65536.0f * fRec11[0]));
-			float fTemp23 = min(8192.0f, ((0.75f * fRec1[0]) + (fRec2[0] * (0.0f - ((0.707106769f * ftbl1mydspSIG1[iTemp22]) + (0.707106769f * ftbl0mydspSIG0[iTemp22]))))));
+			float fTemp23 = std::min(8192.0f, ((0.75f * fRec1[0]) + ((0.0f - ((0.707106769f * ftbl0mydspSIG0[iTemp22]) + (0.707106769f * ftbl1mydspSIG1[iTemp22]))) * fRec5[0])));
 			int iTemp24 = int(fTemp23);
-			float fTemp25 = (fRec12[1] + (fConst9 * fRec5[0]));
-			fRec12[0] = (fTemp25 - floorf(fTemp25));
+			float fTemp25 = (fRec12[1] + (fConst9 * fRec4[0]));
+			fRec12[0] = (fTemp25 - std::floor(fTemp25));
 			int iTemp26 = int((65536.0f * fRec12[0]));
-			float fTemp27 = min(8192.0f, (fRec1[0] + (fRec2[0] * ((0.707106769f * ftbl1mydspSIG1[iTemp26]) - (0.707106769f * ftbl0mydspSIG0[iTemp26])))));
+			float fTemp27 = std::min(8192.0f, ((((0.707106769f * ftbl0mydspSIG0[iTemp26]) - (0.707106769f * ftbl1mydspSIG1[iTemp26])) * fRec5[0]) + fRec1[0]));
 			int iTemp28 = int(fTemp27);
 			output1[i] = FAUSTFLOAT((iSlow0?fTemp0:(fTemp9 - (((0.382683426f * ((fVec0[((IOTA - (iTemp16 & 8191)) & 8191)] * (float(iTemp16) + (1.0f - fTemp15))) + ((fTemp15 - float(iTemp16)) * fVec0[((IOTA - ((iTemp16 + 1) & 8191)) & 8191)]))) + (0.923879504f * (((fVec0[((IOTA - (iTemp20 & 8191)) & 8191)] * (float(iTemp20) + (1.0f - fTemp19))) + ((fTemp19 - float(iTemp20)) * fVec0[((IOTA - ((iTemp20 + 1) & 8191)) & 8191)])) + ((fVec0[((IOTA - (iTemp24 & 8191)) & 8191)] * (float(iTemp24) + (1.0f - fTemp23))) + ((fTemp23 - float(iTemp24)) * fVec0[((IOTA - ((iTemp24 + 1) & 8191)) & 8191)]))))) + (0.382683426f * ((fVec0[((IOTA - (iTemp28 & 8191)) & 8191)] * (float(iTemp28) + (1.0f - fTemp27))) + ((fTemp27 - float(iTemp28)) * fVec0[((IOTA - ((iTemp28 + 1) & 8191)) & 8191)])))))));
 			fRec0[1] = fRec0[0];
 			IOTA = (IOTA + 1);
 			fRec1[1] = fRec1[0];
-			fRec2[1] = fRec2[0];
-			fRec5[1] = fRec5[0];
 			fRec4[1] = fRec4[0];
+			fRec3[1] = fRec3[0];
+			fRec5[1] = fRec5[0];
 			fRec7[1] = fRec7[0];
 			fRec8[1] = fRec8[0];
 			fRec9[1] = fRec9[0];
@@ -1924,11 +1926,11 @@ class LogValueConverter : public LinearValueConverter
     public:
 
         LogValueConverter(double umin, double umax, double fmin, double fmax) :
-            LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), log(std::max<double>(DBL_MIN, fmax)))
+        LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), std::log(std::max<double>(DBL_MIN, fmax)))
         {}
 
-        virtual double ui2faust(double x) 	{ return exp(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(log(std::max<double>(x, DBL_MIN))); }
+        virtual double ui2faust(double x) 	{ return std::exp(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(std::log(std::max<double>(x, DBL_MIN))); }
 
 };
 
@@ -1944,8 +1946,8 @@ class ExpValueConverter : public LinearValueConverter
             LinearValueConverter(umin, umax, exp(fmin), exp(fmax))
         {}
 
-        virtual double ui2faust(double x) { return log(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(exp(x)); }
+        virtual double ui2faust(double x) { return std::log(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(std::exp(x)); }
 
 };
 
@@ -2780,6 +2782,8 @@ class APIUI : public PathBuilder, public Meta, public UI
 #include <string>
 #include <utility>
 #include <iostream>
+#include <cstdlib>
+#include <cmath>
 
 /************************************************************************
  FAUST Architecture File
@@ -4030,7 +4034,7 @@ class uiMidiPitchWheel : public uiMidiItem
 
         int bend2wheel(float v)
         {
-            return (int)((12*log(v)/log(2.0)+2)/4*16383);
+            return (int)((12*std::log(v)/std::log(2.0)+2)/4*16383);
         }
  
     public:
@@ -4413,13 +4417,13 @@ class MidiUI : public GUI, public midi
 
 #include <stdio.h>
 #include <string>
-#include <math.h>
-#include <float.h>
+#include <cmath>
 #include <algorithm>
 #include <ostream>
 #include <sstream>
 #include <vector>
 #include <limits.h>
+#include <float.h>
 
 /************************************************************************
  FAUST Architecture File
@@ -4641,6 +4645,7 @@ class MapUI : public UI, public PathBuilder
 #include <map>
 #include <utility>
 #include <assert.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File

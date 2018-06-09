@@ -4,7 +4,7 @@
 #define MIDICTRL 1
 /* ------------------------------------------------------------
 name: "flanger"
-Code generated with Faust 2.6.00 (https://faust.grame.fr)
+Code generated with Faust 2.6.1 (https://faust.grame.fr)
 Compilation options: cpp, -scal -ftz 0
 ------------------------------------------------------------ */
 
@@ -67,6 +67,7 @@ Compilation options: cpp, -scal -ftz 0
 #include <map>
 #include <string.h>
 #include <stdlib.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File
@@ -122,7 +123,7 @@ inline int int2pow2(int x)		{ int r = 0; while ((1<<r) < x) r++; return r; }
 inline long lopt(char* argv[], const char* name, long def)
 {
 	int	i;
-	for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
+    for (i = 0; argv[i]; i++) if (!strcmp(argv[i], name)) return std::atoi(argv[i+1]);
 	return def;
 }
 
@@ -618,6 +619,7 @@ class dsp_sample_adapter : public decorator_dsp {
 #define FAUSTFLOAT float
 #endif 
 
+#include <algorithm>
 #include <cmath>
 #include <math.h>
 
@@ -728,8 +730,8 @@ class mydsp : public dsp {
 	
 	virtual void instanceConstants(int samplingFreq) {
 		fSamplingFreq = samplingFreq;
-		fConst0 = min(192000.0f, max(1.0f, float(fSamplingFreq)));
-		fConst1 = expf((0.0f - (44.1223412f / fConst0)));
+		fConst0 = std::min(192000.0f, std::max(1.0f, float(fSamplingFreq)));
+		fConst1 = std::exp((0.0f - (44.1223412f / fConst0)));
 		fConst2 = (1.0f - fConst1);
 		fConst3 = (1.0f / fConst0);
 		fConst4 = (6.28318548f / fConst0);
@@ -869,13 +871,13 @@ class mydsp : public dsp {
 			fRec1[0] = (fSlow1 + (fConst1 * fRec1[1]));
 			fRec3[0] = (fSlow3 + (fConst1 * fRec3[1]));
 			float fTemp0 = (fRec2[1] + (fConst3 * fRec3[1]));
-			fRec2[0] = (fTemp0 - floorf(fTemp0));
+			fRec2[0] = (fTemp0 - std::floor(fTemp0));
 			float fTemp1 = (fConst4 * fRec3[0]);
-			float fTemp2 = sinf(fTemp1);
-			float fTemp3 = cosf(fTemp1);
+			float fTemp2 = std::sin(fTemp1);
+			float fTemp3 = std::cos(fTemp1);
 			fRec4[0] = ((fRec5[1] * fTemp2) + (fRec4[1] * fTemp3));
 			fRec5[0] = (((fRec5[1] * fTemp3) + (fRec4[1] * (0.0f - fTemp2))) + float((1 - iVec0[1])));
-			float fTemp4 = ((fSlow2 * (1.0f - fabsf(((2.0f * fRec2[0]) + -1.0f)))) + (fSlow4 * (fRec4[0] + 1.0f)));
+			float fTemp4 = ((fSlow2 * (1.0f - std::fabs(((2.0f * fRec2[0]) + -1.0f)))) + (fSlow4 * (fRec4[0] + 1.0f)));
 			float fTemp5 = float(input0[i]);
 			float fTemp6 = (iSlow0?0.0f:fTemp5);
 			float fTemp7 = ((fRec1[0] * fRec0[1]) - fTemp6);
@@ -883,8 +885,8 @@ class mydsp : public dsp {
 			float fTemp8 = (fSlow5 * fTemp4);
 			float fTemp9 = (fTemp8 + 44.0f);
 			int iTemp10 = int(fTemp9);
-			float fTemp11 = floorf(fTemp9);
-			fRec0[0] = ((fVec1[((IOTA - min(2049, max(0, iTemp10))) & 4095)] * (fTemp11 + (-43.0f - fTemp8))) + ((fTemp8 + (44.0f - fTemp11)) * fVec1[((IOTA - min(2049, max(0, (iTemp10 + 1)))) & 4095)]));
+			float fTemp11 = std::floor(fTemp9);
+			fRec0[0] = ((fVec1[((IOTA - std::min(2049, std::max(0, iTemp10))) & 4095)] * (fTemp11 + (-43.0f - fTemp8))) + ((fTemp8 + (44.0f - fTemp11)) * fVec1[((IOTA - std::min(2049, std::max(0, (iTemp10 + 1)))) & 4095)]));
 			fRec6[0] = (fSlow7 + (fConst1 * fRec6[1]));
 			output0[i] = FAUSTFLOAT((iSlow0?fTemp5:(((fRec0[0] * (iSlow6?(0.0f - fRec6[0]):fRec6[0])) + fTemp6) / (fRec6[0] + 1.0f))));
 			iVec0[1] = iVec0[0];
@@ -1729,11 +1731,11 @@ class LogValueConverter : public LinearValueConverter
     public:
 
         LogValueConverter(double umin, double umax, double fmin, double fmax) :
-            LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), log(std::max<double>(DBL_MIN, fmax)))
+        LinearValueConverter(umin, umax, log(std::max<double>(DBL_MIN, fmin)), std::log(std::max<double>(DBL_MIN, fmax)))
         {}
 
-        virtual double ui2faust(double x) 	{ return exp(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(log(std::max<double>(x, DBL_MIN))); }
+        virtual double ui2faust(double x) 	{ return std::exp(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x)	{ return LinearValueConverter::faust2ui(std::log(std::max<double>(x, DBL_MIN))); }
 
 };
 
@@ -1749,8 +1751,8 @@ class ExpValueConverter : public LinearValueConverter
             LinearValueConverter(umin, umax, exp(fmin), exp(fmax))
         {}
 
-        virtual double ui2faust(double x) { return log(LinearValueConverter::ui2faust(x)); }
-        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(exp(x)); }
+        virtual double ui2faust(double x) { return std::log(LinearValueConverter::ui2faust(x)); }
+        virtual double faust2ui(double x) { return LinearValueConverter::faust2ui(std::exp(x)); }
 
 };
 
@@ -2585,6 +2587,8 @@ class APIUI : public PathBuilder, public Meta, public UI
 #include <string>
 #include <utility>
 #include <iostream>
+#include <cstdlib>
+#include <cmath>
 
 /************************************************************************
  FAUST Architecture File
@@ -3835,7 +3839,7 @@ class uiMidiPitchWheel : public uiMidiItem
 
         int bend2wheel(float v)
         {
-            return (int)((12*log(v)/log(2.0)+2)/4*16383);
+            return (int)((12*std::log(v)/std::log(2.0)+2)/4*16383);
         }
  
     public:
@@ -4218,13 +4222,13 @@ class MidiUI : public GUI, public midi
 
 #include <stdio.h>
 #include <string>
-#include <math.h>
-#include <float.h>
+#include <cmath>
 #include <algorithm>
 #include <ostream>
 #include <sstream>
 #include <vector>
 #include <limits.h>
+#include <float.h>
 
 /************************************************************************
  FAUST Architecture File
@@ -4446,6 +4450,7 @@ class MapUI : public UI, public PathBuilder
 #include <map>
 #include <utility>
 #include <assert.h>
+#include <cstdlib>
 
 /************************************************************************
  FAUST Architecture File
